@@ -1,0 +1,2258 @@
+
+% Copyright 2026 Ma.XianLiang. All rights reserved.
+% First released simultaneously on TSA.CN, GitHub, ChinaXiv and arXiv, timestamp June 2026
+
+\documentclass[tikz,12pt,leqno]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\setlength{\textheight}{21.5cm} \setlength{\textwidth}{16cm}
+\setlength{\oddsidemargin}{0cm} \setlength{\evensidemargin}{0cm}
+\usepackage{latexsym}
+\usepackage{}
+\usepackage{mathtools} % Required for \mathclap
+\usepackage{graphicx} % Removed [dvips] option
+\usepackage{tikz,pgfplots}
+\usepackage{float}
+\usepackage{braket}
+\usepackage{amsmath,bm}
+\usepackage{siunitx}
+\usepackage{array}    % For table center alignment
+\usepackage{booktabs} % For \toprule, \midrule, \bottomrule
+\usepackage{array}    % For syntax >{\centering\arraybackslash}
+\usepackage{enumitem} % For item align 
+\usepackage[font=small]{caption} % Set default font size globally; can also set locally
+\usepackage{url}      % \url package
+\pgfplotsset{compat=1.18} % Must be kept for compatibility
+\usepackage{xcolor}   % Use xcolor instead of old color package for better compatibility
+\pagestyle{plain} \topmargin=0pt
+\renewcommand{\baselinestretch}{1.0}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\bibliographystyle{unsrt}   % sortid
+
+\def\a{\mathcal{A}}
+\def\b{\mathcal{B}}
+\def\c{\mathcal{C}}
+\def\d{\mathcal{D}}
+\def\e{\mathcal{E}}
+\def\f{\mathcal{F}}
+\def\g{\mathcal{G}}
+\def\h{\mathcal{H}}
+\def\i{\mathcal{I}}
+\def\j{\mathcal{J}} 
+\def\k{\mathcal{K}} 
+\def\l{\mathcal{L}}
+\def\m{\mathcal{M}}
+\def\n{\mathcal{N}}
+\def\p{\mathcal{P}}
+\def\q{\mathcal{Q}}
+\def\r{\mathcal{R}}
+\def\s{\mathcal{S}}
+\def\t{\mathcal{T}}
+\def\u{\mathcal{U}}
+\def\v{\mathcal{V}}
+\def\w{\mathcal{W}}
+\def\x{\mathcal{X}}
+\def\y{\mathcal{Y}}
+\def\z{\mathcal{Z}}
+
+\def\sp{(s,\psi)}
+\def\ss{(\rho,\psi)}
+\def\bp{\bar{\psi}}
+\def\pc{\chi\psi}
+\def\tp{\frac{1}{2\pi i}}
+\def\al{\alpha}
+\def\ep{\varepsilon}
+\def\vt{\vartheta}
+\def\la{\lambda}
+\def\bla{\bar{\lambda}}
+\def\tg{\tilde{g}}
+\def\vs{\varsigma}
+\def\tz{\tilde{Z}}
+\def\vk{\varkappa}
+\def\bt{\bar{\theta}}
+\def\bk{\bar{\varkappa}}
+\def\be{\beta}
+\def\tk{\tilde{\kappa}}
+\def\hk{\hat{\kappa}}
+\def\aa{\mathfrak{a}}
+\def\bb{\mathfrak{b}}
+\def\cc{\mathfrak{c}}
+\def\ff{\mathfrak{f}}
+\def\gh{\mathfrak{g}}
+\def\xx{\mathfrak{x}}
+\def\yy{\mathfrak{y}}
+
+\newcommand{\tinysp}{\mspace{1.5mu}}
+
+\title{
+	\Large The Breathing Cosmos: Growing Speed of Light, \textbf{$\boldsymbol{G c^2 = P}$},\\[0.6em]
+	\Large and the Evolution of \textbf{$\boldsymbol{G_{\mu\nu}}$} as well as Bohr Radius \textbf{$\boldsymbol{a_{\scriptscriptstyle\mathrm{B}}(t)}$}
+}
+\author{\\XianLiang Ma}
+\date{}
+
+
+\begin{document}
+	\maketitle
+	
+	\setlength{\leftskip}{1.0cm}
+	\setlength{\rightskip}{1.0cm}
+	
+	\section *\small{{\centerline{Abstract} }
+		\medskip\noindent
+		% Indent 1cm on each side (16-2=14cm), only for abstract; body text resets automatically
+		
+		\small{In physics, the speed of light $c$ and the gravitational constant $G$ are regarded as invariant fundamental constants. This paper explores a new theoretical framework for cosmic evolution, built upon two core postulates: $(1)$ the speed of light is time-dependent, while a cosmic coupling constant $P$ remains invariant, satisfying $G(t)\,c(t)^2 = P$; and $(2)$ the fine-structure constant $\alpha$ is eternally invariant. Under these two assumptions, the time-growing speed of light $c(t)$ emerges as the sole driving force of cosmic evolution, and the gravitational constant $G$ is no longer a fundamental constant but a derived physical quantity dependent on $c(t)$. The physical dimension of length, as defined by the meter, is re-examined within this framework. Vacuum permeability $\mu_0$, vacuum permittivity $\varepsilon_0$, the Bohr radius $a_{\scriptscriptstyle\mathrm{B}}$ of hydrogen, the reduced Planck constant $\hbar$, the Planck mass $m_\text{p}$, the Planck length $\ell_\text{p}$, the Planck density $\rho_\text{p}$, and the thermodynamic temperature $T_\mathrm{ion}$ in the Boltzmann ionization formula all evolve alongside \(c(t)\). The time-dependent function $c(t)$ is inferred to scale synchronously with both the cosmic scale factor $a(t)$ and the redshift factor $1+z$ defined in the standard $\Lambda$CDM model. At the CMB decoupling epoch corresponding to $1+z=1100$, the speed of light $c(t)$ is $1/1100$ of the present speed $c_0$, the Bohr radius $a_{\scriptscriptstyle\mathrm{B}}$ is $1/1100$ of its current value, and the ionization temperature $T_\mathrm{ion}$ is only $82.64\,$K, a result markedly different from the conventional high-temperature assumption of the standard $\Lambda$CDM model. Within this growing-$c(t)$ model, the cosmic formation timescale is extended to be $[-59.1,\,-45.2]\,$$\mathrm{Gyr}$, far exceeding the -13.8$\,\mathrm{Gyr}$ assumed in the standard model, implying a gently evolving cosmos rather than a violent Big Bang scenario. The interpretation of Einstein curvature field equation $G_{\mu\nu}$ is revisited, revealing extremely high spacetime curvature at the early galaxy formation era ($1+z=25$) and the CMB epoch ($1+z=1100$). The intrinsic meaning of the cosmic coupling constant $P$ is explored, with the relation $P = \dfrac{c(t)^6 G_{\mu\nu}}{8\pi T_{\mu\nu}} \approx \dfrac{c(t)^4 G_{\mu\nu}}{8\pi M_{\mu\nu}}$. Here, $P$ characterizes the fundamental coupling between cosmic mass-energy distribution, spacetime curvature and the time-varying light speed $c(t)$. On macroscopic scales, dynamic mass distribution governs the evolution of both spacetime curvature and light propagation velocity. The evolution of the speed of light encodes the transition of the universe from an early utterly homogeneous post-hadronization plasma state toward local clustering of matter and energy in spacetime, while its present annual variation rate is calculated to be $[9.43,\,20.7]\,$$\mathrm{mm\!\cdot\!s^{-1}\!\cdot\!yr^{-1}}$, and the feasibility of testing this variation at the High Energy Photon Source (HEPS) is explored. Outstanding problems such as the cosmic photon budget crisis, the early galaxy stellar mass tension, the Population III star timescale conflict, the early solar lithium abundance puzzle, and the late emergence of advanced intelligent life may be re-examined within this growing-\(c(t)\) model. We postulate the ultimate cosmic origin as the \textit{ZLZT} (\textit{Zero-Light-Speed Zero-Temperature}) primordial state, where both the speed of light and temperature approach zero. Meanwhile, the \textit{LEM-SCDF} (\textit{Light-Electricity-Magnetism Synchronized Cosmic Dark Field}) is defined to realize the global synchronization of electromagnetic parameters. More importantly, the revised Einstein field equation, which abandons the constant \(G\) and is equipped with dynamic \(c(t)\), offers a groundbreaking perspective and feasible approach for exploring the long-sought unified field theory. \\}
+
+\setlength{\leftskip}{0cm}
+\setlength{\rightskip}{0cm}
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		Table of Contents
+	\end{center}
+}
+\medskip
+\noindent
+
+\noindent
+1. Classical Basic Equations
+
+\medskip\noindent
+2. Fundamental Postulates
+ 
+\medskip\noindent
+3. Symbol Definitions and Conventions
+
+\medskip\noindent
+4. The Overlooked Temporal Variability of Light Speed 
+
+\medskip\noindent
+5. Sigmoid-like Growing-$c(t)$ Model
+ 
+\medskip\noindent
+6. Ultra-fine Growing-$c(t)$ Model
+ 
+\medskip\noindent
+7. Different Physical Pictures of Growing-$c(t)$ Universe
+ 
+\medskip\noindent
+8. The Revised ${G_{\mu\nu}}$, the Constant $P$, and the LEM‑SCDF Field
+
+\medskip\noindent
+9. The ZLZT Primordial State, Confinement Generates Substance, and ${c(t)}$ Evolution
+
+\medskip\noindent
+10. Cosmological Redshift: An Unanswered Causal Gap and Its Physical Closure
+
+\medskip\noindent
+11. Discussion on Experimental Detectability of Tiny Evolving ${c(t)}$ 
+
+\medskip\noindent
+12. A Fresh Perspective on Outstanding Problems via the Growing-$c(t)$ Framework
+
+\medskip\noindent
+Postscript
+
+\medskip\noindent
+References
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		1. Classical Basic Equations
+	\end{center}
+}
+\medskip
+\noindent
+
+This thesis is built upon several fundamental equations of physics, which lay the foundation for the subsequent theoretical derivation. For clarity and completeness, these standard equations are briefly listed below with concise annotations, forming the baseline for our modified growing-${c(t)}$ framework.
+
+\bigskip
+The speed of light in vacuum is related to vacuum permeability and permittivity, derived from Maxwell's equations:
+$$
+c = \frac{1}{\sqrt{\mu_0\tinysp \varepsilon_0}} \enspace \quad \Rightarrow \quad \enspace
+\mu_0\tinysp \varepsilon_0\tinysp c^2 = 1 \eqno(1.1)
+$$
+
+\smallskip
+The fine-structure constant, a dimensionless fundamental constant, describes electromagnetic coupling strength and constitutes the most elementary intrinsic quantity underlying the mass of all microscopic matter:
+$$
+\alpha = \frac{e^2}{4\pi\tinysp \varepsilon_0\tinysp \hbar\tinysp c}\eqno(1.2)
+$$
+
+\smallskip
+Planck mass, the fundamental unit of mass in natural units:
+$$
+m_{\scriptscriptstyle\mathrm{P}} = \sqrt{\frac{\hbar\tinysp c}{G}}\eqno(1.3)
+$$
+
+\smallskip
+Planck length, the fundamental unit of length in natural units:
+$$
+\ell_{\scriptscriptstyle\mathrm{P}} = \sqrt{\frac{\hbar\tinysp G}{c^3}}\eqno(1.4)
+$$
+
+\smallskip
+Planck density, the characteristic density scale in quantum gravity, expressed in proportional form:
+$$
+\rho_{\scriptscriptstyle\mathrm{P}} \propto \frac{m_{\scriptscriptstyle\mathrm{P}}}{{\ell_{\scriptscriptstyle\mathrm{P}}}^3} = \frac{c^5}{\hbar\tinysp G^2}\eqno(1.5)
+$$
+
+\smallskip
+A phenomenological relation connecting microscopic Planck quantities and macroscopic constant $Gc^2$. This formula is derived solely via dimensional analysis and lacks any physically meaningful underlying interpretation.
+$$
+\frac{\hbar^4} {m_{\scriptscriptstyle\mathrm{P}}^5\tinysp \ell_{\scriptscriptstyle\mathrm{P}}^3} =
+\frac{\hbar^4\tinysp \rho_{\scriptscriptstyle\mathrm{P}}} {m_{\scriptscriptstyle\mathrm{P}}^6} =
+G\tinysp c^2\eqno(1.6)
+$$
+
+\smallskip
+Bohr radius of hydrogen atom, the most probable radius of the electron orbit in ground-state hydrogen atom:
+$$
+a_{\scriptscriptstyle\mathrm{B}} = \frac{4\pi\tinysp \varepsilon_0\tinysp \hbar^2}{m_e e^2}\tinysp \eqno(1.7)
+$$
+
+\smallskip
+Boltzmann ionization criterion for hydrogen atoms, expressed in two equivalent forms:
+$$
+k_{\scriptscriptstyle\mathrm{B}}\tinysp T_\mathrm{ion} > \frac{e^2}{4\pi\tinysp \varepsilon_0\tinysp a_\text{B}} = \alpha^2\tinysp m_e\tinysp c^2\eqno(1.8)
+$$
+
+\smallskip
+Einstein curvature field equations of general relativity without cosmological constant:
+$$
+G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}\eqno(1.9)
+$$
+
+\smallskip
+Einstein curvature field equations including the cosmological constant, describing spacetime curvature with dark energy contributions:
+$$
+G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}\eqno(1.10)
+$$
+
+\smallskip
+Gravitational frequency shift under Schwarzschild spacetime, describing how photon frequency changes with gravitational potential:
+\[
+\frac{\nu}{\nu_0} = \sqrt{1 - \frac{2GM}{c^2r}}\eqno(1.11)
+\]
+
+\smallskip
+Newton's law of universal gravitation, the classical description of gravitational force:
+$$
+F_g = G \,\frac{m_1 m_2}{r^2}\eqno(1.12)
+$$
+
+\smallskip
+Coulomb's law in vacuum for electrostatic interaction between two point charges, where $k_e$ denotes Coulomb's constant and $\varepsilon_0$ is the vacuum permittivity:
+$$
+F_e = k_e \frac{q_1 q_2}{r^2}, \enspace \quad k_e=\frac{1}{4\pi\varepsilon_0}\eqno(1.13)
+$$
+
+\smallskip
+Friedmann equations derived from Einstein's field equations, describing the expansion of the universe. In this paper, we define ${\rho_{\scriptscriptstyle\mathrm{F}}(t)}$ as the mean cosmic density, to distinguish it from other density scenarios. The first equation defines the Hubble parameter $H(t) = \dot{a}(t)/a(t)$:
+$$
+H^2(t) = \left(\frac{\dot{a}(t)}{a(t)}\right)^2 = \frac{8\pi G}{3}{\rho_{\scriptscriptstyle\mathrm{F}}(t)} - \frac{kc^2}{a(t)^2} + \frac{\Lambda c^2}{3}\eqno(1.14)
+$$
+
+\smallskip
+The second Friedmann equation, governing the acceleration of cosmic expansion, including contributions from matter, radiation, and dark energy:
+$$
+\frac{\ddot{a}(t)}{a(t)} = -\frac{4\pi G}{3}\left({\rho_{\scriptscriptstyle\mathrm{F}}(t)} + \frac{3p(t)}{c^2}\right) + \frac{\Lambda c^2}{3}\eqno(1.15)
+$$
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		2. Fundamental Postulates
+	\end{center}
+}
+\medskip
+\noindent
+
+This paper is built upon two core, complementary postulates that define the theoretical framework for a time-evolving cosmos.
+\bigskip
+
+{\bf Macroscopic Postulate}\,\,\,{There exists a universal cosmic coupling constant \(\boldsymbol{P}\) that remains invariant throughout the entire history of the universe. The speed of light \(c(t)\) is not a constant but a time-dependent function of cosmic evolution, satisfying the fundamental conservation law:} 
+$$
+{G(t)}\tinysp {c(t)^2} = \boldsymbol{P}\eqno(2.1)
+$$
+{where \(G(t)\) is the time-dependent gravitational coefficient. Under this postulate, \(c(t)\) becomes the primary driver of cosmic evolution, and \(G(t)\) is no longer a fundamental constant but a derived physical quantity.}
+\medskip
+
+\textit{\textbf{Note:} The speed of light \(c(t)\) is a global cosmic parameter. At any given time \(t\), all photons in the vacuum share the same speed \(c(t)\), independent of the light speed when they were emitted.}
+\medskip
+
+{\bf Microscopic Postulate}\,\,\,{The fine-structure constant \(\boldsymbol{\alpha}\) is universally invariant throughout the post-CMB era, remaining constant from the epoch of neutral atom formation to the present day. In this framework, its defining expression,}
+$$
+\boldsymbol{\alpha} = \frac{e^2}{4\pi{\varepsilon}_0(t)\tinysp {\hbar}(t)\tinysp {c}(t)}\eqno(2.2)
+$$
+{remains invariant, even as \(\varepsilon_0(t)\), \(\hbar(t)\), and \(c(t)\) themselves evolve with cosmic time. This invariance is undefined in the primordial plasma phase before CMB era.}
+\medskip
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		3. Symbol Definitions and Conventions
+	\end{center}
+}
+\medskip
+\noindent
+
+This section defines and standardizes the key symbols, subscript rules, and reference epochs used throughout the subsequent discussions, ensuring consistent notation and clear physical interpretation.
+
+\medskip
+\noindent
+
+{\bf Cosmic Reference Epochs (Subscript $z$)}\,\,\,Benchmark cosmic epochs are defined via redshift; subscript $\boldsymbol*$ denotes the primordial epoch prior to CMB epoch:
+\begin{itemize}
+	\item $\boldsymbol{z_{*}}$: QGP confinement threshold epoch (Hadronization Epoch)
+	\item $\boldsymbol{z_0}$: $1+z=1100$, CMB decoupling epoch
+	\item $\boldsymbol{z_1}$: $1+z=25$, late reionization and early galaxy formation epoch
+	\item $\boldsymbol{z_2}$: $1+z=3.7$, peak epoch of star formation and black hole activity, Cosmic Noon
+	\item $\boldsymbol{z_3}$: $1+z=1.43$, Solar System formation epoch
+\end{itemize}
+
+\medskip
+\noindent
+
+{\bf Normalized Light Speed and Integrated Quantity}\,\,\,Two core quantities are defined to characterize the time-varying cosmic light speed and its cumulative propagation effect:
+\begin{itemize}
+	\item $\boldsymbol{C(t)}$: Dimensionless cosmic speed of light, defined as the ratio of the evolving light speed $c(t)$ to its present-day value $c_0$:
+	\[
+	C(t) = \dfrac{c(t)}{c_0}
+	\]
+
+	\item $\boldsymbol{D(t_1,t_2)}$: Integrated effective light-travel time, obtained by performing a path integral of $C(t)$ over an arbitrary cosmic time interval $[t_1, t_2]$:
+	\[
+	D(t_1,t_2) = \int_{t_1}^{t_2} C(t)\,dt
+	\]
+	$D(t_1,t_2)$ is measured in $\mathrm{Gyr}$. When scaled by the present-day speed of light $c_0$, this time quantity corresponds to the standard light-travel distance in gigalight-years (Gly) adopted in conventional cosmology.
+	
+\end{itemize}
+
+\medskip
+\noindent
+
+{\bf Light Speed}\,\,\,Normalized light speed evaluated at each benchmark epoch:
+\begin{itemize}
+	\item $\left.\boldsymbol{C(t)}\right|_{\boldsymbol{z_{*}}}$\,: Light speed at quark confinement threshold epoch ($z_{*}$)
+	\item $\left.\boldsymbol{C(t)}\right|_{\boldsymbol{z_0}}$\,: Light speed at the CMB epoch ($z_0$)
+	\item $\left.\boldsymbol{C(t)}\right|_{\boldsymbol{z_1}}$\,: Light speed at the early galaxy formation epoch ($z_1$)
+	\item $\left.\boldsymbol{C(t)}\right|_{\boldsymbol{z_2}}$\,: Light speed at the Cosmic Noon epoch ($z_2$)
+	\item $\left.\boldsymbol{C(t)}\right|_{\boldsymbol{z_3}}$\,: Light speed at the Solar System formation epoch ($z_3$)
+\end{itemize}
+
+\medskip
+\noindent
+
+{\bf Photon Intrinsic Frequencies}\,\,\,Fixed intrinsic reference frequencies of photon, determined by atomic energy levels and the fine-structure constant:
+\begin{itemize}
+	\item $\boldsymbol{\nu_{n0}}=1.0\times10^{15}\ \text{Hz}$: Primary intrinsic frequency
+\end{itemize}
+
+\medskip
+\noindent
+
+{\bf Medium Refractive Indices}\,\,\,
+\begin{itemize}
+	\item $\boldsymbol{N}_{\text{glass}}=1.5$: Refractive index of standard optical glass (fixed)
+\end{itemize}
+
+\medskip
+\noindent
+
+{\bf Plasma Ionization Temperatures}\,\,\,Critical Boltzmann ionization temperature for hydrogen atoms at each benchmark epoch:
+\begin{itemize}
+	\item $\left.\boldsymbol{T_\mathrm{ion}}\right|_{\boldsymbol{z_0}}$: Critical temperature at the CMB epoch (${z_0}$)
+	\item $\left.\boldsymbol{T_\mathrm{ion}}\right|_{\boldsymbol{z_1}}$: Critical temperature at the early galaxy formation epoch (${z_1}$)
+	\item $\left.\boldsymbol{T_\mathrm{ion}}\right|_{\boldsymbol{z_2}}$: Critical temperature at the Cosmic Noon epoch (${z_2}$)
+	\item $\left.\boldsymbol{T_\mathrm{ion}}\right|_{\boldsymbol{z_3}}$: Critical temperature at the Solar System formation epoch (${z_3}$)
+\end{itemize}
+
+\medskip
+\noindent
+
+{\bf Einstein Spacetime Curvature}\,\,\,Einstein curvature tensor evaluated at each benchmark epoch:
+\begin{itemize}
+	\item $\left.\boldsymbol{G_{\mu\nu}}\right|_{\boldsymbol{z_0}}$: Curvature at the CMB epoch (${z_0}$)
+	\item $\left.\boldsymbol{G_{\mu\nu}}\right|_{\boldsymbol{z_1}}$: Curvature at the early galaxy formation epoch (${z_1}$)
+	\item $\left.\boldsymbol{G_{\mu\nu}}\right|_{\boldsymbol{z_2}}$: Curvature at the Cosmic Noon epoch (${z_2}$)
+	\item $\left.\boldsymbol{G_{\mu\nu}}\right|_{\boldsymbol{z_3}}$: Curvature at the Solar System formation epoch (${z_3}$)
+\end{itemize}
+
+\medskip
+\noindent
+
+{\bf Present-Day Cosmic Reference Values (Subscript $0$)}\,\,\,
+Fundamental physical constants and cosmic scale evaluated at the {current cosmic epoch}, serving as the universal reference baseline throughout this work:
+\begin{itemize}
+	\item $\boldsymbol{c_0}$: Present-day speed of light in vacuum
+	\item $\boldsymbol{G_0}$: Present-day gravitational constant
+	\item $\boldsymbol{a_0}$: Present-day cosmic scale factor (Friedmann metric)
+\end{itemize}
+
+\medskip
+\noindent
+
+{\bf Three Definitions of Cosmic Time}\,\,\,
+We introduce three distinct cosmic time variables to distinguish between the {\it variable speed‑of‑light cosmology} developed in this work and the standard {\it constant speed‑of‑light cosmology}:
+\begin{itemize}
+	\item $\boldsymbol{t}$: Cosmic time in the {\it variable speed‑of‑light framework}. 
+	By convention, $t \le 0$ everywhere, with the {\it present epoch} set to $t = 0$. 
+	More ancient cosmic epochs correspond to {\it more negative values} of $t$. 
+	The unit of $t$ is $\mathrm{Gyr}$ (gigayears).
+	
+	\item $\boldsymbol{t^\star}$: Cosmic time in the {\it standard constant speed‑of‑light cosmology}. 
+	This is the conventional cosmic time used in $\Lambda$CDM, also defined such that $t^\star \le 0$ and the present epoch is $t^\star = 0$. The epoch of {\it Cosmic Noon} (the peak of cosmic star‑formation activity) corresponds to 
+	$t^\star \approx -11.4\,\mathrm{Gyr}$ in standard cosmology. 
+	
+	\item $\boldsymbol{t^{\vartriangle}}$: Forward cosmic time defined within the standard $\Lambda$CDM model. It takes the moment of the Big Bang as the origin $t^\vartriangle = 0$, so we always have $t^\vartriangle \ge 0$. 
+	The present epoch corresponds to $t^\vartriangle = 13.8\,\mathrm{Gyr}$.
+	
+	\item[]
+	In particular, the epoch of {\it Cosmic Noon} is located at $t^\vartriangle = 2.4\,\mathrm{Gyr}$ in this forward time system. These two standard cosmological time coordinates satisfy:
+	\[
+	t^\vartriangle + |t^\star| = 13.8\,\mathrm{Gyr}.\eqno(3.1)
+	\]
+	
+	\item[] 
+	\textit{\textbf{Note:} A superscript $\star$ indicates quantities under standard constant-speed cosmology with the present as time zero. A superscript $\vartriangle$ denotes forward $\Lambda$CDM time starting from the Big Bang, commonly used for redshift analysis. This notation distinguishes our framework from conventional cosmology.}
+	
+\end{itemize}
+
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		4. The Overlooked Temporal Variability \\
+		of Light Speed
+	\end{center}
+}
+\medskip
+\noindent
+
+{\bf The Axiomatic Trap}\,\,\,
+For over a century, the constancy of the speed of light \(c\) has been elevated to the status of an unshakable dogma. While Einstein’s theories gained remarkable success within local cosmic regions, it inadvertently formed a cognitive confinement. Researchers habitually extend laboratory constant measurements to cover the whole cosmic timeline. Such axiomatic inertia renders few scholars bold enough to explore the prospect of variable light speed.
+\bigskip
+
+{\bf Observational Asymmetry: The Fundamental Blind Spot}\,\,\,
+Modern cosmology rests on a conspicuous yet long neglected asymmetry. Ancient photons and their redshift phenomena are observable, but we possess \textbf{\textit{zero}} direct evidence for the actual speed of light \(c\) and gravitational strength \(G\) in the early universe. The standard model reduces all consequences of cosmic expansion to a single observable phenomenon of frequency redshift, while blindly holding the speed of light \(c\) fixed permanently. This judgment lacks practical verification, merely serving as an unsubstantiated metaphysical presumption that has never undergone rigorous examination.
+\bigskip
+
+{\bf Topological Necessity: The 2D Geometric Imperative}\,\,\,
+Here lies the fatal geometric flaw in the standard cosmological framework. Cosmic expansion is not a one-dimensional stretching of a line, but uniform scaling deformation of a curved two-dimensional spacetime manifold. Riemannian geometry and topology strictly dictate that the isotropic expansion of a metric surface must distribute its deformation across all inherent degrees of freedom. Light possesses two mutually conjugate kinematic properties: intrinsic frequency and propagation velocity. To assign the entire metric deformation to frequency alone is a mathematical anomaly. The standard assumption effectively amputates half degrees of freedom of spacetime, resulting in a physically incomplete and topologically inconsistent description.
+\bigskip
+
+{\bf The Symmetry-Restoring Postulate}\,\,\,
+To repair this broken geometric symmetry, the most parsimonious and mathematically inevitable conclusion is:
+\smallskip
+$$
+\boldsymbol{\frac{\nu_0}{\nu_e}} \propto \boldsymbol{\frac{a(t_e)}{a_0}} \enspace \quad \Rightarrow \quad \enspace  \boldsymbol{\frac{c(t)}{c_0}} \propto \boldsymbol{\frac{a(t)}{a_0} }
+\eqno(4.1)
+$$
+
+\smallskip
+The speed of light must evolve synchronously with the cosmic scale factor. This is not merely a physical hypothesis; it is a requirement to restore the topological integrity of the expanding universe. In the subsequent Section 10, by challenging the causal deficit within standard cosmological redshift theory, we further argue that cosmic redshift is just the light-speed expansion.
+
+
+
+\bigskip
+In the following three sections, we construct two different growing-$c(t)$ models: the \textit{sigmoid}-like compact model in Section 5 and the \texttt{Planck18}-calibrated ultra-fine model in Section 6. Then, in Section 7, we seek to analyze the dramatically different physical pictures emerging under the growing-$c(t)$ assumption across various cosmic epochs.
+
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		5. Sigmoid-like Growing-$\boldsymbol{c(t)}$ Model
+	\end{center}
+}
+\medskip
+\noindent
+
+This section introduces a physically motivated \textit{sigmoid}-like model for the time-dependent speed of light $c(t)$, which seeks to describe the naturally gradual rise of light speed from the early universe to the present.
+\bigskip
+
+{\bf The Standard Sigmoid Function}\,\,\,
+The sigmoid function is a smooth, monotonic, and bounded function widely applied in biology, botany, life sciences, and data science to describe fundamental growth, maturation, saturation, and transition phenomena. Its standard form is
+\[
+\sigma(x)=\frac{1}{1+e^{-x}}\,\,,\eqno(5.1)
+\]
+
+where $\sigma(x)\in(0,1)$ for all real $x$. This function is symmetric about the point $(0,\,0.5)$ and increases steadily over the entire real domain. For clarity, Table 1 lists key numerical values at representative points.
+
+\begin{table}[h]
+	\centering
+	\captionsetup{skip=2pt, font=small}
+	\caption{Values of the standard sigmoid function $\sigma(x)$}
+	\footnotesize
+	\renewcommand{\arraystretch}{1.20}
+	\begin{tabular}{c|ccccccccc}
+		\toprule
+		$\sigma(x)$ & $0.047$ & $0.119$ & $0.269$ & $0.378$ & $\mathbf{0.500}$ & $0.622$ & $0.731$ & $0.881$ & $0.953$ \\
+		\midrule
+		$x$ & $-3.0$ & $-2.0$ & $-1.0$ & $-0.5$ & $0.0$ & $+0.5$ & $+1.0$ & $+2.0$ & $+3.0$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Following is the standard mathematical curvature $\kappa(x)$ expression of the sigmoid $\sigma(x)$ function without detailed derivation:
+\[
+\kappa(x) = \frac{\bm{\left|}\ddot{\sigma}(x)\bm{\right|}}{\big[1 + (\dot{\sigma}(x))^2\big]^{3/2}} = \frac{\bm{\left|}\sigma(x)\big[1 - \sigma(x)\big]\big[1 - 2\sigma(x)\big]\bm{\right|}}{\big\{1 + \big[\sigma(x)\big(1 - \sigma(x)\big)\big]^2\big\}^{3/2}}\,\,,\eqno(5.2)
+\]
+
+\medskip
+The curvature function $\kappa(x)$ has three key points: two symmetric maxima and one minimum. The left maximum occurs at $x = -\ln(2+\sqrt{3}) \approx -1.317$, and the right maximum at $x = \ln(2+\sqrt{3}) \approx +1.317$. Curvature equals zero at $x=0$, the inflection point where the curve changes concavity. As $x \to \pm\infty$, curvature asymptotically approaches zero.
+\medskip
+
+Notably, if the cosmic redshift function  $z(t)$ takes the exponential form $z(t) \propto e^{-t}$, then the quantity $1/\big(1+z(t)\big)$ closely resembles the standard sigmoid function $\sigma(x) = 1/\big(1+e^{-x}\big)$. If this correspondence holds, it would build a natural bridge between sigmoid formalism and cosmic redshift evolution, laying a solid foundation for the analysis in the following subsection.
+\bigskip
+\medskip
+
+
+
+{\bf Redshift Curve $\boldsymbol{z(t)}$: Morphology and Calibration}\,\,\,
+We obtain the standard $\Lambda$CDM redshift--time relation using the Python library \texttt{astropy.cosmology} \cite{Astropy:2022}, specifically the \texttt{Planck18} cosmological implementation \cite{Planck2018:cosmo}, which provides numerically consistent redshift values as a function of forward cosmic time $t^\vartriangle$ elapsed since the Big Bang.
+
+
+A routinely calibrated cornerstone in observational studies is the so-called {\textit{Cosmic Noon}} epoch, corresponding to $t^\vartriangle = 2.4\, \mathrm{Gyr}$ with a matched redshift $z = 2.7$. We adopt this reference to build the simplified exponential model:
+\[
+z(t^\vartriangle) = A^\vartriangle\,e^{-k^\vartriangle \left(t^\vartriangle - \beta^\vartriangle\right)}\,\,,\eqno(5.3)
+\]
+parameters are set as
+\[
+A^\vartriangle = 2.7,\quad \beta^\vartriangle = 2.4\,\mathrm{Gyr},\quad k^\vartriangle = 1.0\,\,,\eqno(5.4)
+\]
+such that the argument of the exponential equals zero exactly at the Cosmic Noon epoch:
+\[
+t^\vartriangle - \beta^\vartriangle = 0 \quad \Rightarrow \quad e^{0} = 1 \quad \Rightarrow \quad z(t^\vartriangle) = A^\vartriangle\,\,.\eqno(5.5)
+\]
+
+\bigskip
+While the above simplified model captures the general trend of cosmic redshift, we construct a improved composite model to achieve a better fit to the $\Lambda$CDM \texttt{Planck18} numerical data. We extend the basic formulation by incorporating two additional terms: a hyperbolic correction and a pseudo-elliptic adjustment. The full expression reads:
+\medskip
+\[
+z(t^\vartriangle)
+=
+\underbrace{A^\vartriangle\,e^{-k^\vartriangle \left(t^\vartriangle - \beta^\vartriangle\right)}}_{\text{Exp. decay}}
+\cdot
+\underbrace{\left(\frac{t^\vartriangle}{\beta^\vartriangle}\right)^{k^\vartriangle - 1}}_{\text{Hyperbolic corr.}}
+\cdot
+\underbrace{\left(\frac{13.8 - t^\vartriangle}{13.8 - \beta^\vartriangle}\right)^{1 - k^\vartriangle}}_{\text{Pseudo-elliptic adj.}}\eqno(5.6)
+\]
+
+\medskip
+The hyperbolic correction slows the decay rate and brings the profile closer to the $\Lambda$CDM morphology. The two additional terms employ complementary exponents to avoid numerical singularities and zero-denominator issues. The pseudo-elliptic term enforces the present-day boundary condition $z(t^\vartriangle) = 0$ at $t^\vartriangle = 13.8\,\mathrm{Gyr}$, a feature unattainable for exponential model.
+
+\medskip
+Despite its complex appearance, the improved model contains only one independent free parameter $k^\vartriangle$. The set of calibration parameters adopted for global morphological tuning is given by
+\medskip
+\[
+A^\vartriangle = 2.7,\quad \beta^\vartriangle = 2.4\,\mathrm{Gyr},\quad k^\vartriangle = 0.16\,\,,\eqno(5.7)
+\]
+
+\medskip
+The figure below compares the redshift curves obtained from the two models.
+\medskip
+
+
+\begin{figure}[H]
+	\centering
+	% -------------------- Left panel (a) Simple exponential fit --------------------
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=7cm, height=6cm,
+				axis lines = box,
+				xlabel = {(a) Universe Age $t^\vartriangle$ [Gyr]},
+				ylabel = {Redshift $z$},
+				xmin=0.2, xmax=13.8,
+				ymin=0, ymax=20,
+				xtick={0.0,2.5,5.0,7.5,10.0,12.5},
+				ytick={0,5,10,15,20},
+				tick label style={font=\small},
+				label style={font=\small},
+				smooth,
+				every tick/.style={thick, black},
+				]
+				
+				% Redshift curve
+				\addplot[color=red, line width=1.4pt, domain=0.2:13.8, samples=300]
+				{2.7*exp(-1*(x-2.4))};
+				
+				% Reference line t = 2.5$\mathrm{Gyr}$
+				\draw[blue!80!black, line width=1.0pt] (axis cs:2.4, 0) -- (axis cs:2.4, 20);
+				% Reference line z = 2.7
+				\draw[blue!80!black, line width=1.0pt] (axis cs:0.2, 2.7) -- (axis cs:13.8, 2.7);
+				
+				% Text annotations
+				\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:2.65, 9) {$t^\vartriangle=2.4\ \mathrm{Gyr}$};
+				\node[blue!80!black, font=\small, anchor=south west] at (axis cs:6.5, 2.9) {$z=2.7$};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	% -------------------- Right panel (b) Refined composite fit --------------------
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=7cm, height=6cm,
+				axis lines = box,
+				xlabel = {(b) Universe Age $t^\vartriangle$ [Gyr]},
+				ylabel = {Redshift $z$},
+				xmin=0.2, xmax=13.8,
+				ymin=0, ymax=20,
+				xtick={0.0,2.5,5.0,7.5,10.0,12.5},
+				ytick={0,5,10,15,20},
+				tick label style={font=\small},
+				label style={font=\small},
+				smooth,
+				every tick/.style={thick, black},
+				]
+				
+				% Refined composite fit curve
+				\addplot[color=red, line width=1.4pt, domain=0.2:13.8, samples=300]
+				{2.7*exp(-0.16*(x-2.4)) * ((x/2.4)^(-0.84)) * (((13.8-x)/(13.8-2.4))^0.86)};
+				
+				% Reference line t = 2.4$\mathrm{Gyr}$
+				\draw[blue!80!black, line width=1.0pt] (axis cs:2.4, 0) -- (axis cs:2.4, 20);
+				% Reference line z = 2.7
+				\draw[blue!80!black, line width=1.0pt] (axis cs:0.2, 2.7) -- (axis cs:13.8, 2.7);
+				
+				% Text annotations
+				\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:2.65, 9) {$t^\vartriangle=2.4\ \mathrm{Gyr}$};
+				\node[blue!80!black, font=\small, anchor=south west] at (axis cs:6.5, 2.9) {$z=2.7$};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{minipage}
+	
+	\vspace{0.1cm}
+	
+	% Key modification: use footnotesize to make the caption slightly smaller
+	\captionsetup{width=0.80\textwidth, font=footnotesize}
+	\caption{Redshift $z(t^\vartriangle)$ profiles using two models:
+		(a) Simple exponential model Eq.~(5.3);\enspace \enspace
+		(b) improved composite model with exponential, hyperbolic, and pseudo-elliptic components Eq.~(5.6).\enspace \enspace
+		Both models are anchored at the reference point $t^\vartriangle=2.4\ \mathrm{Gyr}$ and $z=2.7$.}
+	\label{fig:redshift_fit_comparison}
+	
+\end{figure}
+
+
+
+
+
+\medskip
+Both the simple exponential model Eq.~(5.3) and the improved composite model Eq.~(5.6) well reproduce the exponential decay morphology of the observed redshift curve. Meanwhile, the improved model achieves a superior overall fit to $\Lambda$CDM \texttt{Planck18} data across all cosmic epochs.
+\medskip
+
+Nevertheless, we conventionally adopt the simple exponential ansatz $z(t) \propto e^{-t}$ to proceed with our study on time-varying light speed. The relation between $c(t)$, scale factor $a(t)$ and redshift $z(t)$ is given below:
+\medskip
+\[
+\boldsymbol{\frac{c(t)}{c_0}} = \boldsymbol{\frac{a(t)}{a_0}} = \frac{\boldsymbol{1}} {\boldsymbol{1} + \boldsymbol{z(t)}} \,\,,\eqno(5.8)
+\]
+
+\medskip
+We adopt this simple formulation to construct $c(t)$ model for the following reasons:
+\begin{itemize}
+	\item It has a compact mathematical formulation and captures the dominant evolutionary trend of cosmic redshift.
+	
+	\item The cosmic time and expansion history $z(t^\vartriangle)$ derived from standard $\Lambda$CDM \texttt{Planck18} data are theoretically inferred under the assumption of a constant light speed.
+	
+	\item To date, no direct observational evidence reveals how the speed of light evolved throughout cosmic history if $c$ is indeed time-dependent.
+	
+	\item Adopting a time-varying light speed, our theoretical framework is fundamentally distinct from standard cosmology with a constant speed of light.
+	
+	\item The smooth sigmoid function is a reasonable extrapolation from the redshift $z(t)$ data; its favorable mathematical properties will also facilitate our toy model construction and theoretical analysis.
+\end{itemize}
+\bigskip
+\medskip
+
+
+
+
+{\bf The Growing $\boldsymbol{c(t)}$ Model}\,\,\,
+Our model assumes that the speed of light continuously rises from the early universe to the present day, and will keep increasing slowly in the future. In this framework, we set the cosmic time of the present day to $t = 0$, while earlier cosmic times take larger negative values. This time convention differs from the variable $t^\vartriangle$ adopted in the preceding redshift model.
+\medskip
+
+Accordingly, we describe the evolving $c(t)$ using a generalized sigmoid function, which features local symmetry about its inflection point:
+\[
+\frac{c(t)}{c_0} = \frac{1}{1 + e^{-k(t+\beta)}} \,\,.\eqno(5.9)
+\]
+
+\medskip
+Here,  $k$ and $\beta$ are two positive parameters to be determined subsequently. In the extremely early universe, as $t \to -\infty$, the exponential term $e^{-k(t+\beta)} \to +\infty$, which means the speed of light back then was far lower than its present value $c_0$.
+
+
+\bigskip
+To normalize the function for the present epoch ($t=0$), where the condition $c(0)/c_0 = 1$ is enforced, a constant factor $(1 + e^{-k\beta})$ is added to the numerator. This yields the final normalized formula:
+\medskip
+\[
+\boldsymbol{C(t)} = \frac{c(t)}{c_0} = \frac{1 + e^{-k\beta}}{1 + e^{-k(t+\beta)}} \,\,.\eqno(5.10)
+\]
+\bigskip
+\medskip
+
+
+{\bf Integral and Derivatives of $\boldsymbol{C(t)}$}\,\,\,
+To evaluate the effective light travel distance across arbitrary cosmic epochs, we first present the definite integral of the normalized light speed function Eq.~(5.10) over a general time interval $[t_1, t_2]$. This integral is essential for comparing our model with observational cosmic timescales.
+\medskip
+
+Introduce a constant to simplify the normalized profile in Eq.~(5.10):
+\[
+J = 1 + e^{-k\beta}\,\,,\eqno(5.11)
+\]
+
+so that
+\[
+\frac{c(t)}{c_0} = \frac{J}{1 + e^{-k(t+\beta)}}\,\,.\eqno(5.12)
+\]
+\medskip
+
+The \textbf{definite integral} over $[t_1, t_2]$ is given by:
+\medskip
+\[
+D(t_1,t_2) = \int_{t_1}^{t_2} \frac{c(t)}{c_0}\,\mathrm{d}t
+= \frac{J}{k}
+\Big[ k(t+\beta) + \ln\big(1+e^{-k(t+\beta)}\big) \Big]
+\Bigg|_{t_1}^{t_2}\,.\eqno(5.13)
+\]
+\medskip
+
+
+We further derive the first and second order derivatives, which describe respectively the variation rate and acceleration of the evolving light speed.
+\medskip
+
+The \textbf{first derivative} (rate of light speed variation) takes the form:
+\medskip
+\[
+\dot{C}(t) = \frac{d}{dt}\left( \frac{c(t)}{c_0} \right)
+=
+\frac{k\,J\,e^{-k(t+\beta)}}
+{\Big(1 + e^{-k(t+\beta)}\Big)^2}\,\,.\eqno(5.14)
+\]
+\medskip
+
+
+For the \textbf{second derivative} (acceleration of light speed variation), we have:
+\medskip
+\[
+\ddot{C}(t) = \frac{d^2}{dt^2}\left( \frac{c(t)}{c_0} \right)
+=
+\frac{k^2\,J\,e^{-k(t+\beta)}\,\Big(e^{-k(t+\beta)} - 1\Big)}
+{\Big(1 + e^{-k(t+\beta)}\Big)^3}\,\,.\eqno(5.15)
+\]
+
+\medskip
+The inflection point denoted as $t_{\text{inf}}$ :
+\[
+t_{\text{inf}} = -\beta\,\,.\eqno(5.16)
+\]
+
+These expressions hold for all admissible positive $k$ and $\beta$. 
+
+
+
+\medskip
+\bigskip
+{\bf The Left Maximum Curvature Point of $\boldsymbol{C(t)}$}\,\,\,
+Referring to the first and second derivatives of $C(t)$ defined in Eq.~(5.14) and Eq.~(5.15) , we now derive the curvature function for the normalized light speed profile.
+\medskip
+
+Following the standard definition of curvature introduced in Eq.~(5.2), the curvature $\kappa(t)$ is always non-negative because its numerator contains an absolute value. Therefore, a point where the first derivative of $\kappa(t)$ equals zero corresponds to a local maximum curvature.
+\medskip
+
+Substituting the derivatives into the curvature formula yields the explicit expression for $\kappa(t)$:
+\medskip
+\[
+\kappa(t) = \frac{\bm{\left|}\ddot{C}(t)\bm{\right|}}{\big[1 + (\dot{C}(t))^2\big]^{3/2}}
+= \frac{
+	\bm{\left|}
+	\displaystyle
+	\frac{k^2 J e^{-k(t+\beta)} \left(e^{-k(t+\beta)} - 1\right)}
+	{\left(1 + e^{-k(t+\beta)}\right)^3}
+	\bm{\right|}
+}{
+	\left[1 + \left(
+	\displaystyle
+	\frac{k J e^{-k(t+\beta)}}
+	{\left(1 + e^{-k(t+\beta)}\right)^2}
+	\right)^2\right]^{3/2}
+}\,\,,\eqno(5.17)
+\]
+\medskip
+
+
+Instead of solving this complex expression directly, we resort to an approximate scheme. The parameters $k$ and $J$ slightly break the exact translational invariance of the sigmoid profile, but valid approximate invariance remains satisfied under the condition $kJ\approx 1$. The left maximum curvature point can then be approximated by
+\[
+{t}_{\text{leftmax}} \approx -\beta - \frac{\ln(2+\sqrt{3})}{k}\,\,.\eqno(5.18)
+\]
+
+
+\medskip
+\bigskip
+{\bf Parameter Solving via Cosmic Noon Anchoring}\,\,\,
+Since the genuine evolutionary curve of cosmic light speed cannot be directly observed, we select the most physically meaningful cosmic epoch as the anchor point to solve the parameters $\boldsymbol{k}$ and  $\boldsymbol{\beta}$ in function Eq.~(5.10).
+
+\medskip
+Cosmic Noon corresponds to the epoch of peak cosmic star formation at $t^\star \approx -11.4\ \mathrm{Gyr}$, marking the universe’s evolutionary rhythm at its most vigorous growth stage, coinciding with the curvature maximum of the model’s evolutionary curve, and serving as the most representative temporal anchor point.
+
+\medskip
+Denoting the cosmic noon time by $\boldsymbol{t_w}$, we impose three independent physical constraints:
+\begin{itemize}
+	\item The effective light-travel integral from Eq.~(5.13) satisfies $D(t_w,0)=11.4$$\mathrm{Gyr}$, equal to the integrated light propagation distance spanning cosmic noon to the present day.
+	
+	\item The normalized light speed at cosmic noon reads $C(t_w)=1/3.7$, constrained by the measured redshift $z=2.7$ together with the model definition in Eq.~(5.10).
+	
+	\item Based on physical self-consistency, cosmic noon coincides with the left curvature maximum from Eq.~(5.18), i.e., $t_w = t_{\text{leftmax}}$, where the acceleration change rate of $c(t)$ reaches its peak.
+\end{itemize}
+
+\medskip
+These three constraints form a closed algebraic system for the three unknown variables $\boldsymbol{k}$, $\boldsymbol{\beta}$ and $\boldsymbol{t_w}$, explicitly written as
+\[
+\left\{
+\begin{aligned}
+	\displaystyle \quad \frac{J}{k}\Big[ k(t+\beta) + \ln\big(1+e^{-k(t+\beta)}\big) \Big]\Bigg|_{t_w}^{0} \enspace &= \enspace 11.4\\[6pt]
+	\displaystyle \quad \frac{1 + e^{-k\beta}}{1 + e^{-k(t_w+\beta)}} \enspace &= \enspace \frac{1}{3.7}\\[6pt]
+	\displaystyle \quad -\beta - \frac{\ln(2+\sqrt{3})}{k} \enspace &= \enspace t_w 
+\end{aligned}
+\right.\eqno(5.19)
+\]
+
+
+
+The resulting parameters read
+\[
+\boldsymbol{k} = 0.1442, \quad \boldsymbol{\beta} = 8.854, \quad \boldsymbol{t_w} = -17.98\,\mathrm{Gyr}, \quad \boldsymbol{J} = 1.2789. \eqno(5.20)
+\]
+
+\medskip
+Up to this point, the compact growing-$c(t)$ model has been fully established. Detailed physical interpretation will be discussed in the following sections.
+
+\bigskip
+\noindent
+$\triangleright \triangleright \triangleright$\enspace
+For the equations system listed in Eq.~(5.19), multiplying the right-hand-side value $11.4$ of the integral constraint $D(t_w,0)$ by $1.25$ (yielding $14.25$) and scaling the denominator constant $3.7$ in the light-speed relation $C(t_w)$ also by the same factor $1.25$ (yielding $4.625$) leads to an alternative set of solved parameters:
+\[
+\boldsymbol{k} = 0.2550, \quad \boldsymbol{\beta} = 14.77, \quad \boldsymbol{t_w} = -19.93\,\mathrm{Gyr}, \quad \boldsymbol{J} = 1.0231. \eqno(5.21)
+\]
+
+When adopting this parameter-modified model, within the time range $t\in[-60,5]$, which corresponds to cosmic window from ancient $-60\ \mathrm{Gyr}$ to $5\ \mathrm{Gyr}$ in the future, the resulting $C(t)$ profile exhibits an ideal, nearly perfect sigmoid shape. The physical origin of this scaling factor $1.25$ remains unclarified, or it may merely arise from accidental coincidence, and relevant discussion is open to the academic community.\enspace$\triangleleft \triangleleft \triangleleft$
+
+\bigskip
+\textit{\textbf{Note:} One may construct a variant of the growing-$c(t)$ model by defining the function via the improved composite model in Eq.~(5.6); however, this formulation features an overly intricate mathematical structure and thus lies beyond the scope of the present work.}
+
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		6. Ultra-fine Growing-$\boldsymbol{c(t)}$ Model
+	\end{center}
+}
+\medskip
+\noindent
+
+In the standard $\Lambda$CDM cosmology, only cosmic redshifts can be directly observed. Precise cosmic expansion history and corresponding cosmic time are unmeasurable in practice.
+
+\medskip
+All cosmic time entries stored in the \texttt{Planck18} dataset are model-derived quantities. Such calculations rely on three fundamental premises: \textit{homogeneous and isotropic universe}, \textit{invariant total matter and energy}, and \textit{constant speed of light}. Cosmic ages are further solved via the Friedmann equations under these restrictions.
+
+\medskip
+Under our $G(t)\,c(t)^2 = P$ postulate, $G(t)$ is time-varying, which implies that the stellar mass estimation methods used in $\Lambda$CDM contain inherent biases. A detailed discussion of this issue is deferred to Section～12.
+
+\medskip
+Despite being constrained by preset theoretical assumptions and the inevitable uncertainties in model derivation, the \texttt{Planck18} data still stands as the best available reference. We therefore construct our ultra-fine growing-$c(t)$ model grounded on this dataset.
+
+
+
+\medskip
+\bigskip
+{\bf Data Extraction}\,\,\,
+The \texttt{Planck18} standard redshift–cosmic time dataset $(z,\, {t}^\vartriangle)$ is extracted from the Python \texttt{astropy.cosmology} library at float64 numerical precision.
+
+
+\medskip
+The total cosmic age is approximately $13.8\ \mathrm{Gyr}$. We partition the full cosmic timeline with a fixed timestep of $10^4$ years (10 kyr) for uniform sampling. This yields roughly $13.8\times10^{5}$ sampled data points.
+
+\medskip
+Sampling begins at the present cosmic time ${t}^\vartriangle=13.79069_{\boldsymbol\cdots}\mathrm{Gyr}$, with each subsequent sample reduced by $10^4$ years: the second and third sampled times equal ${t}^\vartriangle=13.79068_{\boldsymbol\cdots}$ and ${t}^\vartriangle=13.79067_{\boldsymbol\cdots}$, respectively.
+
+\medskip
+The redshift of CMB epoch is $z\simeq 1090$, which defines the uppermost observational boundary. For this reason, sampling is truncated at ${t}^\vartriangle=0.00037_{\boldsymbol\cdots}$ and ${t}^\vartriangle=0.00036_{\boldsymbol\cdots}$, corresponding to $z=1083.07$ and $z=1100.61$, namely 37 kyr and 36 kyr after the Big Bang, in line with this physical limit.
+
+\medskip
+In total, $N=1\,379\,024$ equal-time-interval raw time-redshift pairs are extracted.
+\medskip
+
+
+\bigskip
+{\bf Definition of Interval Distance $\boldsymbol{yr_i}$}\,\,\,
+Following the piecewise averaging rule, the segment time distance for each time interval is defined as
+$$
+\mathit{yr}_i=1+\frac12\left(z_i+z_{i+1}\right) \,\,,\eqno(6.1)
+$$
+
+where $i\in (0,\,1379022)$, and $z_i$ denotes the redshift at the $i$-th sampling point. All $yr_i$ values are computed sequentially over the full valid intervals.
+
+\medskip
+Each piecewise $yr_i$ stands for the time scaling factor derived under the growing-$c(t)$ model. For example, $yr_i=1.5$ corresponds to an averaged redshift $\bar z=0.5$ from $z_i$ and $z_{i+1}$; the original $10^4$ years of sampling interval is scaled to $1.5\times 10^4$ years within the growing-$c(t)$ framework.
+\medskip
+
+
+
+\bigskip
+{\bf Cumulative Summation $\boldsymbol{\mathrm{YR}_i}$}\,\,\,
+We accumulate the sequence $yr_i$ following Eq.~(6.2) to compute the total cosmic timescale under the growing-$c(t)$ model. To suppress floating-point round-off error arising from millions of successive additions, the Kahan summation algorithm is adopted for residual error compensation.
+\[
+\mathrm{YR}_i = \mathrm{YR}_{i-1} + yr_i \,\,,\quad \mathrm{YR}_0 = yr_0 \,\,.\eqno(6.2)
+\]
+
+The resulting $\mathrm{YR}_i$ array represents the growing-$c(t)$ timescale quantified in units of $10^4$ years. Each $\mathrm{YR}_i$ is multiplied by $-1$ to denote negative cosmic time. The formation point of the CMB epoch corresponds to $-45.2\ \mathrm{Gyr}$.
+\medskip
+
+
+\bigskip
+{\bf $\boldsymbol{C(t)}$ Normalizing and $\boldsymbol{\mathrm{YR}_i}$ Downsampling}\,\,\,
+The normalized $C(t)$ follows $C(t) = 1/(1+z_t)$ from sampled redshift sequences, which produces full-resolution $C(t)$ data with $1\,379\,023$ entries.
+
+\medskip
+For convenient presentation within this work, we perform downsampling by retaining one datum per 1000 raw samples. This procedure yields 1381 discrete sets of growing-$c(t)$ and corresponding time $\mathrm{YR}_i$, with an effective spacing of $t^\vartriangle = 10^7\ \mathrm{years}$ between neighboring data. 
+
+\medskip
+This dataset serves as the core database for the proposed ultra-fine growing-$c(t)$ model. Its corresponding curve is presented in following figure.
+\bigskip
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=14cm, height=8cm,
+			axis lines = box,
+			xlabel = {Cosmic Time \(t\) [Gyr]},
+			ylabel = {growing-\(c(t)\)},
+			xmin=-50, xmax=5,
+			ymin=0.0, ymax=1.2,
+			xtick = {-50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5},
+			ytick = {0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2},
+			tick label style={font=\small},
+			label style={font=\small},
+			every tick/.style={thick, black},
+			]
+			
+			% Read your 1381 sets of measured data, red small squares, no connecting lines
+			\addplot[
+			color=red,
+			only marks,
+			mark=square,
+			mark size=0.8pt,
+			] table [col sep=comma, x=X, y=Y] {growing-ct-fine-model-1381.csv};
+
+
+			% Reference line z_3 = Solar System, -5.57Gyr, 0.70 
+			\draw[blue!80!black, line width=1.0pt] (axis cs:-5.57, 0) -- (axis cs:-5.57, 1.2);
+			\draw[blue!80!black, line width=0.4pt] (axis cs:-60, 0.70) -- (axis cs:-3, 0.70);
+			% Text annotation
+			\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:-5.68, 0.50) {${z_3}$\,\,\,Solar-System};
+			
+			% Reference line z_1 = Early Galaxy, -36.8Gyr, 0.04 
+			\draw[blue!80!black, line width=1.0pt] (axis cs:-20, 0) -- (axis cs:-20, 1.2);
+			\draw[blue!80!black, line width=0.4pt] (axis cs:-60, 0.27) -- (axis cs:-16, 0.27);
+			% Text annotation
+			\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:-20.1, 0.29) {${z_2}$\,\,\,Cosmic-Noon};
+						
+			% Reference line z_1 = Early Galaxy, -36.8Gyr, 0.04 
+			\draw[blue!80!black, line width=1.0pt] (axis cs:-36.8, 0) -- (axis cs:-36.8, 1.2);
+			\draw[blue!80!black, line width=0.4pt] (axis cs:-60, 0.04) -- (axis cs:-32, 0.04);
+			% Text annotation
+			\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:-36.9, 0.13) {${z_1}$\,\,\,Early-Galaxy};
+									
+			% Reference line z_0 = CMB Decoupling, -45.2Gyr, 0.092%
+			\draw[blue!80!black, line width=1.0pt] (axis cs:-45.2, 0) -- (axis cs:-45.2, 1.2);
+			% Text annotation
+			\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:-45.3, 0.03) {${z_0}$\,\,\,CMB-Decoupling};
+						
+		\end{axis}
+	\end{tikzpicture}
+	
+	\vspace{0.2cm}
+	\captionsetup{width=0.85\textwidth, font=footnotesize}
+	\caption{
+		The $\mathrm{C(t)}$ curve of the ultra-fine growing-$c(t)$ model, derived from \texttt{Planck18} data.
+		The corresponding cosmic times of the four benchmark epochs $z_0, z_1, z_2, z_3$ will be explained in the following section.}
+	\label{fig:growing_ct_fine_model}
+	
+\end{figure}
+
+
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		7. Different Physical Pictures of \\
+		Growing-\(\boldsymbol{c(t)}\) Universe
+	\end{center}
+}
+\medskip
+\noindent
+
+This section depicts an extensive set of dramatically different physical pictures of cosmic evolution across various cosmic epochs. 
+
+\medskip
+The cosmic origin timescale is extended to $[-59.1,\,-45.2]\,$$\mathrm{Gyr}$, while at the CMB decoupling epoch, the light speed \(c(t)\) equals \(1/1100\) of the present speed \(c_0\), the Bohr radius \(a_\text{B}\) is only \(1/1100\) of its present value, and the ionization temperature of hydrogen atoms ${T_\mathrm{ion}(t)}$ amounts to merely 82.64$\,\mathrm{K}$. 
+
+\medskip
+Many physical quantities from the classical basic equations evolve alongside \(c(t)\), and separate subsections will elaborate each topic sequentially.
+
+\medskip
+All present-day values of fundamental physical constants used in this work (e.g., the Bohr radius $a_{\scriptscriptstyle\mathrm{B},0}$, the reduced Planck constant $\hbar_0$, and the proton diameter $d_p$) are taken from standard reference sources\cite{Tipler:2008}.
+
+\bigskip
+{\bf Cosmic Origin Timescale}\,\,\,
+The CMB decoupling epoch marks the origin point of the observable universe, corresponding to a redshift satisfying $1+z=1100$. 
+
+\medskip
+Under the compact growing-$c(t)$ model defined in Eq.~(6.4), $C(t)=1/1100$ yields $t=-59.1\,\mathrm{Gyr}$; for the ultra-fine growing-$c(t)$ model, the cosmic time reads $t=-45.2\,\mathrm{Gyr}$ at the early CMB stage with redshift $z=1083.07$. These results imply a gently evolving cosmos rather than a violent Big Bang scenario\cite{Weinberg:2008}. 
+
+\medskip
+A preliminary assessment shows that the time span between the QGP threshold epoch ($\boldsymbol{z_{\star}}$) and the CMB decoupling epoch ($\boldsymbol{z_{1}}$) surpasses the 36-37\,$\mathrm{kyr}$ given by the standard $\Lambda$CDM model.
+
+\medskip
+The ultimate cosmic origin was postulated as the \textit{Zero-Light-Speed Zero-Temperature} (\textit{ZLZT}) primordial state, where both the speed of light and temperature approach zero. We infer that if the cosmic speed of light falls below  42\,$\mathrm{km/s}$ (21$\,\mathrm{km/s}$ or \allowbreak 14 $\mathrm{km/s}$) and the ambient temperature stays near 2.75$\,\mathrm{K}$ at the QGP threshold epoch ($\boldsymbol{z_{\star}}$), all hadronic structures fully dissociate into free quarks and gluons, forming a pure quark–gluon universe without hadrons. Detailed discussions are given in Section 9.
+
+
+\bigskip
+{\bf Cosmic Noon and  $\boldsymbol{C(t)}$}\,\,\,
+Based on the compact growing-$c(t)$ model, as the solution in Eq.~(5.20), cosmic noon occurs at $t_w = -17.98\,\mathrm{Gyr}$. For the ultra-fine growing-$c(t)$ model given in Eq.~(6.2), cosmic noon takes place at $t_w = -20.21\,\mathrm{Gyr}$. Both values markedly deviate from the $t^\star = -11.4\,\mathrm{Gyr}$ given by the standard $\Lambda$CDM model. At cosmic noon, the speed of light amounts to $27.03\%$ $(1/3.7)$ of \(c_0\).
+
+
+\bigskip
+{\bf Solar System Formation}\,\,\,
+For the epoch of Solar System formation ($\boldsymbol{z_3}$), the \texttt{Planck18} dataset gives $t^\star = -4.67\,\mathrm{Gyr}$ at redshift $z=0.43$. 
+
+\medskip
+The compact and ultra-fine growing-$c(t)$ model yield $-7.55\,\mathrm{Gyr}$ and $-5.57\,\mathrm{Gyr}$, respectively. We consider the latter result more reliable, since the ultra-fine model is calibrated using the full \texttt{Planck18} dataset, whereas the compact model relies on only a single data point. The relative light speed at this epoch is $69.93\%$. 
+
+\medskip
+Data for the early galaxy formation epoch ($\boldsymbol{z_1}$) are summarized in the table below and will not be discussed further.
+
+\bigskip
+\begin{table}[H]
+	\centering
+	\captionsetup{skip=2pt, font=small}
+	\caption{$\boldsymbol{C(t)}$ and $\boldsymbol{t}$ of benchmark epochs $\boldsymbol{z_i}$}
+	\footnotesize
+	\renewcommand{\arraystretch}{1.50}
+	\begin{tabular}{>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+		\toprule
+		\textbf{Parameter} & \textbf{$\boldsymbol{z_0}$} & \textbf{$\boldsymbol{z_1}$} & \textbf{$\boldsymbol{z_2}$} & \textbf{$\boldsymbol{z_3}$} \\
+		\midrule
+		$\boldsymbol{C(t)}$                     & $1/1100$    & $1/25$    & $1/3.7$   & $1/1.43$   \\
+		$\boldsymbol{C(t)\,\,\%}$               & $0.09\%$    & $4.00\%$  & $27.03\%$ & $69.93\%$  \\
+		$\boldsymbol{t}\mathsf{_{compact}}$     & $-59.1$     & $-32.7$   & $-17.83$  & $-7.55$    \\
+		$\boldsymbol{t}\mathsf{_{fine}}$        & $-45.2$     & $-36.6$   & $-20.21$  & $-5.57$    \\
+		$\boldsymbol{t^\star}$                  & $-13.8$     & $-13.6$   & $-11.40$  & $-4.67$    \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+\bigskip
+{\bf Dimensional Analysis}\,\,\,
+Physics defines seven fundamental dimensional quantities, abbreviated as \texttt{LMTI$\Theta$NJ}. They stand for length (\texttt{L}), mass (\texttt{M}), time (\texttt{T}), electric current (\texttt{I}), thermodynamic temperature (\texttt{$\Theta$}), amount of substance (\texttt{N}) and luminous intensity (\texttt{J}), respectively.
+
+\medskip
+This paper is built upon two core postulates listed in Section 2. The macroscopic postulate is given by ${G(t)}\tinysp {c(t)^2} = \boldsymbol{P}$, which indicates $G(t) \propto c(t)^{-2}$. The microscopic postulate states that the fine-structure constant $\boldsymbol{\alpha}$ is universally invariant throughout cosmic evolution.
+
+\medskip
+Based on these postulates, a subset of the physical quantities from Section 1 evolve with $c(t)$. We derive their dimensions and power-law relations with $c(t)$, as summarized in the table below.
+
+\medskip
+\begin{table}[H]
+	\centering
+	\captionsetup{skip=2pt, font=small}
+	\caption{Dimensional analysis and power-law scaling with $\boldsymbol{c(t)}$}
+	\footnotesize
+	\renewcommand{\arraystretch}{1.50}
+	\begin{tabular}{>{\centering\arraybackslash}p{2.5cm}|>{\hspace{0.5cm}\raggedright\arraybackslash}p{4.2cm}|>{\hspace{0.5cm}\centering\arraybackslash}p{5.5cm}}
+		\toprule
+		\textbf{Evolving Qty.} & \textbf{Dimensional Form} & \textbf{Power-law Scaling with $\boldsymbol{c(t)}$} \\
+		\midrule
+		$G(t)$                                  & $[G]$ : $\mathrm{L}^{3}\, \mathrm{M}^{-1}\, \mathrm{T}^{-2}$                                & ${\propto c^{-2}}$ \\
+		$\mu_0(t)$                              & $[\mu_0]$ : $\mathrm{L}^{1}\, \mathrm{M}\, \mathrm{T}^{-2}\, \mathrm{I}^{-2}$               & ${\propto c^{+1}}$ \\
+		$\varepsilon_0(t)$                      & $[\varepsilon_0]$ : $\mathrm{L}^{-3}\, \mathrm{M}^{-1}\, \mathrm{T}^{4}\, \mathrm{I}^{2}$   & ${\propto c^{-3}}$ \\
+		$\hbar(t)$                              & $[\hbar]$ : $\mathrm{L}^{2}\, \mathrm{M}\, \mathrm{T}^{-1}$                                 & ${\propto c^{+2}}$ \\
+		$a_{\scriptscriptstyle\mathrm{B}}(t)$   & $[a_{\mathrm{B}}]$ : $\mathrm{L}^{1}$                                                       & ${\propto c^{+1}}$ \\
+		$k_e(t)$                                & $[k_e]$ : $\mathrm{L}^{3}\mathrm{M}\, \mathrm{T}^{-4}\, \mathrm{I}^{-2}$                    & ${\propto c^{+3}}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\medskip
+The remaining four quantities are derived from the foregoing results. Their dimensional forms and power-law scaling with $c(t)$ are presented in the following table.
+
+\bigskip
+\begin{table}[H]
+	\centering
+	\captionsetup{skip=2pt, font=small}
+	\caption{Power-law scaling of the remaining four quantities with $\boldsymbol{c(t)}$}
+	\footnotesize
+	\renewcommand{\arraystretch}{1.50}
+	\begin{tabular}{>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{1.8cm}|>{\hspace{0.5cm}\raggedright\arraybackslash}p{8.2cm}}
+		\toprule
+		\textbf{Evolving Qty.} & \textbf{Ref. Eq.} & \textbf{Power-law Scaling with $\boldsymbol{c(t)}$} \\
+		\midrule
+		$m_{\scriptscriptstyle\mathrm{P}}(t)$    &$\mathrm{Eq.}(1.3)$      & ${\hbar \propto c^{+2}},\enspace {c^{+1}\propto c^{+1}},\enspace {G^{-1}\propto c^{+2}}  \quad \Rightarrow \quad {\propto \boldsymbol{c^{\frac{5}{2}}}  }$  \\
+		$\ell_{\scriptscriptstyle\mathrm{P}}(t)$ &$\mathrm{Eq.}(1.4)$      & ${\hbar \propto c^{+2}},\enspace {c^{-3}\propto c^{-3}},\enspace {G^{+1}\propto c^{-2}}  \quad \Rightarrow \quad {\propto \boldsymbol{c^{-\frac{3}{2}}} }$  \\
+		$\rho_{\scriptscriptstyle\mathrm{P}}(t)$ &$\mathrm{Eq.}(1.5)$      & ${\hbar^{-1} \propto c^{-2}},\enspace {c^{+5} \propto c^{+5}},\enspace {G^{-2} \propto c^{+4}} \Rightarrow \quad {\propto \boldsymbol{c^{7}}      }$        \\
+		$T_{\mathrm{ion}}(t)$  &$\mathrm{Eq.}(1.8)$      & ${\Rightarrow \quad {\propto \boldsymbol{c^{2}}}}    $  \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\bigskip
+\textbf{Evolution of $\boldsymbol{\varepsilon_0(t)}$, $\boldsymbol{\mu_0(t)}$}\,\,\,
+$\varepsilon_0(t)$ and $\mu_0(t)$ are the core quantities governing the evolution of $c(t)$. Following $\varepsilon_0(t) \propto c(t)^{-3}$ and $\mu_0(t) \propto c(t)$, the two parameters decrease and increase respectively as $c(t)$ rises and mutually constrain one another, in accordance with the core form of Maxwell's equations, as shown in Eq.~(7.1). 
+\[
+\mu_0(t)\,\varepsilon_0(t)\, c(t)^2 = 1\,\,. \eqno(7.1)
+\]
+
+\medskip
+The three quantities $\mu_0(t)$, $\varepsilon_0(t)$ and $c(t)$ are governed by the \textit{Light-Electricity-Magnetism} \textit{Synchronized Cosmic Dark Field} (\textit{LEM-SCDF}), which will be fully elaborated in subsequent sections.
+
+
+\medskip
+\bigskip
+\textbf{Evolution of the Bohr Radius $\boldsymbol{a_{\scriptscriptstyle\mathrm{B}}(t)}$}\,\,\,
+In our framework, the Bohr radius $a_{\scriptscriptstyle\mathrm{B}}(t)$ of hydrogen scales linearly with $c(t)$, in contrast to the conventional assumption of a constant. At the epoch $1+z=25$, its value equals $1/25$ of the present-day value. At the CMB epoch with $1+z=1100$, the Bohr radius is reduced to $1/1100$ of its current magnitude.
+
+\medskip
+The present-day Bohr radius is $a_{\scriptscriptstyle\mathrm{B},0}=5.292\times10^{-11}\,\mathrm{m}$, and the proton diameter is $d_p=1.6815\times10^{-15}\,\mathrm{m}$. Their present-day ratio is approximately $3.15\times10^4$. At $1+z=1100$, the ratio drops to roughly $28.6$, indicating an extremely narrow electron orbit around the proton in the early universe. This ratio represents the bare minimum scale to sustain neutral hydrogen. Before the cosmic evolution reached this stage, the orbital radius was too small to form stable hydrogen atoms.
+
+\medskip
+This scenario has rarely been investigated in existing studies. When the Bohr radius was merely dozens of times the proton diameter, multi-electron atoms and complex molecular bonds could hardly form, as electron shells were compressed into overlapping configurations. Additionally, the transition from plasma to neutral hydrogen during recombination was fragile and reversible; newly formed atoms were loosely bound and likely to be reionized.
+
+\medskip
+The orbital scale of atoms further governs the abundance of chemical elements. In the era near CMB, the severely compacted atomic structure would have permitted only hydrogen-dominated objects to condense, with almost no complex heavy elements. Simple chemical compositions remained prevalent for a long time in the early cosmic environment.
+
+
+\medskip
+\bigskip
+\textbf{Evolution of Coulomb parameter $\boldsymbol{k_e(t)}$}\,\,\,
+As analyzed in Table 3, the Coulomb parameter $k_e(t)$ scales with the cube of cosmic light speed $c(t)$. At redshift $1+z=25$, $k_e(t)$ is $1/25^3$ of its present value, while at the CMB epoch ($1+z=1100$), it reduces to $1/1100^3$ of the current magnitude. The drastically weakened electrostatic force in the early universe led to fragile atomic bonding at the microscopic scale, consistent with the evolutionary characteristics of hydrogen atoms discussed above.
+
+
+\medskip
+\bigskip
+\textbf{Evolution of Planck Quantities $\boldsymbol{\hbar(t)}$, $\boldsymbol{m_{\scriptscriptstyle\mathrm{P}}(t)}$, $\boldsymbol{\ell_{\scriptscriptstyle\mathrm{P}}(t)}$ and $\boldsymbol{\rho_{\scriptscriptstyle\mathrm{P}}(t)}$}\,\,\,
+As analyzed in Table 3 and Table 4, the reduced Planck constant $\hbar(t) \propto c(t)^{2}$, the Planck mass $m_{\scriptscriptstyle\mathrm{P}}(t) \propto c(t)^{5/2}$, the Planck length $\ell_{\scriptscriptstyle\mathrm{P}}(t)\propto c(t)^{-3/2}$, and the conventional Planck density $\rho_{\scriptscriptstyle\mathrm{P}}(t)$ evolves proportionally to $c(t)^7$.
+
+\medskip
+In the present-day universe, the Planck mass reaches $m_{\scriptscriptstyle\mathrm{P,0}} \approx 2.2\times 10^{-8}\,\mathrm{kg} \approx 22\, \mathrm{\mu g}$, which is extremely massive for a microscopic scale, while the Planck length $\ell_{\scriptscriptstyle\mathrm{P},0} \approx 1.6\times 10^{-35}\,\mathrm{m}$ remains extraordinarily tiny, and the Planck density $\rho_{\scriptscriptstyle\mathrm{P},0} \approx 5.2\times 10^{96}\,\mathrm{kg/m^3}$.
+
+\medskip
+Since $\rho_{\scriptscriptstyle\mathrm{P}}(t) \propto c(t)^7$, at the CMB epoch (${z_0}$) with $1+z=1100$, we have $1100^7 \approx 1.95 \times 10^{21}$. This reduces the Planck density to $\rho_{\scriptscriptstyle\mathrm{P}}(t) \approx 2.65\times 10^{75}\,\mathrm{kg/m^3}$. 
+
+\medskip
+Furthermore, at the post-hadronization plasma epoch (${z_{\star}}$), the speed of light drops to 1/7137.66 of its present-day value $c_0$, i.e., approximately 42 km/s. We get $7137.66^7 \approx 9.44 \times 10^{26}$. This reduces the Planck density to $\rho_{\scriptscriptstyle\mathrm{P}}(t) \approx 5.51\times 10^{69}\,\mathrm{kg/m^3}$.
+
+\medskip
+Both Planck densities above are far greater than the Friedmann cosmic density $\rho_{\scriptscriptstyle\mathrm{F}}(t)$ defined in Eq.~(1.14). We will revisit these quantities when we discuss ${v_{\scriptscriptstyle\mathrm{LEM}}(t)}$ in Eq.~(8.6) later, where both $\rho_{\scriptscriptstyle\mathrm{P}}(t)$ and $\rho_{\scriptscriptstyle\mathrm{F}}(t)$ will be used.
+
+
+
+\medskip
+\bigskip
+\textbf{Evolution of Boltzmann Ionization Criterion  $\boldsymbol{T_\mathrm{ion}(t)}$}\,\,\,
+As analyzed in Table 4, the ionization temperature of hydrogen atoms scales with the cosmic speed of light, following ${T_\mathrm{ion}}(t) \propto c(t)^2$. The present-day ${T_\mathrm{ion}}(t)$ is approximately $10^8\,\mathrm{K}$, and the values of ${T_\mathrm{ion}}(t)$ at four typical cosmic epochs are given in Table 5.
+
+\begin{table}[H]
+	\centering
+	\captionsetup{skip=2pt, font=small}
+	\caption{Ionization temperature $\boldsymbol{T_\mathrm{ion}}$ at benchmark epochs $\boldsymbol{z_i}$}
+	\footnotesize
+	\renewcommand{\arraystretch}{1.50}
+	\begin{tabular}{>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+		\toprule
+		\textbf{Parameter} & \textbf{$\boldsymbol{z_0}$} & \textbf{$\boldsymbol{z_1}$} & \textbf{$\boldsymbol{z_2}$} & \textbf{$\boldsymbol{z_3}$} \\
+		\midrule
+		$\boldsymbol{C(t)}$      & $1/1100$   & $1/25$    & $1/3.7$   & $1/1.43$  \\
+		$\boldsymbol{T_\mathrm{ion}\,(\mathrm{K})}$  & $>82.64$ & $>1.60\times10^{5}$ & $>7.31\times10^{6}$ & $>4.89\times10^{7}$ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:ion_temp}
+\end{table}
+
+According to the Boltzmann formula Eq.~(1.8), if the cosmic speed of light drops to \(1/7137.66\) of its present value, corresponding to $c(t)=42.03\,\mathrm{km/s}$, the ionization temperature reduces to \(1.96\,\mathrm{K}\). In other words, at this light speed, any temperature exceeding \(1.96\,\mathrm{K}\) is sufficient to dissociate neutral hydrogen atoms into plasma.
+
+\medskip
+As will be further discussed in Section 9, raising the temperature from \(1.96\,\mathrm{K}\) to \(2.75\,\mathrm{K}\) induces quark deconfinement and hadron dissociation, transforming the plasma into a sea of free quarks and gluons. We will also conduct a detailed analysis of this phenomenon, alongside research on the initial Zero-Light-Speed and Zero-Temperature (ZLZT) cosmic state, in the same section.
+
+
+ 
+\medskip
+\bigskip
+\textbf{Re-examining the \texttt{Second} and the \texttt{Metre} Definition in SI}\,\,\,
+One \texttt{Second} is defined as the duration of exactly \texttt{9,192,631,770} periods of radiation emitted from a specific energy transition of stationary cesium-133 atoms\cite{BIPM:2019}. The cesium atomic frequency is a pure microscopic quantum invariant governed by the fine-structure constant and the intrinsic energy-level structure of the atom; this frequency does not rely on the speed of light. One \texttt{Metre} is defined as the path length such light travels in vacuum in one \texttt{Second}, divided by \texttt{299,792,458}.
+
+\medskip
+The above definition of the \texttt{Metre} implicitly assumes that the cosmic light speed in vacuum is permanently constant. Under the present-day speed of light $c_0$, the wavelength corresponding to the cesium-133 transition is given by:
+\smallskip
+\[
+\lambda_{\text{cs}} = \frac{c_0}{\nu_{\text{cs}}}
+= \frac{299\,792\,458\ \mathrm{m/s}}{9\,192\,631\,770\ \mathrm{Hz}}
+\approx 0.032612\ \mathrm{m} = \texttt{32.612}\ \mathrm{mm}\,\, \eqno(7.2)
+\]
+
+\medskip
+According to the above definition of the \texttt{Metre}, if the cosmic speed of light in the early universe was reduced to $75\,000\ \mathrm{km/s}$, that is one quarter of the present-day value of $300\,000\ \mathrm{km/s}$, the intrinsic radiation frequency of cesium-133 atoms remains invariant, and the corresponding wavelength $\lambda_{\text{cs}}$ shrinks to one quarter of its modern magnitude, namely $\texttt{8.153}\ \mathrm{mm}$.
+
+\medskip
+Under the postulate of growing-$c(t)$, it is logically necessary to distinguish two distinct concepts: the \texttt{modern Metre} and the \texttt{atomic Metre}, denoted by $\boldsymbol{L_\mathrm{m}}$ and $\boldsymbol{L_\mathrm{a}}$ respectively. Here ${L_\mathrm{m}}$ stands for the standard metre used at present, while ${L_\mathrm{a}}$ refers to the distance travelled during ${9\,192\,631\,770} / {299\,792\,458}\simeq 30.6633$ wave cycles of radiation from cesium-133 atoms.
+
+\medskip
+In other words, ${L_\mathrm{a}}$ is defined based on fixed atomic oscillation cycles, so the total number of cycles is permanently constant. However, the actual spatial extent represented by ${L_\mathrm{a}}$ changes as the cosmic speed of light evolves following growing-$c(t)$. This conception differs markedly from conventional textbook definitions, so readers are advised to pay close attention and fully comprehend the underlying logic.
+
+
+\medskip
+\bigskip
+\textbf{Re-examining Photon Frequency, Wavelength and Speed of Light}\,\,\,
+We start with basic physical fundamentals. Constrained by the fine-structure constant and the intrinsic quantized energy gaps of atomic systems, the intrinsic frequency $\nu$ and angular frequency $\omega$ of a photon satisfy:
+\[
+\Delta E = h\,\nu = 2\pi\hbar\,\nu = \hbar\,\omega \,\,  \eqno(7.3)
+\]
+
+\smallskip
+Both $\Delta E$ and $\hbar$ evolve in tandem and scale as $c(t)^2$. Consequently, the emission frequency $\nu$ of a photon is inherently constant and independent of the speed of light.
+
+\medskip
+In contrast, wavelength is not an intrinsic property of photons. It varies with light speed and the refractive index of the propagation medium, following the fundamental relation for electromagnetic waves:
+\[
+c = \lambda \,\nu \,\,  \eqno(7.4)
+\]
+
+We adopt standard optical glass to demonstrate wavelength variation visually. For a vacuum light speed of 300\,000 km/s, consider a photon with $\nu_{n0}=1.0\times10^{15}\,\mathrm{Hz}$ and $\lambda_{n0}=300\,\mathrm{nm}$. Upon entering glass with a refractive index $N_{\text{glass}}=1.5$, the photon’s propagation speed drops to 200\,000 km/s, accompanied by a wavelength reduction to $200\,\mathrm{nm}$. When exiting the glass and returning to vacuum, the wavelength returns to its original value of $300\,\mathrm{nm}$.
+
+\medskip
+The vacuum speed of light acts as a universal cosmic background parameter, rather than an attribute of individual photons.
+
+\medskip
+Within the framework of standard cosmological redshift, we examine an ancient photon with intrinsic frequency $\nu_{n1}=1.0\times 10^{15}\,\mathrm{Hz}$ emitted at redshift $z=3.0$, where $1+z=4$. Driven by cosmic expansion, its observed frequency decreases to $2.5\times 10^{14}\,\mathrm{Hz}$ at the present epoch, equal to one quarter of its initial value, while its measured wavelength quadruples.
+
+\medskip
+For a photon traveling across the full cosmic scale $a(t)$, standard redshift theory establishes that the total number of wave cycles along its trajectory is conserved. As the cosmic scale expands from $\frac{1}{4}a_0$ to the present scale $a_0$, the photon’s frequency declines and its wavelength extends to adapt to the enlarged spatial scale, while the total number of wave crests and troughs remains unchanged. We term this phenomenon "redshift invariant in quantity of wave cycles".
+
+\medskip
+Our growing-$c(t)$ model extends and enriches the set of physical invariants associated with cosmological redshift. At the epoch where $1+z=4.0$, the cosmic light speed is $75\,000\,\mathrm{km/s}$, a quarter of its present $c_0$ . As the cosmic spatial scale evolves from $a(t)=\frac{1}{4}\, a_0$ to $a_0$, light speed $c(t)$ increases synchronously. The travel time required for a photon to traverse the entire cosmic scale is conserved throughout cosmic expansion.
+
+\medskip
+The dual invariant of wave cycle count and propagation time reveals profound internal harmony and the elegant aesthetics of fundamental physical laws. In essence, any photon that is emitted to travel across the whole cosmic scale $a(t)$ will maintain a fixed number of wave cycles and a constant travel time, unaffected by cosmic expansion. This intrinsic congruence is clearly manifested in our growing-$c(t)$ model.
+
+\medskip
+We further analyze the ancient photon with $\nu_{n0}=1.0\times10^{15}\,\mathrm{Hz}$ emitted at $1+z=4.0$. Calibrated to the $L_\mathrm{m}$, the cosmic light speed was $75\,000\,\mathrm{km/s}$ at that time and the photon had an initial wavelength of $75\,\mathrm{nm}$. After long-range propagation to the present, cosmological redshift lowers its frequency to $2.5\times 10^{14}\,\mathrm{Hz}$. Meanwhile, the cosmic vacuum light speed has risen to  $300\,000\, \mathrm{km/s}$, and the observed final wavelength reaches $1200\,\mathrm{nm}$, 16 times the wavelength at emission.
+
+\medskip
+The total 16-fold wavelength amplification stems from two separate effects: a 4-fold contribution from cosmological redshift, and another 4-fold contribution from the monotonic increase of cosmic vacuum light speed $c(t)$.
+
+\medskip
+The 16-fold wavelength shift appears counterintuitive under the assumption of a constant speed of light. Nevertheless, when interpreted using the $L_\mathrm{a}$, we see that the photon’s frequency is simply reduced to one quarter of its value at emission.
+
+
+\medskip
+\bigskip
+\textbf{Illustrating the Materiality Behind Photon Frequency via a Metaphor}\,\,\,
+Just as an individual’s innate traits are fixed by parental genes, a photon’s frequency at emission is solely determined by the fine‑structure constant and the structure of its radiation source, independent of external cosmic environments.
+
+\medskip
+After decoupling from its source, the photon’s inherent frequency becomes modulated by the cosmic background. Cosmic expansion and gravitational fields of massive objects continuously alter this intrinsic frequency, predominantly producing redshift effects, much like how societal material conditions shape an individual after they enter society.
+
+
+
+\medskip
+\bigskip
+To this point, we have illustrated a series of distinctly different physical pictures describing cosmic evolution. The discussion on the Einstein $G_{\mu\nu}$ field equation, together with the Light-Electricity-Magnetism Synchronized Cosmic Dark Field (\textit{LEM-SCDF}) proposed in this work, will be carried out in the subsequent Section 8.
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		8. The Revised $\boldsymbol{G_{\mu\nu}}$, the Constant $\boldsymbol{P}$, \\
+		and the LEM‑SCDF Field
+	\end{center}
+}
+\medskip
+\noindent
+
+We revisit the macroscopic postulate from Section 2: a universal time‑invariant cosmic coupling constant $\boldsymbol{P}$ exists, and the time‑dependent speed of light $c(t)$ satisfies the conservation law
+\[
+G(t)\tinysp c(t)^2 = \boldsymbol{P} \,\,.  \eqno(8.1)
+\]
+
+\smallskip
+Using this postulate, we revise Einstein’s curvature field equation, and examine the physical plausibility of this $G(t)c(t)^2$ power‑law relation. Furthermore, we introduce the LEM‑SCDF, defined as the globally synchronized cosmic dark field of light, electricity and magnetism, as a theoretically motivated construct for this framework.
+
+\medskip
+\textit{\textbf{Note:} Dirac, as early as the 1930s, already conceived the idea that those fundamental constants might also evolve with cosmic time. He further argued that the striking coincidences among the large dimensionless numbers in physics and cosmology could be resolved if the gravitational constant $G$ varies with the cosmic epoch; and such a variation would necessarily involve a change in the speed of light $c$ as well~\cite{Dirac:1937, Dirac:1938}.}
+
+
+\medskip
+\bigskip
+\textbf{The Revised $\boldsymbol{G_{\mu\nu}}$ Equation}\,\,\,
+Substituting the above postulate into the Einstein curvature field equation\cite{Einstein:632320} defined in Eq.~(1.8), we obtain:
+$$
+G_{\mu\nu} = \frac{8\pi\tinysp G(t)}{{c(t)}^4} T_{\mu\nu} = \frac{8\pi\tinysp P}{{c(t)}^6} T_{\mu\nu} \,\,.  \eqno(8.2)
+$$
+
+\smallskip
+In Eq.~(8.2), \, $T_{\mu\nu}$ denotes the energy‑momentum tensor describing mass‑energy distribution. Although the full form of $T_{\mu\nu}$ for the early universe cannot be precisely determined, note that if the speed of light in the early galaxy‑formation era ($1+z=25$) and the CMB epoch ($1+z=1100$) were respectively $1/25$ and $1/1100$ of the present‑day speed of light $c_0$, the spacetime curvature would be extremely large, scaling as $25^6\approx 2.4\times 10^{8}$ or $1100^6\approx 1.8\times 10^{18}$. 
+
+\medskip
+Such extreme spacetime curvature in primordial epochs induced strong coupling between matter and celestial objects, which in turn demanded an exceedingly long timescale for these objects to reach relaxation equilibrium. Accordingly, the spacetime curvature (reflected by the Einstein tensor $G_{\mu\nu}$) was enormous in early epochs and exhibits a qualitative decreasing trend across successive cosmic eras: CMB epoch $z_0$, early galaxy‑formation epoch $z_1$, cosmic noon epoch $z_2$, and the solar system formation epoch $z_3$.
+
+\medskip
+The tensor $T_{\mu\nu}$ contains energy density, momentum flux, pressure, stress, and electromagnetic fields. On macroscopic scales, under the weak‑field approximation and slow‑motion approximation together with the relation $E=m c^2$, Eq.~(8.2) reduces to
+$$
+G_{\mu\nu} \thinspace \approx  \thinspace \frac{8\pi\tinysp P}{{c(t)}^6}\cdot  M_{\mu\nu}\tinysp \cdot {{c(t)}^2} 
+\thinspace = \thinspace \frac{8\pi\tinysp P}{{c(t)}^4} M_{\mu\nu}\,\,  \eqno(8.3)
+$$
+
+\smallskip
+Here, $M_{\mu\nu}$ represents the density distribution of matter.
+
+\medskip
+Under the postulate $G(t)\tinysp c(t)^2={P}$, a comparison between Eq.~(8.2) and Eq.~(8.3) shows complete physical consistency on the right‑hand sides of both equations. This indicates that the relation $\boldsymbol{G\tinysp c^2=P}$ is  \textbf{\textit{somehow}} inherently embedded within the Einstein field equation.
+
+\medskip
+Otherwise, if alternative power‑law forms such as $G(t)\tinysp c(t)={P}$, $G(t)\tinysp c(t)^3={P}$ or $G(t)\tinysp c(t)^4={P}$ are adopted, this consistency vanishes. Although quantities associated with $G(t)$ are mathematically permissible under pure computation, they lack physically reasonable interpretation. Accordingly, such alternative power‑law forms are not further discussed in this work.
+
+\medskip
+Using Maxwell's equations defined in Eq.~(7.1) to substitute for $c(t)^6$ in Eq.~(8.2), we obtain a correlated form of the Revised ${G_{\mu\nu}}$ Equation involving $\mu_0(t)$ and $\varepsilon_0(t)$, as shown below:
+$$
+G_{\mu\nu} = 8\pi\tinysp P\cdot \mu_0(t)^3\cdot \varepsilon_0(t)^3\cdot T_{\mu\nu} \,\,   \eqno(8.4)
+$$
+
+
+\medskip
+\bigskip
+\textbf{Theoretical Insight of the Revised $\boldsymbol{G_{\mu\nu}}$ Equation}\,\,\,
+The major part of cosmic mass and energy originates from the strong interaction. The binding energy between quarks and gluons creates most mass of visible matter, so the energy-momentum tensor $T_{\mu\nu}$ essentially reflects the macroscopic distribution of strong-interaction effects in the universe.
+
+\medskip
+Einstein’s original field equation forms a purely one‑way geometric response model. All variations in the mass‑energy distribution described by $T_{\mu\nu}$ are balanced solely via spacetime curvature $G_{\mu\nu}$, with no extra physical degree of freedom available to share the dynamical burden.
+
+\medskip
+In contrast, our revised framework establishes a closed-loop regulation system. The spacetime curvature $G_{\mu\nu}$ cooperates with the time-varying speed of light $c(t)$ to jointly respond and balance the dynamic variation of $T_{\mu\nu}$. 
+
+\medskip
+Since $c(t)$ is determined by vacuum electromagnetic parameters $\mu_0(t)$ and $\varepsilon_0(t)$, the entire cosmic system effectively connects microscopic strong-interaction mass sources, large-scale spacetime geometric effects, and underlying vacuum electromagnetic rules. All physical variables in this dynamic process are strictly constrained by the invariant cosmic constant $P$.
+
+\medskip
+Accordingly, the revised ${G_{\mu\nu}}$ equation no longer belongs to a pure geometric theory of gravity. It forms a unified cosmic dynamic framework grounded on vacuum electromagnetic fundamentals, adopts spacetime curvature and time‑varying light speed as dual regulatory channels, and takes the strong‑interaction‑dominated mass‑energy distribution as the core source term.
+
+
+\medskip
+\bigskip
+\textbf{The Intrinsic Meaning of Constant $\boldsymbol{P}$}\,\,\,
+${P}$ is termed the cosmic coupling constant, as it characterizes the fundamental coupling among cosmic mass‑energy distribution, spacetime curvature, the time‑varying speed of light $c(t)$, and the time‑varying vacuum permeability $\mu_0(t)$ and vacuum permittivity $\varepsilon_0(t)$.
+
+\medskip
+By manipulating Eq.~(8.4), Eq.~(8.2) and Eq.~(8.3), we obtain:
+$$
+\boldsymbol{P} \thinspace = \thinspace \dfrac{G_{\mu\nu}}{8\pi\tinysp \mu_0(t)^3\cdot \varepsilon_0(t)^3\cdot T_{\mu\nu}}
+\thinspace = \thinspace \dfrac{{{c(t)}^6}\cdot {G_{\mu\nu}}}{8\pi\tinysp \cdot T_{\mu\nu}}
+\thinspace \approx \thinspace \dfrac{{{c(t)}^4} \cdot {G_{\mu\nu}}}{8\pi\tinysp \cdot M_{\mu\nu}} \,\,   \eqno(8.5)
+$$
+
+
+\medskip
+\bigskip
+\noindent
+$\triangleright \triangleright \triangleright$\enspace
+Historically, Einstein held an ambivalent attitude toward gravitational constant. Although general relativity attributes gravitational phenomena entirely to spacetime curvature, rendering $G$ no longer a fundamental independent quantity, Einstein nevertheless retained $G$ in his field equations. This choice was primarily intended to ensure the equation reduces to Newtonian gravitation under weak‑field and slow‑motion limits, rather than by rigorous theoretical necessity.
+
+\medskip
+For roughly a decade after 1915, Einstein and most contemporary physicists adhered to the static cosmological paradigm. Within this conceptual framework, researchers did not further explore the possibility of a time‑varying speed of light, even though the invariant relation $G\tinysp c^2=P$ is somehow inherently embedded within this equation. \enspace$\triangleleft \triangleleft \triangleleft$
+
+
+
+
+
+
+\medskip
+\bigskip
+\textbf{The LEM-SCDF Field}\,\,\,
+Within the Growing-$c(t)$ framework, the vacuum electromagnetic parameters $c$, $\varepsilon_0$, and $\mu_0$ are no longer universal constants. Following the standard postulation paradigm in theoretical physics, this work introduces the Light-Electricity-Magnetism Synchronized Cosmic Dark Field (LEM-SCDF) as a fundamental cosmic background field.
+
+\medskip
+This study focuses on the LEM–SCDF dark field throughout cosmic evolution from the post-hadronization plasma epoch, across the CMB era, and up to the present universe. All QCD-governed quark-gluon dynamics and hadronization processes are excluded from the current discussion.
+
+\medskip
+The core function of the LEM--SCDF dark field is to achieve global synchronization of the time-varying fundamental parameters $c(t)$, $\varepsilon_0(t)$, and $\mu_0(t)$ across the entire cosmic space, while maintaining their strict spatial uniformity.
+
+\medskip
+We denote by $\boldsymbol{v_{\scriptscriptstyle\mathrm{LEM}}(t)}$ the propagation speed of the LEM-SCDF dark field, which satisfies $v_{\scriptscriptstyle\mathrm{LEM}}(t) \gg c(t)$. We define the invariant relation as
+\[
+v_{\scriptscriptstyle\mathrm{LEM}}(t)\cdot \rho_{\scriptscriptstyle\mathrm{F}}(t) = c(t)\cdot \rho_{\scriptscriptstyle\mathrm{P}}(t) \,\,\,,   \eqno(8.6)
+\]
+or equivalently,
+\[
+v_{\scriptscriptstyle\mathrm{LEM}}(t)= c(t)\cdot \frac{\rho_{\scriptscriptstyle\mathrm{P}}(t)}{\rho_{\scriptscriptstyle\mathrm{F}}(t)} \,\,\,.   \eqno(8.7)
+\]
+
+\smallskip
+Here, $\rho_{\scriptscriptstyle\mathrm{F}}(t)$ denotes the mean cosmic density that appears in the first and second Friedmann equations, Eq.~(1.14) and Eq.~(1.15), and serves as the core density term governing cosmic expansion. The quantity $\rho_{\scriptscriptstyle\mathrm{P}}(t)$ is the Planck density discussed in Section 7, it is the upper limiting density imposed by quantum gravity, an inherent property of spacetime itself.
+
+\medskip
+On the right-hand side of Eq.~(8.6), $c(t)\cdot\rho_{\scriptscriptstyle\mathrm{P}}(t)$, the term $c(t)$ is the baseline propagation speed for electromagnetic and gravitational interactions in local spacetime, while $\rho_{\scriptscriptstyle\mathrm{P}}(t)$ is the maximum mass density that spacetime can sustain under quantum-gravitational constraints. Their product thus gives the intrinsic upper limit of interaction transmission per unit volume.
+
+\medskip
+On the left-hand side, $v_{\scriptscriptstyle\mathrm{LEM}}(t)\cdot\rho_{\scriptscriptstyle\mathrm{F}}(t)$, the Friedmann mean density $\rho_{\scriptscriptstyle\mathrm{F}}(t)$ represents the diluted actual distribution of matter in the expanding universe, and $v_{\scriptscriptstyle\mathrm{LEM}}(t)$ is the characteristic propagation speed of the LEM--SCDF dark field.
+
+\medskip
+This symmetric product structure establishes a dual correspondence between the microscopic quantum spacetime limit and the macroscopic large-scale cosmic evolution, and it holds for arbitrary cosmic time $t$. The equality of these two products maintains a permanent balance between the quantum-scale bound of spacetime and the coordination requirements of the entire macroscopic cosmos. This definition is mathematically well-behaved, with no singularities or non-differentiable points. It also has formal elegance and a clear physical picture.
+
+\medskip
+Since $\rho_{\scriptscriptstyle\mathrm{P}}(t)$ is the absolute upper density limit allowed by quantum gravity, and since, apart from the initial singular state of cosmic expansion (which is a logical idealization), we have $\rho_{\scriptscriptstyle\mathrm{P}}(t) \gg \rho_{\scriptscriptstyle\mathrm{F}}(t)$ at all subsequent evolutionary stages, this inequality directly implies $v_{\scriptscriptstyle\mathrm{LEM}}(t) \gg c(t)$ at any given time.
+
+\medskip
+The $v_{\scriptscriptstyle\mathrm{LEM}}(t)$ exceeds the local vacuum speed of light by many orders of magnitude, so the propagation time delay of the dark field remains negligibly small across all observable cosmic scales. This feature naturally produces nearly instantaneous global synchronization, which underpins the core invariant $G(t)\tinysp c(t)^2=\text{constant}$ established in this work.
+
+\medskip
+The global synchronization dominated by the LEM--SCDF dark field requires no material medium, involves no transmission of energy or physical signals, and implies no causal correlation between emitting and receiving particles. Its global coordination is essentially a state transition of the cosmic background itself. Its superluminal propagation speed therefore does not violate the local light-cone causality constraints of special relativity.
+
+\medskip
+All mass and energy in the cosmos collectively participate in shaping the evolution of these LEM fundamental parameters. Consequently, the LEM-SCDF dark field provides a unified underlying physical framework that consistently integrates Maxwell's electromagnetism, Yang--Mills gauge field theory, and Einstein's general relativity.
+
+
+\bigskip
+\textit{\textbf{Note:} Standard Maxwell’s vacuum parameters $c$, $\varepsilon_0$ and $\mu_0$ are measured constants obtained from present-day clean vacuum experiments. There is no proof that these fixed values apply to all eras of cosmic evolution. In the LEM-SCDF framework, we discard static vacuum electromagnetic constants $c$, $\varepsilon_0$ and $\mu_0$, and instead use time-varying global average background parameters to describe the cosmic electromagnetic substrate. The clean modern-style vacuum corresponds to an ideal electromagnetic environment and cannot be treated as the general cosmic state. Such ideal vacuum conditions were absent at least in two key cosmic periods: the post-hadronization plasma phase prior to CMB decoupling, and the reionization epoch up to redshift $1+z=25$, when the whole universe was filled with ionized plasma. It is unreasonable to directly apply today’s vacuum electromagnetic standards to these early cosmic stages.}
+
+
+
+\medskip
+\bigskip
+\textbf{Alternative Approaches to UFT Puzzles}\,\,\,
+Traditional Unified Field Theory (UFT) research has long been hindered by two fundamental obstacles. The primary challenge originates from the quantization of gravity, where general relativity exhibits essential structural incompatibility with standard Yang–Mills gauge field frameworks, rendering conventional quantization schemes infeasible.
+
+\medskip
+Our revised $G_{\mu\nu}$ equation abandons the traditional constant gravitational parameter $G$ and adopts a time‑evolving $c(t)$ variable. By shifting to LEM field quantization, this modified curvature formulation may provide a viable alternative for circumventing the gravitational quantization dilemma.
+
+\medskip
+A second critical issue is the photon‑scattering problem. Conventional cosmological models postulate an extremely hot primordial universe with the constant present‑day speed of light, which generates severe photon scattering and hinders early cosmic particle aggregation and hadronization.
+
+\medskip
+Within the Growing‑$c(t)$ framework, this issue is addressed via the postulated \textit{ZLZT} (Zero‑ Light‑Speed and Zero‑Temperature) primordial state, where both light speed and temperature asymptotically approach zero.
+
+
+\medskip
+\bigskip
+The following Section 9 further discusses the physical implications of the ZLZT primordial postulate. It investigates cosmic evolution starting from the post-hadronization plasma stage through to the CMB epoch, focusing on the physical generation of \textit{Arche-Particle-Substance} and the gradual growth of light speed from an initial near-zero state to $c(t)=1/1100$ at the CMB epoch. 
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		9. The ZLZT Primordial State, \\
+		Confinement Generates Substance, \\
+		and $\boldsymbol{c(t)}$ Evolution
+	\end{center}
+}
+\medskip
+\noindent
+
+Under the assumption of a constant speed of light, the SI definition of mass establishes a tight connection with the speed of light and energy. In this section, we introduce $\boldsymbol{M_{\mathrm{aps}}}$, standing for \textit{Arche-Particle-Substance}, to describe pure substance that is decoupled from the speed of light.
+
+\medskip
+Relying on known static QCD results for bound hadron states, we restructure the conventional energy–mass framework based on the $M_{\mathrm{aps}}$ scale, and propose a distinctive viewpoint: \textit{Confinement Generates Substance}. This idea differs fundamentally from the conventional interpretation that confinement corresponds to energy accumulation. 
+
+\medskip
+This section studies how cosmic substance forms, as well as the gradual rise of the cosmic light speed $c(t)$ from the post-hadronization plasma phase through the CMB era. This work does not explore the intrinsic QCD-driven dynamical mechanism of hadronization.
+
+\medskip
+\textit{\textbf{Note:} In our model, substance, namely \textit{Arche-Particle-Substance} ($M_{\mathrm{aps}}$), is an intrinsic physical entity independent of the speed of light.}
+
+
+\medskip
+\bigskip
+\textbf{A Critical Note on Mass Definition in the New SI System}\,\,\,
+The 2018–2019 revision of the International System of Units (SI) redefined the kilogram based on the Planck constant $h$, aiming to build a complete unit system upon a minimal set of quantized fundamental physical constants. This revision substantially enhances the long-term stability and measurement accuracy of metrological standards.
+
+\medskip
+Nevertheless, this framework blurs the conceptual boundary between intrinsic matter and energy. By anchoring the definition of mass entirely within the energy framework, the official standard treats mass merely as a derivative manifestation of energy. By contrast, the concept of rest mass in traditional physics education provides clear physical intuition.
+
+\medskip
+From the author’s perspective, it is improper to define mass merely as an \textit{energy-equivalent form} at the fundamental level simply to pursue \textit{minimalism} in dimensional foundations. Instead, a more reasonable approach is to maintain clear distinctions at the conceptual level of the SI standard, while adopting the current quantized scheme at the high-precision measurement level.
+
+
+\medskip
+\bigskip
+\textbf{Arche-Particle-Substance}\,\,\,
+The term \textit{arche} derives from Ancient Greek, signifying origin, commencement and fundamental principle. Combined with \textit{particle substance}, $M_{\mathrm{aps}}$ denotes the primordial fundamental substance of cosmic particles.
+
+\medskip
+In modern physics, the electron rest property is commonly quoted in MeV, a unit for rest energy instead of intrinsic mass. The genuine rest inertial substance is derived by dividing this energy by $c^2$.
+
+\medskip
+The proposed quantity $M_{\mathrm{aps}}$ takes the electron rest inertial mass $M_\mathrm{e}$ as its calibration reference, clearly distinguishing the concept of substance from energy conversion.
+
+
+
+
+\medskip
+\bigskip
+\textbf{Hadronization Confinement Energy in QCD}\,\,\,
+In quantum chromodynamics (QCD), mass is described in terms of energy defined by the constant speed of light. The proton rest energy is approximately $m_p c^2 \approx 938.3$ MeV, which consists of four components.
+\[
+E_{p} = m_p c^2 = (2m_u + m_d)c^2 + T_{\rm quark} + E_{\rm gluon} + V_{\rm potential} \,\,.   \eqno(9.1)
+\]
+
+\smallskip
+The first component is the contribution from two up quarks and one down quark. The combined rest energy of its three valence quarks ($uud$) is
+\[
+(2m_u + m_d)c^2 \approx 8.8 \text{ MeV} \,\,.   \eqno(9.2)
+\]
+
+\smallskip
+This quark rest energy accounts for less than $1\%$ of the proton’s total energy. In QCD, the remaining nearly $99\%$ originates from confinement, namely hadronization energy. Therefore, the proton mass is predominantly contributed by confined field energy rather than quark rest mass. The detailed energy composition is expressed as:
+\begin{itemize}
+	\item $T_{\rm quark}$ denotes the kinetic energy of the three confined quarks. Analogous to three billiard balls moving vigorously inside the hadron at relativistic speeds, this term is approximately $600 \text{ MeV}$.
+	
+	\item $E_{\rm gluon}$ stands for the gluon field energy within the hadron. Gluons act like highly viscous glue, moving rapidly inside the hadron and maintaining the volume of the hadronic bag, with an energy of approximately $340 \text{ MeV}$.
+	
+	\item $V_{\rm potential}$ refers to the perturbative potential energy generated by first-order gluon exchange, which is approximately $-25 \text{ MeV}$.
+\end{itemize}
+
+\medskip
+In the above QCD model, the total energy of a proton $E_{p}$ is 938.3 MeV, and the energy of a free electron $E_{e}$ is 0.511 MeV. The value of the former is $\boldsymbol{1836.15}$ times that of the latter, which is the well-known mass ratio between a proton and an electron.
+
+
+
+\medskip
+\bigskip
+\textbf{Confinement Generates Substance}\,\,\,
+In QCD, confinement traps energy\cite{Peskin:1995}; in this work, \textit{Confinement Generates Substance}. This marks a fundamental distinction. Under the assumption of a constant speed of light, energy and substance can be regarded as nearly interchangeable, whereas in a variable-$c$ framework, the two concepts must be strictly differentiated.
+
+\medskip
+Confinement is not a simple process of energy storage. Instead, the confinement process itself is a \textit{substance-forming process}. The majority of cosmic substance originates from hadronization, making confinement the dominant mechanism for the generation of cosmic substance.
+
+\medskip
+High-energy experiments conducted at CERN, Fermilab, BNL and SLAC investigate protons in highly excited states. The observed behaviors of quarks and gluons are energy-driven responses under extreme excitation, and do not necessarily reflect the genuine ground-state substance structure inside hadrons.
+
+\medskip
+The internal structure of a proton has never been directly observed. Accordingly, the energy signatures detected in particle collisions cannot be equated with the intrinsic substance nature residing within hadrons.
+
+\medskip
+\textit{\textbf{Note:} In this model, hadronization is equivalent to materialization. Hadrons function as cosmic real estate — fixed substance assets — while the speed of light acts as the cosmic energy–substance exchange rate. The bulk of cosmic substance formed during early hadronization at an extremely low $c(t)$, corresponding to this low exchange rate.}
+
+\medskip
+QCD attributes cosmic mass to energy freezing at ultra-high temperatures under a constant speed of light; by contrast, this work traces cosmic substance to confinement-driven substance generation under the low early values of $c$. These two physical pictures differ fundamentally.
+
+\medskip
+Once formed, confined substance $M_{\mathrm{aps}}$ permanently remains as substance rather than energy. Any conversion into energy follows the contemporary exchange rate $c(t)^2$, so the energy equivalent of a given quantity of substance rises as $c(t)$ increases. It therefore serves as a core postulate of this model that $M_{\mathrm{aps}}$ is conserved, while energy is not.
+
+\medskip
+For the proton, QCD quantifies confinement as an energy of approximately 938.3 MeV. By comparison, this work describes the confined content as roughly  $\boldsymbol{1836.15}$ electron-$M_{\mathrm{aps}}$ units of substance, which directly connects the confinement effect to substance scale.
+
+
+\medskip
+\bigskip
+\textbf{Photon Scattering and Primordial Temperature}\,\,\,
+Standard QCD cosmology assumes a hot primordial universe with two unsolved flaws: intense photon scattering blocks hadronization, and cosmic expansion cannot account for uniform early thermal distribution.
+
+\medskip
+The Growing-$c(t)$ ZLZT state begins with near-zero temperature and light speed, erasing strong primordial photon scattering and removing obstacles to hadronization.
+
+\medskip
+Hadronization captures surrounding energy to form $M_{\mathrm{aps}}$ substance. This energy-consuming process cools the cosmos and yields a naturally homogeneous early thermal field.
+
+
+\medskip
+\bigskip
+\textbf{Temperature and Light-Speed Thresholds in the ZLZT Ansatz}\,\,\,
+As the speed of light $c$ is universally treated as a constant, standard quantum chromodynamics (QCD) studies on the hadron-to-quark-gluon plasma (QGP) transition only examine the temperature dependence of the deconfinement critical point. No existing literature addresses how a variable light speed would alter this critical threshold.
+
+\medskip
+Hydrogen ionization is a QED-governed two-body dissociation process that obeys the Bohr scaling law, yielding a quadratic light-speed dependence  $\boldsymbol{T_{\rm ion} \propto c^2}$ for the critical ionization temperature.
+
+\medskip
+To construct a self-consistent variable-$c(t)$ cosmological model, we adopt a simple power-law relation to distinguish QED and QCD phase transitions. 
+
+\medskip
+Within hadrons, quarks and virtual gluons exhibit strong multi-body collective interactions. We therefore hypothesize the QCD deconfinement temperature follows a cubic light-speed scaling $\boldsymbol{T_{\rm QGP} \propto c^3}$. This relation is just a phenomenological assumption of the ZLZT framework, not a standard result of fixed-$c$ QCD.
+
+\medskip
+Under this assumption, if the speed of light falls to $1/7137.66$ of its present value, corresponding to $c(t) \approx 42\,\mathrm{km/s}$, an extremely low value approaching zero, the hydrogen ionization temperature scales down to $1.96\ \mathrm{K}$. In other words, at this reduced light speed threshold, any temperature above $1.96\ \mathrm{K}$ will dissociate neutral hydrogen atoms into electromagnetic plasma.
+
+\medskip
+If we apply this cubic scaling rule to QCD deconfinement, the current QGP transition temperature of $10^{12}\,\mathrm{K}$ would scale down by a factor of $1/7137.66^3$ during the early ZLZT stage. This results in a residual temperature of about $2.75\,\mathrm{K}$. 
+
+\medskip
+From this sequential inference, if the cosmic speed of light drops below $42\,\mathrm{km/s}$ (or $21\,\mathrm{km/s}$, $14\,\mathrm{km/s}$) while the surrounding temperature remains close to $2.75\,\mathrm{K}$ at the QGP threshold epoch $\boldsymbol{z_{\star}}$, all hadronic structures dissociate completely into free quarks and gluons, yielding a pure quark–gluon universe free of bound hadrons. 
+
+\medskip
+This constitutes our inference on the speed-of-light and temperature thresholds of the primordial Zero-Light-Speed and Zero-Temperature (ZLZT) state. When the temperature is fixed at $2.75\,\mathrm{K}$ and the speed of light rises from $21\,\mathrm{km/s}$ to $42\,\mathrm{km/s}$ or $63\,\mathrm{km/s}$, the hadronization process accelerates gradually, and more frequent transitions from quark-gluon plasma to hadrons take place. Correspondingly, the Confinement-Generates-Substance process becomes increasingly active.
+
+
+
+\medskip
+\bigskip
+\textbf{The Inapplicability of LEM-SCDF to the QGP Epoch}\,\,\,
+Maxwell’s equations only describe electromagnetic (U(1)) interactions and carry a limited scope of validity. In contrast, the quark-gluon plasma (QGP) epoch is governed predominantly by the strong force (SU(3) color interactions). This draws a distinct physical boundary: classical electrodynamics fails to fully characterize the behaviors arising within QGP.
+
+\medskip
+Furthermore, all existing theoretical and experimental investigations of QGP adopt the assumption of a constant vacuum light speed $c_0$, which stands in stark conflict with the variable-$c$ premise laid out in LEM-SCDF. 
+
+\medskip
+The LEM-SCDF framework is postulated to hold from the post-hadronization plasma epoch through the CMB decoupling epoch up to the present day, yet we explicitly exclude QGP and the hadronization transition from the domain of validity of LEM-SCDF.
+
+
+
+\medskip
+\bigskip
+\textbf{Substance Clustering Shapes $\boldsymbol{c(t)}$ Dynamics}\,\,\,
+This subsection puts forward a tentative directional conjecture: prior to the CMB epoch, the temporal growth of the cosmic speed of light $c(t)$ originates from the local clustering of cosmic substance.
+
+\medskip
+After hadronization completes, the originally homogeneous and dispersed substance begins to accumulate within localized spatial regions, while bound hadronic substance becomes progressively denser. This is the substance clustering process we address here.
+
+\medskip
+This difference in structure breaks the early homogeneous distribution of cosmic substance. It changes the overall electromagnetic background controlled by the LEM-SCDF field. 
+
+\medskip
+As substance continuously accumulates into dense localized structures, the spatial inhomogeneity of cosmic substance distribution intensifies. The background electromagnetic parameters coordinated by LEM-SCDF evolve synchronously, which further drives the gradual growth of cosmic $c(t)$.
+
+\medskip
+This forms a self-strengthening feedback loop. To provide an intuitive mathematical reference for this line of reasoning, we employ statistical methods and construct a simplified two-dimensional model to quantify the degree of substance clustering.
+
+\bigskip
+Consider a two-dimensional square region $\Omega$ with total area $A$. Let $\rho(x,y)$ denote the areal density distribution over the plane, with the total substance conserved as
+\[
+S = \iint_\Omega \rho(x,y)\,\mathrm{d}x\mathrm{d}y = \mathrm{constant} \,\,.   \eqno(9.3)
+\]
+
+\smallskip
+The global mean density is given by
+\[
+\bar{\rho} = \frac{S}{A} \,\,.   \eqno(9.4)
+\]
+
+\smallskip
+For a perfectly uniform distribution, $\rho(x,y) \equiv \bar{\rho}$ holds everywhere inside $\Omega$, which corresponds to the early fully homogeneous post-hadronization plasma state we postulate.
+
+\medskip
+When substance gradually aggregates into localized clumps while the total amount of substance remains unchanged, the density field becomes inhomogeneous, with certain regions denser and others more rarefied.
+
+\medskip
+To quantify the magnitude of spatial inhomogeneity and dispersion, we introduce the variance of the substance density field:
+\[
+\sigma^2_\rho = \frac{1}{A}\iint_\Omega \big[\rho(x,y) - \bar{\rho}\big]^2 \mathrm{d}x\mathrm{d}y \,\,.   \eqno(9.5)
+\]
+
+\smallskip
+In the early uniform state, $\sigma^2_\rho = 0$. 
+
+\medskip
+As substance clusters and the distribution grows more uneven, $\sigma^2_\rho$ rises monotonically. We define a dimensionless variation coefficient as
+$$
+C_\rho = \frac{\sigma_\rho}{\bar{\rho}}
+= \frac{1}{\bar{\rho}} \sqrt{\frac{1}{A}\iint_\Omega \big[\rho(x,y) - \bar{\rho}\big]^2 \mathrm{d}x\mathrm{d}y} \,\,.   \eqno(9.6)
+$$
+
+\smallskip
+To enable cross-comparison across distinct cosmic evolutionary stages. Larger values of $C_\rho$ correspond to stronger spatial differentiation of substance, consistent with the rising trend of $c(t)$ stated in our conjecture.
+
+\bigskip
+From the perspective of information theory and statistical entropy, we express the normalized probability density as
+\[
+p(x,y) = \frac{\rho(x,y)}{S}   \,\,,   \eqno(9.7)
+\]
+
+\smallskip
+which obeys the normalization condition $\iint_\Omega p(x,y)\,\mathrm{d}x\mathrm{d}y = 1$. The information entropy characterizing the ordering of the substance distribution reads
+\[
+H = -\iint_\Omega p(x,y)\,\ln p(x,y)\,\mathrm{d}x\mathrm{d}y   \,\,.   \eqno(9.8)
+\]
+
+\smallskip
+With fixed total substance and fixed geometric boundaries, a perfectly uniform distribution yields the maximum entropy $H_{\max} = \ln A$. As substance assembles into clustered structures, the system becomes more ordered and entropy decreases. We accordingly define the entropy reduction
+\[
+\Delta H = H_{\max} - H   \,\,,   \eqno(9.9)
+\]
+
+\smallskip
+as a direct metric for substance aggregation and spatial inhomogeneity. 
+
+\medskip
+Taken together, the density variance $\sigma^2_\rho$ and entropy reduction $\Delta H$ constitute a consistent dual statistical description of substance dispersion and clustering within the plasma epoch.
+
+\bigskip
+This model only serves as a heuristic auxiliary illustration to clarify the correlation between substance inhomogeneity and the evolutionary trend of $c(t)$. The full mathematical construction and rigorous physical proof linking substance clustering to the background electromagnetic parameters of LEM-SCDF are left for future research.
+
+
+\medskip
+\bigskip
+\textbf{The Dawn of Neutral Atoms: Marching toward CMB Decoupling}\,\,\,
+As the local condensation of cosmic substance continues, the speed of light $c(t)$ rises steadily. This increasing light speed directly strengthens the Coulomb interaction between protons and electrons. Consequently, the characteristic orbital radius determined jointly by $c(t)$ and the fine-structure constant gradually expands from an extremely tiny initial value until it becomes large enough to accommodate electrons orbiting protons, reaching roughly $1/1100$ of the present-day Bohr radius derived in Section 7.
+
+\medskip
+Under this enhanced electromagnetic binding force, electrons finally gain the physical conditions required to stably orbit around protons. Although the forming atomic structures are still prone to re-ionization at this early stage, the probability of maintaining stable bound states increases continuously as $c(t)$ grows. As more electrons successfully bind to protons and primitive hydrogen atoms accumulate in large quantities, the universe begins to transition away from its plasma-dominated state. 
+
+\medskip
+During the cosmic evolution from the post-hadronization plasma epoch ($\boldsymbol{z_{\star}}$) to the CMB decoupling epoch ($\boldsymbol{z_{0}}$), the speed of light gradually increases from below $42\ \mathrm{km/s}$ to $1/1100$ of the present-day $c_0$. This evolutionary process may span $4$--$5\ \mathrm{Gyr}$, which is vastly longer than the $36$--$37\ \mathrm{kyr}$ predicted by the standard $\Lambda$CDM model. This span is obtained by a simple power-law estimation from the $c(t)$ curve, covering the rise from $1/7137.66$ to $1/1100$ of $c_0$.
+
+\medskip
+This continuous formation of neutral hydrogen ultimately guides cosmic evolution onward toward the epoch of CMB decoupling, opening a brand-new cosmic realm governed by Einstein’s field equations.
+
+
+
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		10. Cosmological Redshift: An Unanswered\\
+		Causal Gap and Its Physical Closure		 
+	\end{center}
+}
+\medskip
+\noindent
+
+For a full century, modern cosmology has left a fundamental logical gap unaddressed. In this section, we confront this gap directly.
+
+\medskip
+\bigskip
+\textbf{Our Challenge}\,\,\,
+We begin with a concrete result from Section 7. There, we re-examined the behavior of photon frequency, wavelength and the speed of light. Consider an ancient photon with $\nu_{n0}=1.0\times10^{15}\,\mathrm{Hz}$, emitted at redshift $1+z=4.0$. After nearly ten billion years of propagation through intergalactic space, cosmological redshift has reduced its frequency to $2.5\times10^{14}\,\mathrm{Hz}$ at the present epoch.
+
+\medskip
+We put a direct question to the cosmologist: \emph{``The photon has left its host galaxy and travelled through nearly empty space for ten billion years. Why does it obediently, strictly following the rules, know that it must redshift as the universe expands? Who notified the photon? How was the photon notified?''}
+
+\medskip
+The standard answers are familiar. One says: space itself expands, stretching the photon's wavelength, just as waves drawn on a balloon elongate when the balloon is inflated. Another says: in the FRW metric, the scale factor $a(t)$ enters the null geodesic equation, and the frequency naturally scales as $a(t)^{-1}$; the calculation gives the redshift, so no further mechanism is required.
+
+\medskip
+Neither answer, however, directly addresses the physical mechanism behind photon redshift. Both are either geometric analogies or mathematical re-statements that effectively mask the underlying causal question.
+
+\medskip
+We return to our challenge. The logical chain is remarkably clear:
+\begin{itemize}
+	\item \textbf{Premise\_1}: The photon has long since departed from all material sources — its emitting galaxy, massive bodies, and local gravitational fields.
+	
+	\item \textbf{Premise\_2}: During its flight, while the cosmic scale expands, the photon's frequency redshifts strictly and proportionally.
+	
+	\item \textbf{Premise\_3}: If the photon in flight has no remaining connection to the rest of the universe, by what means does it \emph{know} that the universe has expanded? By what means does it \emph{adjust} its frequency accordingly?
+	
+	\item \textbf{Premise\_4}: If the photon remains in continuous contact with the universe throughout its flight, so as to instantly receive the expansion information and respond with redshift, then \emph{must not} the propagation speed of this contact mechanism be vastly greater than the speed of light itself?
+	
+	\item \textbf{Premise\_5}: Is the message carried by this contact a direct instruction about the "cosmic expansion scale"? That seems impossible. The geometric quantity of scale expansion has no inherent physical connection to the electromagnetic oscillations of a photon.
+	
+	\item \textbf{Premise\_6}: Could the contact instead deliver individual frequency-adjustment commands to each photon separately? That is equally impossible. Photons across the cosmos possess a vast range of different frequencies; there is no universal command that could tell every photon exactly how much to shift.
+
+	\item \textbf{Premise\_7}: With all other possibilities excluded, \emph{do you not agree} that only one self-consistent resolution remains? The underlying signal transmitted by a global field can only be the intrinsic property of light itself — the global synchronized variation of the vacuum light speed $c(t)$. No multiple alternative answers exist.
+\end{itemize}
+
+\smallskip
+The existing logical gap, in our view, constitutes a genuine \textbf{\textit{causal deficit}} in the standard redshift interpretation.
+
+\medskip
+Nor are these concerns new. The physical mechanism underlying cosmological redshift has been questioned before: Feynman noted that it is not a Doppler shift but a change occurring to the photons themselves during their journey\cite{Feynman:2011}; Davies further identified a persistent causal deficit, arguing that attributing redshift to spatial expansion alone replaces physical mechanism with geometric description\cite{Davies:1995}. 
+
+\medskip
+\bigskip
+\textbf{A Method Taught by History}\,\,\,
+The history of physics teaches us: inferring a causal gap in existing theory from observational appearances, and thereby revealing an as-yet-undiscovered global physical entity, is a powerful and productive method of thought — one that has succeeded repeatedly at critical moments in the history of science.
+
+\medskip
+Einstein, confronted with the striking equivalence between inertial and gravitational mass, refused to treat it as coincidence; he concluded that gravity cannot be an action-at-a-distance force, but must be a manifestation of spacetime geometry itself — and thus discovered general relativity. 
+
+\medskip
+Oersted first demonstrated that electric currents generate magnetic fields. Drawing on this symmetry, Faraday conjectured the reverse effect: a time-varying magnetic field should induce an electric field, and he verified this phenomenon experimentally to establish the law of electromagnetic induction.
+
+\medskip
+In both cases, the crucial step was not fitting the data, but recognizing that the existing framework lacked a physical agent — and then demanding that the agent must exist.
+
+
+
+\medskip
+\bigskip
+\textbf{The Only Causally Sound Conclusion}\,\,\,
+We apply the same reasoning here. The only causally sound conclusion is this: There must exist a mechanism — propagating far faster than light and covering the entire universe — that continuously notifies and modulates the photon throughout its entire journey. 
+
+\medskip
+The cosmos must be pervaded by a global, extremely fast synchronized field, to which every photon remains coupled along its entire path of propagation. This field responds to the global dilution of the cosmic average density and to the universal evolution of the speed of light, continuously adjusting the photon's frequency in accordance with the expanding background.
+
+\medskip
+In other words, the physical interpretation of cosmological redshift requires the existence of a universal background field with propagation speed far exceeding that of light. This is precisely the core function that the LEM--SCDF dark field fulfills. 
+
+\medskip
+Although the expression of LEM propagation speed $v_{\scriptscriptstyle\mathrm{LEM}}(t)$ in Eq.~(8.6) adopts the Planck density and the Friedmann density as subjectively chosen scaling factors, other mathematically self-consistent forms still exist. Nevertheless, the physical reality of this dark field is not a random postulate.
+
+\medskip
+It is a logical and physical necessity: a photon, long after leaving all local sources, continues to obey a frequency evolution that cannot be explained by local interactions alone. Behind this observed behavior, there must exist a physical mechanism that propagates far faster than light and maintains continuous contact with the universe as a whole.
+
+
+
+
+\medskip
+\bigskip
+\textbf{Cosmic Redshift is Just the Cosmic Light-Speed Expansion}\,\,\,
+From the above challenges we have posed, to the conclusion we have reached, one \emph{unavoidable} truth emerges: cosmic redshift is just the expansion of the global speed of light $c(t)$!
+
+\medskip
+\emph{For an ancient photon emitted ten billion years ago, the redshift accumulated over its long journey is itself the record of ten billion years of vacuum light-speed evolution.}
+
+\medskip
+But the inherent limitation in observation blinds us: ancient photons and their redshift are observable, yet we possess \textbf{\textit{zero}} direct evidence for the actual speed of light in the early universe. We can now, under the brand new LEM-SCDF paradigm, declare to the world:
+
+\medskip
+\emph{Cosmic spatial expansion is fundamentally light-speed expansion. Redshift is merely the observable signature of global growing-$c(t)$ variation; the two are two facets of a single unified physical process.}
+
+\medskip
+Four centuries is infinitesimal against the cosmic evolutionary timescale. Since Galileo (1638) and R\o mer (1676) first established that light propagates at finite speed, generations of measurements have continually reinforced our conviction: the speed of light is a universal constant, set by the Creator, unchanging!
+
+\medskip
+We are now beginning to realize that, to the cosmic giant, four hundred years is merely a single heartbeat. If the speed of light is not decreed by a Creator, but instead shaped collectively by every milligram of dust and every joule of energy in the universe — this is, in fact, a more harmonious and beautiful cosmos.
+
+
+
+\medskip
+\bigskip
+\textbf{The Universe as a Coherent Physical Whole}\,\,\,
+In conventional physics, no intrinsic mechanism universally connects all cosmic mass and energy, so the universe remains merely a vast collection of isolated local grains of sand, lacking global coordination. Yet each grain silently upholds its two sacred parameters—$c$ and $G$—unchanging, as if decreed by the Creator.
+
+\medskip
+The LEM-SCDF field provides a physical mechanism that instantaneously links every particle and photon through synchronized modulation. It encodes the distribution of all coupled mass-energy and delivers large-scale cosmic variations uniformly to every participating component. The universe thus becomes a dynamically coherent physical whole, unified by real, continuous field interaction.
+
+\medskip
+Previous definitions of the universe were vague and imprecise. With the introduction of LEM-SCDF, the concept becomes strict and unambiguous: every elementary unit of mass and energy participates in shaping the evolution of the LEM-SCDF; the complete collection of all such mass and energy belongs to our defined universe, regardless of where it is distributed or how far it lies from any reference center.
+
+\medskip
+Within this framework, cosmic expansion acquires a strictly well-defined physical meaning. Previously, a well-known logical paradox persisted: if the universe is already spatially infinite, what does Friedmann expansion describe? Expansion of an infinite scale? Within our new picture, the answer is clear: expansion describes the \textit{statistical} enlargement of the distribution domain and the corresponding  \textit{statistical} dilution of the density inside the LEM-SCDF coupled system.
+
+\bigskip
+In the new picture, every photon experiences an active and continuous global modulation by the only entity that connects all cosmic constituents. This is not a decorative addition to the theory; it is the causal closure that the redshift phenomenon itself demands.
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		11. Discussion on Experimental\\
+		Detectability of Tiny Evolving $\boldsymbol{c(t)}$ 
+	\end{center}
+}
+\medskip
+\noindent
+
+Since the 1983 SI revision, the vacuum speed of light has been fixed to $c = \texttt{299,792,458} \text{\,m/s}$, rendering $c$ no longer an independently measurable physical quantity. The constancy of $c$ thereby serves as a fundamental axiom for the design and operation of nearly all metrological instruments.
+
+\medskip
+Under the deductions of our growing-$c(t)$ model, the annual relative variation rate of $c(t)$ lies on the order of $10^{-11}$. Such a tiny deviation surpasses the precision limit of all existing human-made measuring instruments and experimental techniques by at least two to three orders of magnitude. 
+
+\medskip
+Only leading experimental physicists, innovative measurement schemes and state-of-the-art facilities can potentially realize quantitative detection of the tiny evolving $c(t)$. The brief discussion presented in this section does not constitute any practically implementable experimental proposal.
+
+
+\medskip
+\bigskip
+\textbf{Historical Measurements of the Speed of Light}\,\,\,
+A series of historical experiments gradually improved the measurement precision of $c$ via distinct physical mechanisms, summarized concisely below:
+\begin{itemize}
+	\item Fizeau rotating toothed wheel (1849): Ground-based direct time-of-flight measurement of light, precision $\sim 10^{-4}$, the first quantitative terrestrial determination of $c$.
+	\item Foucault–Michelson rotating mirror scheme (Foucault 1850, Michelson octagonal mirror refinement 1926): Optimized optical layout to suppress mechanical systematic errors, lifting measurement precision to $\sim 10^{-6}$.	
+	\item Microwave resonant cavity (1946–1970s): Calculated $c$ from the identity $c=\lambda f$ by calibrating resonant frequency and cavity geometry; precision $\sim 10^{-9}$, the primary metrological standard prior to the 1983 SI redefinition.	
+	\item Stabilized laser interferometry (1972 NBS experiment): Separately measured the frequency and vacuum wavelength of frequency-stabilized lasers via atomic clocks and interferometric techniques, combining results to compute $c=\lambda\nu$; precision better than $10^{-10}$, which laid the experimental foundation for the fixed definition of $c$ in the SI system.
+\end{itemize}
+
+
+\medskip
+\bigskip
+\textbf{Estimated Variation Rate of the Growing-$\boldsymbol{c(t)}$ Model}\,\,\,
+Within the compact model, the derivative of $C(t)$ is given by Eq.~(5.14). Taking the present moment as $t=0$ and substituting the parameters $k$ and $\beta$ from Eq.~(5.20), we obtain $\dot{C}(t)=0.03145$, corresponding to $3.145 \times 10^{-11}\,\mathrm{yr}^{-1}$. Scaled to $c_0$, this yields a secular variation of $9.43\,\mathrm{mm\!\cdot\!s^{-1}\!\cdot\!yr^{-1}}$.
+
+\medskip
+For the ultra-fine model, we utilize the \texttt{Planck18} standard redshift dataset and carry out calculations with $z_1$ from Eq.~(6.1), taking the average value over the latest $10^4$ years. This configuration yields a relative growth rate of $6.89\%$ per Gyr, or equivalently $6.89 \times 10^{-11}\ \mathrm{yr}^{-1}$. When normalized to $c_0$, this corresponds to an annual variation of $20.7\ \mathrm{mm\!\cdot\!s^{-1}\!\cdot\!yr^{-1}}$.
+
+\medskip
+When evaluating the rate on monthly or daily timescales, the above yearly variation values shall be divided by $12$ and $365$, which correspondingly requires measurement precision up to $10^{-12}$ and $10^{-13}$, respectively. 
+
+\medskip
+\textit{\textbf{Note:} Beyond the foregoing precision constraints, another critical concern lies in avoiding circular reasoning. Since the metrological standard definition $\texttt{Metra}$ and photon wavelength $\lambda$ are built upon the fundamental axiom of invariant $c$, entirely new measurement frameworks must be devised.}
+
+
+\medskip
+\bigskip
+\textbf{HEPS Device Conditions for Exploring Tiny $\boldsymbol{c(t)}$ Evolution}\,\,\,
+The High Energy Photon Source (HEPS) in Huairou, Beijing, is a cutting-edge fourth-generation synchrotron radiation facility that provides high-precision, high-resolution experimental conditions\cite{HEPS:2022}. Its key performance advantages are summarized below:
+
+\begin{itemize}
+	\item HEPS hosts a 6\,GeV high-energy electron storage ring, generating high-purity hard X-ray beams for stable calibration of physical parameters.
+	
+	\item It supports atomic-scale charge density mapping, single-nanoparticle imaging and high-coherence diffraction, breaking the limits of traditional fringe-counting measurement methods.
+	
+	\item Its fully oil-free ultra-high-vacuum system maintains a base pressure below $1\times10^{-9}\,\mathrm{Pa}$. Such a setup removes refractive interference from air and supplies pure vacuum environments for light-speed-related experiments.
+	
+	\item The facility’s nanoprobe achieves a focused spot size of 9.5–12.5\,nm, providing atomic-level spatial resolution for precise calibration of optical paths and lattice geometries.
+	
+	\item The beamline delivers picosecond temporal resolution ($10^{-12}\,\mathrm{s}$), upgradable to 100\,fs with ultrafast detectors for high-precision timing of faint transient physical signals.
+	
+	\item HEPS uses atomically polished Kirkpatrick–Baez (KB) folding focusing mirrors with sub-angstrom surface flatness ($<0.1\,\mathrm{nm}$), minimizing optical path distortion.
+\end{itemize}
+
+\medskip
+Whether the experimental community at HEPS will adopt the growing-$c(t)$ conjecture and further design dedicated experimental schemes remains undetermined.
+
+
+
+
+
+\vskip 0.1in
+\section*{
+	\begin{center}
+		12. A Fresh Perspective \\
+		on Outstanding Problems \\
+		via the Growing-$\boldsymbol{c(t)}$ Framework
+	\end{center}
+}
+\medskip
+\noindent
+
+In this section, we will re-examine several outstanding problems under this growing-$c(t)$ model, including the cosmic photon budget crisis, the early galaxy stellar mass tension, the Population III star timescale conflict, the early solar lithium abundance puzzle, the late emergence of advanced intelligent life, and several other open issues.
+
+\medskip
+\bigskip
+\textbf{Alternative Explanation for Cosmic Acceleration}\,\,\,
+In the standard $\Lambda$CDM paradigm, dark energy acts as a homogeneous background fluid. It drives the continuous stretching of cosmic space and dominates the total mass-energy budget in the late universe, as inferred from observations of distant supernovae\cite{Riess:1998}.
+
+
+\medskip
+The revised Einstein field equation in Section 8 reveals the fundamental physical mechanism behind cosmic expansion. In the growing-$c(t)$ framework, cosmic expansion directly couples to the slow, monotonic growth of light speed $c(t)$. As the universe evolves, primordial matter aggregates into dense localized clumps. This leaves intergalactic volumes highly tenuous and reshapes the global electromagnetic background via the LEM-SCDF field. According to the scaling law $G(t)\propto c(t)^{-2}$, the steady growth of $c(t)$ weakens the effective long-range gravitational coupling between separated matter.
+
+\medskip
+We hold a moderate, non-exclusive stance on dark energy. The growing-$c(t)$ framework does not rule out the cosmological constant or dark energy. Instead, it offers an independent physical route to reproduce the observed cosmic acceleration. 
+
+\medskip
+\textit{\textbf{Note:} We apply the same cautious stance to the dark matter framework. Stronger effective gravity from diminished early $c(t)$ can partially explain high-redshift gravitational shortfalls. However, our mechanism cannot resolve the 400-fold mass mismatch observed in the low-redshift Coma Galaxy Cluster\cite{Zwicky:1933}.}
+
+
+
+
+\medskip
+\bigskip
+\textbf{Reinterpreting the Cosmic Photon Budget Crisis at $\boldsymbol{1+z=25}$}\,\,\,
+Standard $\Lambda$CDM rests on two premises: a hot Big Bang cooling scenario, and the tSZ thermal scaling relation $T(z)=T_0(1+z)$ with $T_0=2.725\ \mathrm{K}$. This relation predicts an intergalactic temperature of $68\,\mathrm{K}$ at $1+z=25$ and $19\,\mathrm{K}$ at $1+z=7$, where the former temperature is approximately 3.58 times the latter.
+
+\medskip
+Per atomic physics, photons above 13.6\,eV ionize hydrogen instantly; recombination speeds up sharply at lower gas temperatures. At $1+z=25$, early galaxies emit massive far-ultraviolet photons matching the 91.2\,nm ionization threshold. Standard theory uses the $68\,\mathrm{K}$ temperature to argue recombination is slow, and abundant UV photons would fully ionize intergalactic hydrogen at high redshift.
+
+\medskip
+This prediction clashes with joint observations\cite{Madau:2023}. JWST detects extreme UV photon output at $1+z=25$, while $21\tinysp$CM radio signals prove widespread neutral hydrogen persists at the same redshift. This inconsistency forms the photon budget crisis, which standard cosmology only resolves near $1+z=7$ via falling UV production and faster recombination.
+
+\medskip
+The $T(z)=T_0(1+z)$ formula assumes fixed light speed, conflicting with our growing-$c(t)$ model where $c(t)=c_0/25$ at $1+z=25$ and $c(t)=c_0/7$ at $1+z=7$. We separate two unrelated temperature quantities:
+\begin{itemize}
+	\item $T_{\rm rad}(z)$: Effective blackbody temperature of distant photons measured by the tSZ effect;
+	\item $T_{\rm gas}(z)$: True thermodynamic temperature of diffuse intergalactic hydrogen controlling ionization and recombination.
+\end{itemize}
+
+Standard cosmology incorrectly equates $T_{\rm rad}(z)$ and $T_{\rm gas}(z)$; our framework decouples them entirely.
+
+\medskip
+Under our ZLZT cold primordial state, $T_{\rm gas}(z)<10\ \mathrm{K}$ at both $1+z=25$ and $1+z=7$. The ultracold medium creates an extremely high recombination rate. Ionized particles rapidly recombine into neutral hydrogen after each photon collision, naturally reconciling all observational data without artificial fitting parameters. 
+
+\medskip
+Another possible reason is that the $\Lambda$CDM model makes incorrect estimates of the mass and density of stars at the $1+z=25$ epoch, leading to a serious overestimation of their UV photon output. This point will be analyzed in the next subsection.
+
+\medskip
+\textit{\textbf{Note:} This text focuses solely on the reionization-related narrow photon budget paradox, separate from the full-band EBL problem. We accept tSZ measurements but reject the unproven identification of radiative temperature and intergalactic gas temperature.}
+
+
+\medskip
+\bigskip
+\textbf{Re-evaluating Stellar Mass and Density}\,\,\,
+Within standard Newtonian celestial mechanics and conventional cosmology, all stellar and galactic mass calibrations fundamentally rest on the gravitational constant $G_0$, which is calibrated locally within the Solar System. Standard cosmological frameworks implicitly treat $G=G_0$ as invariant across all cosmic redshifts, and all subsequent calculations of stellar density, radius and stellar evolution obey this fixed scaling rule.
+
+\medskip
+Recent JWST observations have identified candidate compact galaxies at extremely high redshifts ranging from $z\sim10$ to $z\sim25$. Under the assumption of a fixed gravitational constant $G_0$, the estimated average density of objects in this high-redshift regime approaches or even exceeds the nuclear saturation density\cite{Labbe:2023}.
+
+\medskip
+If density exceeds this saturation threshold, runaway nuclear fusion ignites inside stars, driving their rapid collapse into black holes. This theoretical outcome conflicts with the stable, long-lived high-redshift systems observed by space telescopes. Standard theories seek to resolve this tension by invoking unconfirmed physical mechanisms: super-Eddington accretion or the direct collapse of massive primordial gas clouds; however, neither scenario has been validated via local astronomical observations.
+
+\medskip
+Turning to Newtonian celestial mechanics, orbital motions of planets, binary stars and virialized galaxies only constrain the combined product $GM$. This degeneracy arises directly from conservation of angular momentum. For a two-body gravitational system with reduced mass $\mu=\frac{Mm}{M+m}$, orbital angular momentum takes the form $L=\mu\sqrt{G M a(1-e^2)}$, where $a$ and $e$ represent the orbital semi-major axis and eccentricity, respectively.
+
+\medskip
+Since only $GM$ appears in the expression, orbital, angular-momentum and light-curve observations cannot separate $G$ from the central mass $M$. For closed systems with conserved angular momentum, any $(G,M)$ pair with fixed $GM$ yields identical orbits, periods and velocity profiles.
+
+\medskip
+Our Growing-$c(t)$ model hypothesizes that the gravitational constant $G(t)$ rises with redshift following the relation $G(t)\propto c(t)^{-2}$. This indicates gravitational coupling was far stronger in the early high-redshift universe. If we retain the orbital observational invariant $G(t)M(t)$, the intrinsic baryonic mass $M(t)$ and density of celestial objects will be much lower than the predictions from standard astronomical models. 
+
+\medskip
+The cosmic scaling law of the Growing-$c(t)$ framework breaks the degeneracy between $G$ and $M$, shifting stellar density distributions to milder, physically consistent ranges compatible with the nuclear saturation limit of baryonic matter.
+
+\medskip
+The Growing-$c(t)$ model introduces a previously overlooked fundamental scaling degree of freedom into the standard $\Lambda$CDM analysis framework. Future work requires joint constraints combining atomic scaling derived from the Bohr radius, primordial nucleosynthesis, and binary orbital kinematics to resolve the $GM$ degeneracy and establish revised mass scaling relations valid across all cosmic epochs.
+
+
+
+
+
+\medskip
+\bigskip
+\textbf{Resolving Timescale Conflict for Population III Stars}\,\,\,
+Within the standard $\Lambda$CDM model, the first generation of metal-free primordial stars---Population III stars---inevitably form with extremely large masses, ranging from ten to several hundred solar masses, due to the absence of metal-line cooling in primordial gas clouds. The standard $\Lambda$CDM model predicts that these very massive Population III stars remain on the main sequence for merely two to three million years\cite{Topping:2023}.
+
+\medskip
+This canonical prediction creates a severe timescale conflict with recent JWST observations of celestial objects in the high-redshift range $z\sim10$ to $z\sim25$. JWST has identified fully formed, massive galaxies that emerged merely several hundred million years after the Big Bang. If all these primordial massive stars burn through their nuclear fuel and die within just a few million years, galaxy assembly, supernova feedback, and metal enrichment must proceed at an unphysically rapid pace to produce the observed mature galaxies.
+
+\medskip
+To alleviate this conflict with JWST observations, cosmologists have proposed unconfirmed ad-hoc physical hypotheses, including dark matter annihilation heating inside stellar cores and strongly top-heavy initial mass function (IMF) distributions.
+
+\medskip
+We argue that the extremely short lifetimes of primordial stars in the standard $\Lambda$CDM model originate fundamentally from an untested assumption: that the gravitational constant $G=G_0$ remains invariant across all cosmic epochs. This fixed-$G$ prior systematically overestimates the baryonic mass of high-redshift primordial objects.
+
+\medskip
+Our Growing-$c(t)$ framework follows the relation $G(t)\propto c(t)^{-2}$, indicating that gravitational coupling was significantly stronger at high redshifts in the early universe. Under the constraint of conserved orbital observables, the enhanced early $G(t)$ necessarily reduces the intrinsic baryonic mass $M(t)$ of primordial stars. Crucially, this mass reduction effect dominates over the strengthened gravitational coupling, yielding a substantially weakened core compression in early stars.
+
+\medskip
+Stellar physics establishes a robust mass-luminosity relation $L\propto M^{3\sim4}$, implying that stellar energy consumption rises superlinearly with mass. A moderate reduction in intrinsic stellar mass dramatically suppresses the nuclear burning rate, whereas the total nuclear fuel content decreases only linearly. Consequently, the main-sequence lifetime of primordial stars is significantly extended, naturally alleviating the extreme time pressure for early galaxy assembly and metal enrichment.
+
+\medskip
+Therefore, the Growing-$c(t)$ framework may resolve this severe timescale conflict without invoking exotic heating mechanisms or fine-tuned initial mass distributions. By breaking the $GM$ degeneracy and revising the high-redshift stellar mass scaling, early stellar evolution timescales return to physically consistent ranges, offering an elegant and self-consistent explanation for the mature galactic structures observed in the extremely early universe.
+
+
+
+
+\medskip
+\bigskip
+\textbf{The Early Solar Lithium Abundance Puzzle}\,\,\,
+Standard stellar evolution theories assume a constant speed of light $c$. Based on this premise, they predict a definite primordial lithium abundance for the early Sun. However, high-precision spectroscopic observations have long revealed a marked discrepancy: the lithium content on the solar surface is merely one-third of the theoretical prediction. This well-known inconsistency is referred to as the long-standing solar lithium puzzle.
+
+\medskip
+To fix this problem, existing theories add extra assumptions. These include stronger internal mixing, early mass loss, or lithium hiding in planets\cite{Korn:2019}. However, there is no direct proof for these ideas, and they fail to provide a unified, self-consistent physical picture.
+
+\medskip
+Within the growing-$c(t)$ framework proposed in this paper, the Solar System formed at a cosmic redshift of $1+z\approx1.43$. Following the scaling law $c(z)=c_0/(1+z)$, the vacuum light speed at the epoch of solar formation was roughly 70\% of its present-day value. Correspondingly, the Bohr radii of hydrogen, lithium, carbon, and all other elements shrink to 70\% of their present-day sizes, imposing inherent limits on the initial lithium reservoir of the protosun.
+
+\medskip
+Lithium is a light element. Lower $c(t)$ and smaller Bohr radii together make it easier for lithium to start nuclear burning. Lithium atoms quickly burn away in the young Sun, so much lithium is lost early on. This process creates a solar surface lithium level much lower than calculations that use a fixed speed of light.
+
+\medskip
+Many young stars lie within ten light-years of the Sun. These stars formed at redshifts near $z=0$, when the cosmic speed of light was nearly equal to today’s value. Our model gives a testable prediction: nearby young stars lose far less lithium, so their surface lithium levels will be clearly higher than the Sun’s.
+
+
+
+
+
+\medskip
+\bigskip
+\textbf{Earth's Biological Evolution and the $\boldsymbol{G(t)}$}\,\,\,
+The Cambrian Explosion and the Carboniferous carbon burial represent two landmark episodes in the history of Earth's biological evolution. In the standard geological and paleontological frameworks, these events are primarily interpreted through planetary-scale internal processes—such as supercontinent breakup, continental weathering rates, oceanic redox stratification, the evolutionary timing of lignin-degrading fungi, and swamp sediment preservation conditions.
+
+\medskip
+According to the prevailing view, for nearly three billion years prior to the Cambrian, Earth hosted only simple life forms, with evolutionary progress largely suppressed by multiple environmental thresholds. It was not until the narrow window of 25 million years (540--515~Ma) that the critical planetary conditions simultaneously crossed their evolutionary thresholds, triggering the Cambrian radiation, during which most major animal phyla emerged in a geologically brief interval.
+
+\medskip
+The Carboniferous period featured a uniquely stable planetary climate that persisted for as long as 60 million years (360--300~Ma). The warm, oxygen-rich environment facilitated large-scale geological carbon sequestration; the subsequent decline in atmospheric oxygen levels eliminated giant organisms with limited brain capacity, thereby opening ecological niches for the evolution of mammalian brains.
+
+\medskip
+The evolutionary record of Earth thus exhibits a striking asymmetry: billions of years of prolonged stagnation punctuated by abrupt biological transitions within extremely short geological windows. Many current theories attribute the emergence of intelligent life to random coincidences—the so-called \textit{lucky Earth} hypothesis.
+
+\medskip
+Against the background of continuously evolving $G(t)$ and $c(t)$, we tentatively suggest that a comprehensive picture may need to incorporate nested constraints across three scales: \textit{cosmic, stellar, and planetary}. In particular, the time-varying gravitational coefficient $G(t)$ may have undergone key relaxation processes during the Cambrian and Carboniferous epochs. 
+
+\medskip
+As gravitational coupling approached stability, orbital perturbations within the Solar System were minimized, fluctuations in surface solar flux were substantially damped, and Earth's rotation and precession cycles entered a prolonged phase of dynamical regularity.
+
+\medskip
+While planetary-scale analyses remain essential, incorporating the macroscopic boundaries set by the cosmic background fields $G(t)$ and $c(t)$ may offer a broader context. 
+
+\medskip
+One might then be more inclined to view the appearance of human intelligence on Earth at this particular moment not as a pure accident, but perhaps as a contingent outcome made possible by a sequence of necessary physical conditions. This interpretation, however, remains highly speculative, and we present it with due caution.
+
+
+
+
+\medskip
+\bigskip
+\textbf{Local Renewal Misread as Cosmic Creation}\,\,\,
+Standard cosmology borrows what we see today to explain what happened at the beginning. Supernovae and black holes are local events in the mature universe, yet researchers extrapolate them backward in time to describe the early cosmos. 
+
+\medskip
+This logical mismatch between global early-universe phase transitions and local late-universe events has been noted before: Milne's cosmological principle~\cite{Milne:1933} emphasizes the global uniformity of the early universe, while Barrow and Tipler~\cite{Barrow:1986} underscore the fundamental distinction between the extreme physical conditions of the early epoch and the late-time local environment.
+
+\medskip
+This constitutes a fundamental logical mismatch. All observed supernovae and black holes originate from the late universe, after the formation of atoms, galaxies, and stars. In contrast, the early universe evolved through hadronization, plasma coupling, and CMB decoupling stages, with no stars, no compact objects, and no gravitational collapse.
+
+\medskip
+Early universe evolution is global: the entire cosmos undergoes phase transitions as one unified system. Hadronic substance, then plasma, then neutral atoms and the CMB — this sequence built the fundamental material foundation of the cosmos. It is the true creation of all baryonic matter.
+
+\medskip
+Black holes and supernovae are purely local. They occur only after the cosmic background is fully in place. They redistribute mass, release energy, and recycle stellar material. They are renewal processes within galaxies — not creation processes of the universe itself.
+
+\medskip
+We should draw a clear line between these two distinct physical levels. This distinction will remove a long-standing conflation, and provides a physically consistent basis for understanding early cosmic structure formation.
+
+
+
+\newpage
+\section*{
+	\begin{center}
+		Postscript
+	\end{center}
+}
+\smallskip
+\noindent
+
+\textbf{A Hymn to the Breathing Cosmos and Intelligent Life}\,\,\,
+In its earliest days, the cosmos and our blue Earth were clumsy novices. Massive ancient stars burned brightly and collapsed suddenly, too short-lived to nurture planetary systems. Our planet once had a frozen equator and endured five devastating mass extinctions. Life rose, fell, and reset again and again amid countless trials. Every collapse is not an end, but a new beginning. Every setback gathers silent power for the final bloom of life.
+
+\medskip
+After billions of years of evolution, fundamental physical quantities of the universe fell into perfect balance. The speed of light, gravity, Earth’s 23.5-degree axial tilt, atmospheric oxygen and the ozone layer all settled at ideal states to sustain life. This is the true meaning of the breathing cosmos: it runs on the endless rhythm of time. Stars, planets and all living things breathe with the universe, and intelligent life is born of this eternal rhythm.
+
+\medskip
+May the light of intelligence never fade. Earth has waited four billion years, and the universe far longer, for conscious life to emerge. May human civilization live up to this ancient waiting, turning a fleeting spark into lasting radiance across the galaxy. We are fragile yet infinitely precious. We are not temporary travelers in the universe. Instead, we are the \textit{very eyes} through which the cosmos, after billions of years of silence, finally sees and understands itself.
+
+\bigskip
+\textbf{On the Origin of This Work}\,\,\,
+I first began wondering about the essence of light and gravity decades ago. A sudden insight came to me during a drive in early March. Realizing this is one of the deepest mysteries of physics, I dared not even entertain the thought. In early May, the growing passion urged me to write this paper. I attempt to build a logically consistent physical framework in this work. Even if my theory fails to match observational evidence, I hope it can serve as an imaginative thought experiment.
+
+
+
+\vskip 0.7in
+\bibliography{refs}
+\newpage
+
+
+
+
+\vskip 1.0in
+\noindent
+Xianliang Ma\\[10pt]
+Chief Quantitative Architect\\[2pt]
+Beijing DeepQuant.AI Technologies Co., Ltd\\[2pt]
+Chaoyang District, Beijing 100029, P.R.China\\[10pt]
+E-mail: maxianliang@gmail.com\\[10pt]
+June 13, 2026
+
+\vskip 1.6in
+
+
+
+\begin{footnotesize}
+\vspace{0.4em}
+\noindent{\color{lightgray}\rule{\linewidth}{0.3pt}}
+\vspace{0.4em}
+
+
+\vskip 0.2in
+\noindent
+Version History 
+
+\smallskip
+\texttt{\makebox[3.5em][l]{v1.1}2026-06-24\hspace{1.2em}The first public version.}
+
+\smallskip
+\texttt{\makebox[3.5em][l]{v1.0}2026-06-13\hspace{1.2em}Initial draft.}
+
+
+\vskip 0.3in
+\noindent
+Citation Template
+
+\medskip
+\hspace{-0.8em} \begin{minipage}{\linewidth}
+\begin{verbatim}
+	@misc{XianLiang:2026_growing_ct,
+		author       = "XianLiang.Ma",
+		title        = "{The Breathing Cosmos: Growing Speed of Light, $Gc^2=P$}",
+		year         = "2026",
+		month        = "6",
+		howpublished = "{GitHub repository}",
+		url          = "https://github.com/ma-xian-liang/2026-growing-ct"
+	}
+\end{verbatim}
+\end{minipage}
+
+
+
+
+
+
+
+\vskip 0.3in
+\noindent
+Deposited at 
+
+\smallskip
+\url{https://chinaxiv.org/abs/xxxx.xxxxx} 
+
+\smallskip
+\url{https://github.com/ma-xian-liang/2026-growing-ct}
+
+\smallskip
+\url{https://arxiv.org/abs/xxxx.xxxxx} 
+
+
+
+\vskip 0.3in
+\noindent
+Document Fingerprint (SHA-256, IPR.TSA.CN Trusted Timestamp)
+
+\smallskip
+\verb|463F919377637F84C125D355DD74471CCF8A301FA061D6E1DFAB88445BF44DE2|
+
+
+\end{footnotesize}
+
+
+\end {document}
+
+
+
+
