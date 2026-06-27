@@ -2,32 +2,44 @@
 % Copyright 2026 Ma.XianLiang. All rights reserved.
 % First released simultaneously on TSA.CN, GitHub, ChinaXiv and arXiv, timestamp June 2026
 
-\documentclass[tikz,12pt,leqno]{article}
-\usepackage{amsmath,amssymb,amsfonts}
-\setlength{\textheight}{21.5cm} \setlength{\textwidth}{16cm}
-\setlength{\oddsidemargin}{0cm} \setlength{\evensidemargin}{0cm}
-\usepackage{latexsym}
-\usepackage{}
-\usepackage{mathtools} % Required for \mathclap
-\usepackage{graphicx} % Removed [dvips] option
-\usepackage{tikz,pgfplots}
-\usepackage{float}
-\usepackage{braket}
-\usepackage{amsmath,bm}
-\usepackage{siunitx}
-\usepackage{array}    % For table center alignment
-\usepackage{booktabs} % For \toprule, \midrule, \bottomrule
-\usepackage{array}    % For syntax >{\centering\arraybackslash}
-\usepackage{enumitem} % For item align 
-\usepackage[font=small]{caption} % Set default font size globally; can also set locally
-\usepackage{url}      % \url package
-\pgfplotsset{compat=1.18} % Must be kept for compatibility
-\usepackage{xcolor}   % Use xcolor instead of old color package for better compatibility
-\pagestyle{plain} \topmargin=0pt
-\renewcommand{\baselinestretch}{1.0}
-%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\documentclass[12pt,leqno]{article}
 
-\bibliographystyle{unsrt}   % sortid
+% ========== CRITICAL FIX: Force PDF mode and enhance compatibility ==========
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools} 
+\usepackage{bm}
+\usepackage{siunitx}
+
+% ---------- Graphics and Plotting (Explicitly specify driver) ----------
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage[pdftex]{graphicx}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ---------- Tables and Formatting ----------
+\usepackage{array,booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{braket}
+\usepackage[font=small]{caption}
+\usepackage{url}
+
+% ---------- Page Layout Settings ----------
+\setlength{\textheight}{21.5cm}
+\setlength{\textwidth}{16cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\topmargin=0pt
+\pagestyle{plain}
+\renewcommand{\baselinestretch}{1.0}
+
+% ========== CRITICAL: Force all fonts to be embedded ==========
+\pdfcompresslevel=9
+\pdfobjcompresslevel=0
+
+% ========== Bibliography Style ==========
+\bibliographystyle{unsrt}
+
 
 \def\a{\mathcal{A}}
 \def\b{\mathcal{B}}
@@ -888,7 +900,7 @@ In the standard $\Lambda$CDM cosmology, only cosmic redshifts can be directly ob
 All cosmic time entries stored in the \texttt{Planck18} dataset are model-derived quantities. Such calculations rely on three fundamental premises: \textit{homogeneous and isotropic universe}, \textit{invariant total matter and energy}, and \textit{constant speed of light}. Cosmic ages are further solved via the Friedmann equations under these restrictions.
 
 \medskip
-Under our $G(t)\,c(t)^2 = P$ postulate, $G(t)$ is time-varying, which implies that the stellar mass estimation methods used in $\Lambda$CDM contain inherent biases. A detailed discussion of this issue is deferred to Section～12.
+Under our $G(t)\,c(t)^2 = P$ postulate, $G(t)$ is time-varying, which implies that the stellar mass estimation methods used in $\Lambda$CDM contain inherent biases. A detailed discussion of this issue is deferred to Section 12.
 
 \medskip
 Despite being constrained by preset theoretical assumptions and the inevitable uncertainties in model derivation, the \texttt{Planck18} data still stands as the best available reference. We therefore construct our ultra-fine growing-$c(t)$ model grounded on this dataset.
@@ -2258,8 +2270,7 @@ Deposited at
 Document Fingerprint (SHA-256, IPR.TSA.CN Trusted Timestamp)
 
 \smallskip
-\verb|463F919377637F84C125D355DD74471CCF8A301FA061D6E1DFAB88445BF44DE2|
-
+\texttt{463F919377637F84C125D355DD74471CCF8A301FA061D6E1DFAB88445BF44DE2}
 
 \end{footnotesize}
 
