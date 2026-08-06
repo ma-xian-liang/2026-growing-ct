@@ -1511,9 +1511,9 @@
 
 
 \begin{document}
-			
+		
 	\maketitle
-	
+		
 	\setlength{\leftskip}{1.0cm}
 	\setlength{\rightskip}{1.0cm}
 	
@@ -2603,10 +2603,15 @@
 	
 	\medskip
 	Furthermore, at the post-hadronization plasma epoch (${z_{\star}}$), the speed of light drops to 1/7137.66 of its present-day value $c_0$, i.e., approximately 42 km/s. We get $7137.66^7 \approx 9.44 \times 10^{26}$. This reduces the Planck density to $\rho_{\scriptscriptstyle\mathrm{P}}(t) \approx 5.51\times 10^{69}\,\mathrm{kg/m^3}$.
-	
+		
 	\medskip
 	Both Planck densities above are far greater than the Friedmann cosmic density $\rho_{\scriptscriptstyle\mathrm{F}}(t)$ defined in Eq.~(1.14). We will revisit these quantities when we discuss ${v_{\scriptscriptstyle\mathrm{LEM}}(t)}$ in Eq.~(8.6) later, where both $\rho_{\scriptscriptstyle\mathrm{P}}(t)$ and $\rho_{\scriptscriptstyle\mathrm{F}}(t)$ will be used.
 	
+	\medskip
+	If we eliminate $G$ and replace it with $P = Gc^2$, the three Planck quantities in Eq.~(1.3), Eq.~(1.4), and Eq.~(1.5) become:
+	\[
+	m_P = \sqrt{\frac{\hbar(t) \cdot c(t)^3}{P}}, \quad \ell_P = \sqrt{\frac{\hbar(t) \cdot P}{c(t)^5}}, \quad \rho_P = \frac{c(t)^9}{\hbar(t) \cdot P^2}\,\,. \eqno(7.2)
+	\]
 	
 	
 	\medskip
@@ -2651,7 +2656,7 @@
 	\medskip
 	A natural extension of this picture would be to quantify the suppression of planet formation as a function of redshift. One may heuristically write
 	\[
-	P_{\rm planet}(z) \; \propto \; \left(\frac{r_s(z)}{r_{\rm disk}(z)}\right)^{-\beta} \propto \; (1+z)^{4\beta},\,\, \eqno(7.2)
+	P_{\rm planet}(z) \; \propto \; \left(\frac{r_s(z)}{r_{\rm disk}(z)}\right)^{-\beta} \propto \; (1+z)^{4\beta},\,\, \eqno(7.3)
 	\]
 	
 	where $r_{\rm disk}(z)$ is the characteristic scale of a protoplanetary disk and $\beta>0$ is a phenomenological index. A more rigorous derivation could be attempted from gravitational focusing or Bondi accretion physics, relating the enhanced capture cross-section to the likelihood of disk survival and subsequent planet assembly.
@@ -2673,7 +2678,7 @@
 	\[
 	\lambda_{\text{cs}} = \frac{c_0}{\nu_{\text{cs}}}
 	= \frac{299\,792\,458\ \mathrm{m/s}}{9\,192\,631\,770\ \mathrm{Hz}}
-	\approx 0.032612\ \mathrm{m} = \texttt{32.612}\ \mathrm{mm}\,\, \eqno(7.3)
+	\approx 0.032612\ \mathrm{m} = \texttt{32.612}\ \mathrm{mm}\,\, \eqno(7.4)
 	\]
 	
 	\medskip
@@ -2691,7 +2696,7 @@
 	\textbf{Re-examining Photon Frequency, Wavelength and Speed of Light}\,\,\,
 	We start with basic physical fundamentals. Constrained by the fine-structure constant and the intrinsic quantized energy gaps of atomic systems, the intrinsic frequency $\nu$ and angular frequency $\omega$ of a photon satisfy:
 	\[
-	\Delta E = h\,\nu = 2\pi\hbar\,\nu = \hbar\,\omega \,\,  \eqno(7.4)
+	\Delta E = h\,\nu = 2\pi\hbar\,\nu = \hbar\,\omega \,\,  \eqno(7.5)
 	\]
 	
 	\smallskip
@@ -2700,7 +2705,7 @@
 	\medskip
 	In contrast, wavelength is not an intrinsic property of photons. It varies with light speed and the refractive index of the propagation medium, following the fundamental relation for electromagnetic waves:
 	\[
-	c = \lambda \,\nu \,\,  \eqno(7.5)
+	c = \lambda \,\nu \,\,  \eqno(7.6)
 	\]
 	
 	We adopt standard optical glass to demonstrate wavelength variation visually. For a vacuum light speed of 300\,000 km/s, consider a photon with $\nu_{n0}=1.0\times10^{15}\,\mathrm{Hz}$ and $\lambda_{n0}=300\,\mathrm{nm}$. Upon entering glass with a refractive index $N_{\text{glass}}=1.5$, the photon’s propagation speed drops to 200\,000 km/s, accompanied by a wavelength reduction to $200\,\mathrm{nm}$. When exiting the glass and returning to vacuum, the wavelength returns to its original value of $300\,\mathrm{nm}$.
@@ -2909,6 +2914,31 @@
 	Our revised $G_{\mu\nu}$ equation abandons the traditional constant gravitational parameter $G$ and adopts a time‑evolving $c(t)$ variable. By shifting to LEM field quantization, this modified curvature formulation may provide a viable alternative for circumventing the gravitational quantization dilemma.
 	
 	\medskip
+	As a tentative direction for further exploration, we note that by combining Eq.~(8.5) and Eq.~(1.6), a formal connection can be drawn between the macroscopic gravitational sector and the microscopic quantum domain:
+	\[
+	\boldsymbol{P} \thinspace = \thinspace \dfrac{G_{\mu\nu}}{8\pi\tinysp \mu_0(t)^3\cdot \varepsilon_0(t)^3\cdot T_{\mu\nu}}
+	 \thinspace = \thinspace \dfrac{c(t)^6 \cdot G_{\mu\nu}}{8\pi \cdot T_{\mu\nu}}
+	 \thinspace = \thinspace \dfrac{\hbar(t)^4 \cdot \rho_{\scriptscriptstyle\mathrm{P}}(t)}{m_{\scriptscriptstyle\mathrm{P}}(t)^6} \,\,\,. \eqno(8.8)
+	\]
+	
+	\medskip
+	The above equation brings together the languages of general relativity and quantum mechanics in one place. Its left-hand side speaks in terms of spacetime curvature and mass-energy; its right-hand side, in terms of Planck-scale quantities.
+	
+	
+	\bigskip
+	\noindent
+	$\triangleright \triangleright \triangleright$\enspace
+	In the years following the completion of general relativity (1915–1920), Einstein redefined spacetime as a physical continuum endowed with intrinsic properties. He held that:
+	\begin{itemize}
+		\item spacetime is not an empty geometric background; geometry itself is the physical attribute of spacetime, with curvature being an inherent material property of spacetime itself;
+		\item the matter-energy tensor alters the physical properties of spacetime (curvature and density), and in turn, these spacetime properties govern the trajectories of matter and light;
+		\item there exists no ``\textit{vacuum}'' devoid of material attributes — the \textit{vacuum} is a continuous medium with a mutable physical structure.
+	\end{itemize}
+	
+	In his 1920 inaugural lecture ``Ether and the Theory of Relativity'' at the University of Leiden\cite{Einstein:1922ether}, Einstein reflected on the relationship between the gravitational and electromagnetic fields. He noted that while the gravitational field is inseparable from space itself, ``a part of space may very well be imagined without an electromagnetic field; thus in contrast with the gravitational field, the electromagnetic field seems to be only a secondary phenomenon.'' He then expressed the vision that ``{\textit{it would be a great advance if we could succeed in comprehending the gravitational field and the electromagnetic field together as one unified conformation, Then the contrast between ether and matter would fade away}.''\enspace$\triangleleft \triangleleft \triangleleft$
+	
+	
+	\bigskip
 	A second critical issue is the photon‑scattering problem. Conventional cosmological models postulate an extremely hot primordial universe with the constant present‑day speed of light, which generates severe photon scattering and hinders early cosmic particle aggregation and hadronization.
 	
 	\medskip
@@ -2922,7 +2952,6 @@
 	
 	
 	
-	\vskip 0.1in
 	\section*{
 		\begin{center}
 			9. The ZLZT Primordial State, \\
@@ -3171,7 +3200,7 @@
 	Under this enhanced electromagnetic binding force, electrons finally gain the physical conditions required to stably orbit around protons. Although the forming atomic structures are still prone to re-ionization at this early stage, the probability of maintaining stable bound states increases continuously as $c(t)$ grows. As more electrons successfully bind to protons and primitive hydrogen atoms accumulate in large quantities, the universe begins to transition away from its plasma-dominated state. 
 	
 	\medskip
-	During the cosmic evolution from the post-hadronization plasma epoch ($\boldsymbol{z_{\star}}$) to the CMB decoupling epoch ($\boldsymbol{z_{0}}$), the speed of light gradually increases from below $42\ \mathrm{km/s}$ to $1/1100$ of the present-day $c_0$. This evolutionary process may span $4$--$5\ \mathrm{Gyr}$, which is vastly longer than the $36$--$37\ \mathrm{kyr}$ predicted by the standard $\Lambda$CDM model. This span is obtained by a simple power-law estimation from the $c(t)$ curve, covering the rise from $1/7137.66$ to $1/1100$ of $c_0$.
+	During the cosmic evolution from the post-hadronization plasma epoch ($\boldsymbol{z_{\star}}$) to the CMB decoupling epoch ($\boldsymbol{z_{0}}$), the speed of light gradually increases from below $42\ \mathrm{km/s}$ to $1/1100$ ($272\ \mathrm{km/s}$) of the present-day $c_0$. Under the assumption of such an extremely low light speed in the early universe, this evolutionary process may span $4$--$5\ \mathrm{Gyr}$, which is vastly longer than the $36$--$37\ \mathrm{kyr}$ predicted by the standard $\Lambda$CDM model. This span is obtained by a simple power-law estimation from the $c(t)$ curve, covering the rise from $1/7137.66$ to $1/1100$ of $c_0$. 
 	
 	\medskip
 	This continuous formation of neutral hydrogen ultimately guides cosmic evolution onward toward the epoch of CMB decoupling, opening a brand-new cosmic realm governed by Einstein’s field equations.
@@ -3181,9 +3210,7 @@
 	
 	
 	
-	
-	
-	\vskip 0.1in
+		
 	\section*{
 		\begin{center}
 			10. Cosmological Redshift: An Unanswered\\
@@ -3630,7 +3657,7 @@
 	E-mail: maxianliang@gmail.com\\[10pt]
 	June 13, 2026
 	
-	\vskip 1.2in
+	\vskip 0.9in
 	
 	
 	
@@ -3643,27 +3670,30 @@
 		\vskip 0.0in
 		\noindent
 		Version History 
+
+		\smallskip
+		\texttt{\makebox[3.0em][l]{v1.7}2026-08-05\hspace{1.2em}Added Einstein's Leiden lecture on vacuum materiality to Section 8.}
 		
 		\smallskip
-		\texttt{\makebox[3.5em][l]{v1.6}2026-07-30\hspace{1.2em}Added methodological reflection on modern cosmology to Section 12.}
+		\texttt{\makebox[3.0em][l]{v1.6}2026-07-30\hspace{1.2em}Added methodological reflection on modern cosmology to Section 12.}
 		
 		\smallskip
-		\texttt{\makebox[3.5em][l]{v1.5}2026-07-29\hspace{1.2em}Added Schwarzschild radius discussion to Section 7.}
+		\texttt{\makebox[3.0em][l]{v1.5}2026-07-29\hspace{1.2em}Added Schwarzschild radius discussion to Section 7.}
 				
 		\smallskip
-		\texttt{\makebox[3.5em][l]{v1.4}2026-07-27\hspace{1.2em}Title revised for greater directness, added DESI DR2 discussion.}
+		\texttt{\makebox[3.0em][l]{v1.4}2026-07-27\hspace{1.2em}Title revised for greater directness, added DESI DR2 discussion.}
 		
 		\smallskip
-		\texttt{\makebox[3.5em][l]{v1.3}2026-07-24\hspace{1.2em}Abstract revised and optimized.}
+		\texttt{\makebox[3.0em][l]{v1.3}2026-07-24\hspace{1.2em}Abstract revised and optimized.}
 		
 		\smallskip
-		\texttt{\makebox[3.5em][l]{v1.2}2026-06-26\hspace{1.2em}Added a note on reconstructing the Friedmann equation.}
+		\texttt{\makebox[3.0em][l]{v1.2}2026-06-26\hspace{1.2em}Added a note on reconstructing the Friedmann equation.}
 		
 		\smallskip
-		\texttt{\makebox[3.5em][l]{v1.1}2026-06-24\hspace{1.2em}First public version.}
+		\texttt{\makebox[3.0em][l]{v1.1}2026-06-24\hspace{1.2em}First public version.}
 		
 		\smallskip
-		\texttt{\makebox[3.5em][l]{v1.0}2026-06-13\hspace{1.2em}Initial draft.}
+		\texttt{\makebox[3.0em][l]{v1.0}2026-06-13\hspace{1.2em}Initial draft.}
 		
 		
 		\vskip 0.2in
