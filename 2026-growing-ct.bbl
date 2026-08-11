@@ -48,6 +48,23 @@ Albert Einstein.
 \newblock Methuen \& Co. Ltd., London, 1922.
 \newblock A lecture delivered on May 5, 1920, at the University of Leyden.
 
+\bibitem{LeidenLecture:2025}
+Albert Einstein.
+\newblock {\em {Is Space Empty? Einstein Resurrects the Aether}}.
+\newblock Independently Published, 2025.
+\newblock A new translation of the 1920 Leiden Lecture 'Ether and the Theory of
+  Relativity'.
+
+\bibitem{Coulton:2021}
+William~R. Coulton, Benjamin Beringue, and P.~Daniel Meerburg.
+\newblock {Primordial information content of Rayleigh anisotropies}.
+\newblock {\em Physical Review D}, 103(4):043501, 2021.
+
+\bibitem{Magueijo:2003}
+João Magueijo.
+\newblock {New varying speed of light theories}.
+\newblock {\em Reports on Progress in Physics}, 66(11):2025--2068, 2003.
+
 \bibitem{Peskin:1995}
 Michael~E. Peskin and Daniel~V. Schroeder.
 \newblock {\em {An Introduction to Quantum Field Theory}}.
@@ -82,6 +99,12 @@ G.~Gu, X.~Wang, Y.~Wang, et~al.
   oscillations measurements}.
 \newblock {\em Nature Astronomy}, 9:1879--1889, 2025.
 
+\bibitem{AbreuTurner:2026}
+Matilde~L. Abreu and Michael~S. Turner.
+\newblock {DESI Dark Secrets}.
+\newblock {\em arXiv e-prints}, 2026.
+\newblock Submitted to a journal.
+
 \bibitem{Zwicky:1933}
 F.~Zwicky.
 \newblock {Die Rotverschiebung von extragalaktischen Nebeln}.
@@ -91,6 +114,19 @@ F.~Zwicky.
 Piero Madau.
 \newblock {The Cosmic Reionization History and the Photon Budget Crisis}.
 \newblock {\em Research Notes of the AAS}, 7(5):98, 2023.
+
+\bibitem{Austin:2025}
+D.~Austin, T.~Harvey, C.~Conselice, et~al.
+\newblock {Resolving the ionizing photon budget crisis with JWST/NIRCam HII
+  clumping constraints at z=6}.
+\newblock {\em arXiv e-prints}, 2025.
+
+\bibitem{Reionization:2025}
+No~authors specified.
+\newblock {Towards Reconciling Reionization with JWST: The Role of Bright
+  Galaxies and Strong Feedback}.
+\newblock {\em arXiv e-prints}, 2025.
+\newblock Submitted to ApJ.
 
 \bibitem{Labbe:2023}
 I.~Labbé, P.~van Dokkum, E.~Nelson, et~al.
@@ -103,6 +139,12 @@ M.~W. Topping, D.~P. Stark, R.~Endsley, et~al.
 \newblock {The Evolving Intergalactic Medium and the Implications for the First
   Galaxies}.
 \newblock {\em The Astrophysical Journal}, 954(2):139, 2023.
+
+\bibitem{Prather:1976}
+Michael~J. Prather.
+\newblock {\em {Evolution of Low Mass Stars and the Effects of a Variable
+  Gravitational Constant}}.
+\newblock PhD thesis, Yale University, 1976.
 
 \bibitem{Korn:2019}
 A.~J. Korn and J.~Meléndez.
