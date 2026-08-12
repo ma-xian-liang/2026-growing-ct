@@ -23,14 +23,14 @@ Steven Weinberg.
 \newblock {\em {Cosmology}}.
 \newblock Oxford University Press, Oxford, 2008.
 
-\bibitem{BIPM:2019}
-Bureau~International des Poids~et Mesures.
-\newblock {The International System of Units (SI)}, 2019.
-
 \bibitem{Dirac:1937}
 P.~A.~M. Dirac.
 \newblock {The Cosmological Constants}.
 \newblock {\em Nature}, 139:323, 1937.
+
+\bibitem{BIPM:2019}
+Bureau~International des Poids~et Mesures.
+\newblock {The International System of Units (SI)}, 2019.
 
 \bibitem{Dirac:1938}
 P.~A.~M. Dirac.
@@ -80,6 +80,12 @@ Richard~P. Feynman, Robert~B. Leighton, and Matthew Sands.
 Paul C.~W. Davies.
 \newblock {\em {About Time: Einstein's Unfinished Revolution}}.
 \newblock Simon \& Schuster, New York, 1995.
+
+\bibitem{NBS:1987}
+{\em The International System of Units (SI)}.
+\newblock NBS Special Publication 330. 1987.
+\newblock Appendices I and II contain the meter definition and practical
+  realization.
 
 \bibitem{HEPS:2022}
 Y.~Jiao et~al.
