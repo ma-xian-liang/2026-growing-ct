@@ -48,6 +48,8 @@
         --link-color: #6b5510;
         --link-hover: #9a7a1a;
         --shadow: 0 2px 8px rgba(139, 105, 20, 0.08);
+        /* 侧栏宽度：默认值，可被拖拽分隔条的 JS 覆盖（范围 180px ~ 25vw） */
+        --sidebar-w: clamp(180px, 15vw, 280px);
     }
 
     html {
@@ -59,7 +61,7 @@
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        min-width: 980px; /* 左 180 + 右 800 = 最小总宽，更窄时横向滚动 */
+        min-width: 990px; /* 左 180 + 分隔条 7 + 右 800 = 最小总宽，更窄时横向滚动 */
         /* 科学空间风格字体栈：英文 Georgia/Times 衬线 + 中文系统无衬线 */
         font-family: Georgia, "Times New Roman", Times, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
         background-color: var(--bg-main);
@@ -76,15 +78,36 @@
         top: 0;
         left: 0;
         flex-shrink: 0;
-        /* 左栏：最窄 180px，随窗口增长（15vw），封顶 280px；
-           增长的大部分让给右栏内容区 */
-        width: clamp(180px, 15vw, 280px);
+        /* 左栏宽度：默认 clamp(180px,15vw,280px)，可拖拽分隔条调节，
+           最窄 180px，最宽窗口宽度的 25% */
+        width: var(--sidebar-w, clamp(180px, 15vw, 280px));
         height: 100vh;
         background-color: var(--bg-sidebar);
         border-right: 1px solid var(--border-color);
         overflow-y: auto;
         padding: 28px 0 40px 0;
         z-index: 100;
+    }
+
+    /* ===== 可拖拽分隔条（左栏与正文之间） ===== */
+    .drag-handle {
+        flex-shrink: 0;
+        width: 7px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        cursor: col-resize;
+        background: transparent;
+        z-index: 150;
+        transition: background 0.15s;
+    }
+
+    .drag-handle:hover {
+        background: rgba(139, 105, 20, 0.15);
+    }
+
+    .drag-handle.dragging {
+        background: var(--accent-gold-light);
     }
 
     .sidebar-header {
@@ -414,7 +437,7 @@
     .progress-bar {
         position: fixed;
         top: 0;
-        left: clamp(180px, 15vw, 280px); /* 跟随左栏宽度 */
+        left: var(--sidebar-w, clamp(180px, 15vw, 280px)); /* 跟随左栏宽度 */
         right: 0;
         height: 3px;
         background-color: var(--accent-gold);
@@ -460,6 +483,9 @@
 <li><a href="#chapter-E24" class="nav-link"><span class="nav-chapter">E24</span><span class="nav-title">On the Darwinian Worldview of the Growing-\( c(t) \) Paper</span></a></li>
         </ul>
     </nav>
+
+    <!-- 可拖拽分隔条：拖动调节左栏宽度（180px ~ 窗口 25%），双击复位 -->
+    <div class="drag-handle" id="dragHandle" title="按住拖动调节导航栏宽度（双击复位）"></div>
 
     <!-- 阅读进度条 -->
     <div class="progress-bar" id="progressBar"></div>
@@ -3685,6 +3711,49 @@ c = \frac{1}{\sqrt{\mu_0 \epsilon_0}}
                 window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
             }
         });
+    });
+
+    // ===== 可拖拽分隔条：调节左栏宽度 =====
+    const dragHandle = document.getElementById('dragHandle');
+    const rootStyle = document.documentElement;
+    let dragging = false;
+
+    function clampSidebar(w) {
+        const minW = 180;                       // 最窄 180px
+        const maxW = window.innerWidth * 0.25;  // 最宽窗口宽度的 25%
+        return Math.max(minW, Math.min(w, maxW));
+    }
+
+    dragHandle.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        dragging = true;
+        dragHandle.classList.add('dragging');
+        document.body.style.userSelect = 'none';
+        document.body.style.cursor = 'col-resize';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!dragging) return;
+        rootStyle.style.setProperty('--sidebar-w', clampSidebar(e.clientX) + 'px');
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (!dragging) return;
+        dragging = false;
+        dragHandle.classList.remove('dragging');
+        document.body.style.userSelect = '';
+        document.body.style.cursor = '';
+    });
+
+    // 双击分隔条：恢复默认宽度
+    dragHandle.addEventListener('dblclick', () => {
+        rootStyle.style.removeProperty('--sidebar-w');
+    });
+
+    // 窗口尺寸变化时，把当前侧栏宽度重新限制在合法范围内
+    window.addEventListener('resize', () => {
+        const cur = document.querySelector('.sidebar').getBoundingClientRect().width;
+        rootStyle.style.setProperty('--sidebar-w', clampSidebar(cur) + 'px');
     });
     </script>
 
