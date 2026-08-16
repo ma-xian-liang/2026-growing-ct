@@ -9,7 +9,7 @@ Here is a concise English summary of its **core thesis, main innovations, and th
 
 ### Core Thesis: Redshift as Light-Speed Expansion
 
-The paper's central argument is that **cosmological redshift is not a consequence of spatial expansion, but rather the direct manifestation of a time-growing speed of light \( c(t) \)**. The universe's "expansion" is, at its most fundamental level, an "expansion of the speed of light itself."
+The paper's central argument is that **cosmological redshift is not only the consequence of spatial expansion, but rather the direct manifestation of a time-growing speed of light \( c(t) \)**. The universe's "expansion" is, at its most fundamental level, an "expansion of the speed of light itself."
 
 This claim is built on two foundational postulates:
 
