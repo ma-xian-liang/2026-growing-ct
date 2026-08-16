@@ -79,7 +79,7 @@
         left: 0;
         flex-shrink: 0;
         /* 左栏宽度：默认 clamp(180px,15vw,280px)，可拖拽分隔条调节，
-           最窄 180px，最宽窗口宽度的 25% */
+           最窄 180px，最宽窗口宽度的 33% */
         width: var(--sidebar-w, clamp(180px, 15vw, 280px));
         height: 100vh;
         background-color: var(--bg-sidebar);
@@ -484,7 +484,7 @@
         </ul>
     </nav>
 
-    <!-- 可拖拽分隔条：拖动调节左栏宽度（180px ~ 窗口 25%），双击复位 -->
+    <!-- 可拖拽分隔条：拖动调节左栏宽度（180px ~ 窗口 33%），双击复位 -->
     <div class="drag-handle" id="dragHandle" title="按住拖动调节导航栏宽度（双击复位）"></div>
 
     <!-- 阅读进度条 -->
@@ -3720,7 +3720,7 @@ c = \frac{1}{\sqrt{\mu_0 \epsilon_0}}
 
     function clampSidebar(w) {
         const minW = 180;                       // 最窄 180px
-        const maxW = window.innerWidth * 0.25;  // 最宽窗口宽度的 25%
+        const maxW = window.innerWidth * 0.33;  // 最宽窗口宽度的 33%
         return Math.max(minW, Math.min(w, maxW));
     }
 

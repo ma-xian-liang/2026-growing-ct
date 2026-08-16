@@ -79,7 +79,7 @@
         left: 0;
         flex-shrink: 0;
         /* 左栏宽度：默认 clamp(180px,15vw,280px)，可拖拽分隔条调节，
-           最窄 180px，最宽窗口宽度的 25% */
+           最窄 180px，最宽窗口宽度的 33% */
         width: var(--sidebar-w, clamp(180px, 15vw, 280px));
         height: 100vh;
         background-color: var(--bg-sidebar);
@@ -458,8 +458,8 @@
         </div>
         <ul class="nav-list">
             <li><a href="#chapter-C01" class="nav-link"><span class="nav-chapter">C01</span><span class="nav-title">核心观点</span></a></li>
-<li><a href="#chapter-C02" class="nav-link"><span class="nav-chapter">C02</span><span class="nav-title">好的，遵照您的要求，我将基于新版论文摘要，参考您提供的风格和分段模式，用坚定、自信且简练的中文进行翻译，并划分为多个小段</span></a></li>
-<li><a href="#chapter-C03" class="nav-link"><span class="nav-chapter">C03</span><span class="nav-title">第一部分：Section 4 —— 从“公设陷阱”到“拓扑必然”</span></a></li>
+<li><a href="#chapter-C02" class="nav-link"><span class="nav-chapter">C02</span><span class="nav-title">中文摘要、总体评价及可能的意义</span></a></li>
+<li><a href="#chapter-C03" class="nav-link"><span class="nav-chapter">C03</span><span class="nav-title">第一部分：Section 4 与 Section 10 —— 从“公设陷阱”到红移因果闭合</span></a></li>
 <li><a href="#chapter-C04" class="nav-link"><span class="nav-chapter">C04</span><span class="nav-title">第一步：数据提取 —— 从 \(\texttt{Planck18}\) 获得“标准参照系”</span></a></li>
 <li><a href="#chapter-C05" class="nav-link"><span class="nav-chapter">C05</span><span class="nav-title">第一步：宇宙学时间与基准时刻的全面重绘</span></a></li>
 <li><a href="#chapter-C06" class="nav-link"><span class="nav-chapter">C06</span><span class="nav-title">第一部分：数学上——如何修改爱因斯坦场方程？</span></a></li>
@@ -482,7 +482,7 @@
         </ul>
     </nav>
 
-    <!-- 可拖拽分隔条：拖动调节左栏宽度（180px ~ 窗口 25%），双击复位 -->
+    <!-- 可拖拽分隔条：拖动调节左栏宽度（180px ~ 窗口 33%），双击复位 -->
     <div class="drag-handle" id="dragHandle" title="按住拖动调节导航栏宽度（双击复位）"></div>
 
     <!-- 阅读进度条 -->
@@ -553,10 +553,10 @@
     <section id="chapter-C02" class="chapter">
         <div class="chapter-header">
             <span class="chapter-badge">C02</span>
-            <h2 class="chapter-title">好的，遵照您的要求，我将基于新版论文摘要，参考您提供的风格和分段模式，用坚定、自信且简练的中文进行翻译，并划分为多个小段</h2>
+            <h2 class="chapter-title">中文摘要、总体评价及可能的意义</h2>
         </div>
         <div class="chapter-body">
-        <p>好的，遵照您的要求，我将基于新版论文摘要，参考您提供的风格和分段模式，用坚定、自信且简练的中文进行翻译，并划分为多个小段落。</p>
+        <h1>中文摘要、总体评价及可能的意义</h1>
 <hr />
 <p><strong>摘要翻译</strong></p>
 <p>爱因斯坦1905年狭义相对论与1915年广义相对论，仅要求光速满足洛伦兹框架协变；两大理论从未断言，光速在数十亿年的宇宙演化历程中恒为定值。这一关键区别，在过去一个世纪里，被一个未经检验的宇宙学假设所误读。</p>
@@ -606,10 +606,11 @@ P \,=\, \frac{c(t)^6\, G_{\mu\nu}}{8\pi\, T_{\mu\nu}} \,\approx\, \frac{c(t)^4\,
     <section id="chapter-C03" class="chapter">
         <div class="chapter-header">
             <span class="chapter-badge">C03</span>
-            <h2 class="chapter-title">第一部分：Section 4 —— 从“公设陷阱”到“拓扑必然”</h2>
+            <h2 class="chapter-title">第一部分：Section 4 与 Section 10 —— 从“公设陷阱”到红移因果闭合</h2>
         </div>
         <div class="chapter-body">
-        <p>在论文的 <strong>Section 4（被忽视的光速时间变异性）</strong> 和 <strong>Section 10（宇宙学红移：一个未被回答的因果缺口及其物理闭合）</strong> 中，作者采用了层层递进、从“破”到“立”的严密逻辑链条来论证“宇宙学红移即光速膨胀”这一核心命题。</p>
+        <h1>第一部分：Section 4 与 Section 10 —— 从“公设陷阱”到红移因果闭合</h1>
+<p>在论文的 <strong>Section 4（被忽视的光速时间变异性）</strong> 和 <strong>Section 10（宇宙学红移：一个未被回答的因果缺口及其物理闭合）</strong> 中，作者采用了层层递进、从“破”到“立”的严密逻辑链条来论证“宇宙学红移即光速膨胀”这一核心命题。</p>
 <p>我将严格遵循原文的立论逻辑，为你做详细解说。</p>
 <hr />
 <h3>第一部分：Section 4 —— 从“公设陷阱”到“拓扑必然”</h3>
@@ -3057,7 +3058,7 @@ m_P = \sqrt{\frac{\hbar c^3}{P}}, \quad \ell_P = \sqrt{\frac{\hbar P}{c^5}}, \qu
 
     function clampSidebar(w) {
         const minW = 180;                       // 最窄 180px
-        const maxW = window.innerWidth * 0.25;  // 最宽窗口宽度的 25%
+        const maxW = window.innerWidth * 0.33;  // 最宽窗口宽度的 33%
         return Math.max(minW, Math.min(w, maxW));
     }
 
