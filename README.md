@@ -1,8 +1,7 @@
-### The XianLiang Conjecture: Cosmic Redshift is Just the Light-Speed Expansion! G(t) c(t)^2 = P, the Revised Einstein Field Equation G_{\mu\nu}, 
-and the Zero-Light-Speed Primordial Universe
+### The XianLiang Conjecture: Cosmic Redshift is Just the Light-Speed Expansion! G(t) c(t)^2 = P, the Revised Einstein Field Equation Gμν, and the Zero-Light-Speed Primordial Universe
 
 
-This is a highly unconventional and philosophically bold arXiv preprint. It does not operate within the comfort zone of mainstream astrophysical journals, but instead mounts a fundamental challenge to the very bedrock assumptions of modern physics.
+This is a highly unconventional and philosophically bold preprint. It does not operate within the comfort zone of mainstream astrophysical journals, but instead mounts a fundamental challenge to the very bedrock assumptions of modern physics.
 
 Here is a concise English summary of its **core thesis, main innovations, and the problems it seeks to resolve**, written in a style consistent with the paper's own academic tone.
 
