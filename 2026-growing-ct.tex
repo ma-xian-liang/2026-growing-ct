@@ -1729,7 +1729,6 @@
 	
 	
 	
-	\vskip 0.1in
 	\section*{
 		\begin{center}
 			3. Symbol Definitions and Conventions
@@ -1878,7 +1877,7 @@
 	For over a century, the constancy of the speed of light \(c\) has been elevated to the status of an unshakable dogma. While Einstein's theories achieved remarkable success in local regimes, they inadvertently imposed a cognitive confinement: researchers habitually project laboratory-scale measurements onto the entire cosmic timeline. Such axiomatic inertia leaves few scholars bold enough to explore the prospect of variable light speed. 
 	
 	\medskip
-	Yet Einstein's 1905 special relativity (SR) and 1915 general relativity (GR) demand only the Lorentz-frame invariance of \(c\) — they never require constancy of \(c\) across ten-billion-year cosmic epochs. This subtle distinction has been silently misread for a century as a universal cosmological assumption. Since R\o mer (1676) first demonstrated that light travels at finite speed, human measurements of \(c\) have spanned barely four centuries — an interval utterly negligible against the cosmic evolutionary timescale.
+	Yet Einstein's 1905 special relativity (SR) and 1915 general relativity (GR) demand only the Lorentz-frame invariance of \(c\) — they never require constancy of \(c\) across ten-billion-year cosmic epochs. This subtle distinction has been silently misread for a century as a universal cosmological assumption. Since R\o mer (1676) first pointed out that light travels at finite speed, human measurements of light speed \(c\) have spanned less than four centuries — a mere heartbeat to the cosmic giant. 
 	\bigskip
 				
 	{\bf Observational Asymmetry: The Fundamental Blind Spot}\,\,\,
@@ -1960,7 +1959,7 @@
 	
 	
 	{\bf Redshift Curve $\boldsymbol{z(t)}$: Morphology and Calibration}\,\,\,
-	We obtain the standard $\Lambda$CDM redshift--time relation using the Python library \texttt{astropy.cosmology} \cite{Astropy:2022}, specifically the \texttt{Planck18} cosmological implementation \cite{Planck2018:cosmo}, which provides numerically consistent redshift values as a function of forward cosmic time $t^\Delta$ elapsed since the Big Bang.
+	We obtain the standard $\Lambda$CDM redshift--time relation using the Python library \texttt{astropy.cosmology}~\cite{Astropy:2022}, specifically the \texttt{Planck18} cosmological implementation~\cite{Planck2018:cosmo}, which provides numerically consistent redshift values as a function of forward cosmic time $t^\Delta$ elapsed since the Big Bang.
 	
 	
 	A routinely calibrated cornerstone in observational studies is the so-called {\textit{Cosmic Noon}} epoch, corresponding to $t^\Delta = 2.4\, \mathrm{Gyr}$ with a matched redshift $z = 2.7$. We adopt this reference to build the simplified exponential model:
@@ -2461,14 +2460,14 @@
 	Many physical quantities from the classical basic equations evolve alongside \(c(t)\), and separate subsections will elaborate each topic sequentially.
 	
 	\medskip
-	All present-day values of fundamental physical constants used in this work (e.g., the Bohr radius $a_{\scriptscriptstyle\mathrm{B},0}$, the reduced Planck constant $\hbar_0$, and the proton diameter $d_p$) are taken from standard reference sources\cite{Tipler:2008}.
+	All present-day values of fundamental physical constants used in this work (e.g., the Bohr radius $a_{\scriptscriptstyle\mathrm{B},0}$, the reduced Planck constant $\hbar_0$, and the proton diameter $d_p$) are taken from standard reference sources~\cite{Tipler:2008}.
 	
 	\bigskip
 	{\bf Cosmic Origin Timescale}\,\,\,
 	The CMB decoupling epoch marks the origin point of the observable universe, corresponding to a redshift satisfying $1+z=1100$. 
 	
 	\medskip
-	Under the compact growing-$c(t)$ model defined in Eq.~(5.10), $C(t)=1/1100$ yields $t=-59.1\,\mathrm{Gyr}$; for the ultra-fine growing-$c(t)$ model, the cosmic time reads $t=-45.2\,\mathrm{Gyr}$ at the early CMB stage with redshift $z=1083.07$. These results imply a gently evolving cosmos rather than a violent Big Bang scenario\cite{Weinberg:2008}. 
+	Under the compact growing-$c(t)$ model defined in Eq.~(5.10), $C(t)=1/1100$ yields $t=-59.1\,\mathrm{Gyr}$; for the ultra-fine growing-$c(t)$ model, the cosmic time reads $t=-45.2\,\mathrm{Gyr}$ at the early CMB stage with redshift $z=1083.07$. These results imply a gently evolving cosmos rather than a violent Big Bang scenario~\cite{Weinberg:2008}. 
 	
 	\medskip
 	A preliminary assessment shows that the time span between the QGP threshold epoch ($\boldsymbol{z_{\star}}$) and the CMB decoupling epoch ($\boldsymbol{z_{1}}$) surpasses the 36-37\,$\mathrm{kyr}$ given by the standard $\Lambda$CDM model.
@@ -2686,13 +2685,13 @@
 	As analyzed in Table 4, the Dirac larger ratio~\cite{Dirac:1937} in Eq.~(1.16) scales as $N_{\mathrm{Dirac}}(t) \propto c(t)^{5}$. The present‑day ratio is $\approx 2.26 \times 10^{39}$. At the CMB epoch with $1+z=1100$, the large number is reduced to $(1/1100)^5$ of its current value, yielding $N_{\mathrm{Dirac,CMB}} \approx 1.40\times 10^{24}$.
 	
 	\medskip
-	Notice that such a dramatic reduction of the electromagnetic‑to‑gravitational force ratio at the CMB epoch is a distinctive prediction of our varying‑speed‑of‑light framework. A smaller $N_{\mathrm{Dirac}}$ implies that gravitational effects become comparatively more important in the early universe dynamics.
+	Notice that such a dramatic reduction of the electromagnetic‑to‑gravitational force ratio at the CMB epoch is a distinctive prediction of our growing-$c(t)$ framework. A smaller $N_{\mathrm{Dirac}}$ implies that gravitational effects become comparatively more important in the early universe dynamics.
 
 	
 	\medskip
 	\bigskip
 	\textbf{Re-examining the \texttt{Second} and the \texttt{Metre} Definition in SI}\,\,\,
-	One \texttt{Second} is defined as the duration of exactly \texttt{9,192,631,770} periods of radiation emitted from a specific energy transition of stationary cesium-133 atoms\cite{BIPM:2019}. The cesium atomic frequency is a pure microscopic quantum invariant governed by the fine-structure constant and the intrinsic energy-level structure of the atom; this frequency does not rely on the speed of light. One \texttt{Metre} is defined as the path length such light travels in vacuum in one \texttt{Second}, divided by \texttt{299,792,458}.
+	One \texttt{Second} is defined as the duration of exactly \texttt{9,192,631,770} periods of radiation emitted from a specific energy transition of stationary cesium-133 atoms~\cite{BIPM:2019}. The cesium atomic frequency is a pure microscopic quantum invariant governed by the fine-structure constant and the intrinsic energy-level structure of the atom; this frequency does not rely on the speed of light. One \texttt{Metre} is defined as the path length such light travels in vacuum in one \texttt{Second}, divided by \texttt{299,792,458}.
 	
 	\medskip
 	The above definition of the \texttt{Metre} implicitly assumes that the cosmic light speed in vacuum is permanently constant. Under the present-day speed of light $c_0$, the wavelength corresponding to the cesium-133 transition is given by:
@@ -2733,8 +2732,8 @@
 	We adopt standard optical glass to demonstrate wavelength variation visually. For a vacuum light speed of 300\,000 km/s, consider a photon with $\nu_{n0}=1.0\times10^{15}\,\mathrm{Hz}$ and $\lambda_{n0}=300\,\mathrm{nm}$. Upon entering glass with a refractive index $N_{\text{glass}}=1.5$, the photon’s propagation speed drops to 200\,000 km/s, accompanied by a wavelength reduction to $200\,\mathrm{nm}$. When exiting the glass and returning to vacuum, the wavelength returns to its original value of $300\,\mathrm{nm}$.
 	
 	\medskip
-	The vacuum speed of light acts as a universal cosmic background parameter, rather than an attribute of individual photons.
-	
+	\textit{\textbf{Note:} The vacuum speed of light acts as a universal cosmic background parameter, rather than an attribute of individual photons.}
+		
 	\medskip
 	Within the framework of standard cosmological redshift, we examine an ancient photon with intrinsic frequency $\nu_{n1}=1.0\times 10^{15}\,\mathrm{Hz}$ emitted at redshift $z=3.0$, where $1+z=4$. Driven by cosmic expansion, its observed frequency decreases to $2.5\times 10^{14}\,\mathrm{Hz}$ at the present epoch, equal to one quarter of its initial value, while its measured wavelength quadruples.
 	
@@ -2799,7 +2798,7 @@
 	\medskip
 	\bigskip
 	\textbf{The Revised $\boldsymbol{G_{\mu\nu}}$ Equation}\,\,\,
-	Substituting the above postulate into the Einstein curvature field equation\cite{Einstein:632320} defined in Eq.~(1.9), we obtain:
+	Substituting the above postulate into the Einstein curvature field equation~\cite{Einstein:632320} defined in Eq.~(1.9), we obtain:
 	$$
 	G_{\mu\nu} = \frac{8\pi\tinysp G(t)}{{c(t)}^4} T_{\mu\nu} = \frac{8\pi\tinysp P}{{c(t)}^6} T_{\mu\nu} \,\,.  \eqno(8.2)
 	$$
@@ -2928,10 +2927,10 @@
 	\medskip
 	\bigskip
 	\textbf{Alternative Approaches to UFT Puzzles}\,\,\,
-	Traditional Unified Field Theory (UFT) research has long been hindered by two fundamental obstacles. 
+	Traditional Unified Field Theory (UFT) research has long been hindered by two fundamental obstacles: the quantization of gravity and the photon-scattering problem. 
 	
 	\medskip
-	The primary challenge originates from the quantization of gravity, where general relativity exhibits essential structural incompatibility with standard Yang–Mills gauge field frameworks, rendering conventional quantization schemes infeasible.
+	The quantization of gravity poses the first obstacle: general relativity exhibits essential structural incompatibility with standard Yang–Mills gauge field frameworks, rendering conventional quantization schemes infeasible.
 	
 	\medskip
 	Our revised $G_{\mu\nu}$ equation abandons the traditional constant gravitational parameter $G$ and adopts a time‑evolving $c(t)$ variable. By shifting to LEM field quantization, this modified curvature formulation may provide a viable alternative for circumventing the gravitational quantization dilemma.
@@ -2965,7 +2964,7 @@
 	
 
 	\bigskip
-	A second critical issue is the photon‑scattering problem. Standard \(\Lambda\)CDM cosmology assumes a hot primordial universe with constant present-day \(c\), which produces intense photon scattering and obstructs early particle assembly and hadronization. The cosmic transition from opaque plasma to transparent medium is governed by coupled scattering processes such as Thomson scattering on free electrons and Rayleigh scattering on neutral hydrogen, as documented in the existing literature~\cite{Coulton:2021}.
+	The second critical issue is the photon‑scattering problem. Standard \(\Lambda\)CDM cosmology assumes a hot primordial universe with constant present-day \(c\), which produces intense photon scattering and obstructs early particle assembly and hadronization. The cosmic transition from opaque plasma to transparent medium is governed by coupled scattering processes such as Thomson scattering on free electrons and Rayleigh scattering on neutral hydrogen, as documented in the existing literature~\cite{Coulton:2021}.
 	
 	\medskip
 	To resolve the horizon and flatness puzzles, Magueijo introduced an early-time VSL (variable speed of light) model~\cite{Magueijo:2003}. However, this ansatz amplifies photon interaction rates and mean free paths, worsening the scattering barrier to hadronization and neutral atom formation — the very problem that a successful cosmology must resolve.
@@ -3061,7 +3060,7 @@
 	\medskip
 	\bigskip
 	\textbf{Confinement Generates Substance}\,\,\,
-	In QCD, confinement traps energy\cite{Peskin:1995}; in this work, \textit{Confinement Generates Substance}. This marks a fundamental distinction. Under the assumption of a constant speed of light, energy and substance can be regarded as nearly interchangeable, whereas in a variable-$c$ framework, the two concepts must be strictly differentiated.
+	In QCD, confinement traps energy~\cite{Peskin:1995}; in this work, \textit{Confinement Generates Substance}. This marks a fundamental distinction. Under the assumption of a constant speed of light, energy and substance can be regarded as nearly interchangeable, whereas in a variable-$c$ framework, the two concepts must be strictly differentiated.
 	
 	\medskip
 	Confinement is not a simple process of energy storage. Instead, the confinement process itself is a \textit{substance-forming process}. The majority of cosmic substance originates from hadronization, making confinement the dominant mechanism for the generation of cosmic substance.
@@ -3220,7 +3219,7 @@
 	This model only serves as a heuristic auxiliary illustration to clarify the correlation between substance inhomogeneity and the evolutionary trend of $c(t)$. The full mathematical construction and rigorous physical proof linking substance clustering to the background electromagnetic parameters of LEM-SCDF are left for future research.
 	
 	\medskip
-	\textit{\textbf{Note:} In this picture, the cosmic speed of light \(c(t)\) is a statistical collective property of the universe — just as gas temperature is not a property of any single molecule, but a statistical average of their collective motion. Every star, every milligram of matter, and every joule of energy contributes, through its electromagnetic configuration, to the global response of the LEM-SCDF background. As matter condenses, the statistical distribution of these sources shifts, and \(c(t)\) evolves accordingly. In short, \(c(t)\) is to the cosmos what gas temperature is to a gas: a macroscopic statistical quantity, not a metaphysical constant.}
+	\textit{\textbf{Note:} In this picture, the cosmic speed of light \(c(t)\) is a statistical collective property of the universe — just as gas temperature is not a property of any single molecule, but a statistical average of their collective motion. Every star, every milligram of substance, and every joule of energy contributes, through its electromagnetic configuration, to the global response of the LEM-SCDF background. As matter condenses, the statistical distribution of these sources shifts, and \(c(t)\) evolves accordingly. In short, \(c(t)\) is to the cosmos what gas temperature is to a gas: a macroscopic statistical quantity, not a metaphysical constant.}
 	
 	
 	\medskip
@@ -3290,7 +3289,7 @@
 	The existing logical gap, in our view, constitutes a genuine \textbf{\textit{causal deficit}} in the standard redshift interpretation.
 	
 	\medskip
-	Nor are these concerns new. The physical mechanism underlying cosmological redshift has been questioned before: Feynman noted that it is not a Doppler shift but a change occurring to the photons themselves during their journey\cite{Feynman:2011}; Davies further identified a persistent causal deficit, arguing that attributing redshift to spatial expansion alone replaces physical mechanism with geometric description\cite{Davies:1995}. 
+	Nor are these concerns new. The physical mechanism underlying cosmological redshift has been questioned before: Feynman~\cite{Feynman:2011} noted that it is not a Doppler shift but a change occurring to the photons themselves during their journey; Davies~\cite{Davies:1995} further identified a persistent causal deficit, arguing that attributing redshift to spatial expansion alone replaces physical mechanism with geometric description. 
 	
 	\medskip
 	\bigskip
@@ -3369,8 +3368,6 @@
 	
 	
 	
-	
-	\vskip 0.1in
 	\section*{
 		\begin{center}
 			11. Discussion on Experimental\\
@@ -3420,7 +3417,7 @@
 	\medskip
 	\bigskip
 	\textbf{HEPS Device Conditions for Exploring Tiny $\boldsymbol{c(t)}$ Evolution}\,\,\,
-	The High Energy Photon Source (HEPS) in Huairou, Beijing, is a cutting-edge fourth-generation synchrotron radiation facility that provides high-precision, high-resolution experimental conditions\cite{HEPS:2022}. Its key performance advantages are summarized below:
+	The High Energy Photon Source (HEPS) in Huairou, Beijing, is a cutting-edge fourth-generation synchrotron radiation facility that provides high-precision, high-resolution experimental conditions~\cite{HEPS:2022}. Its key performance advantages are summarized below:
 	
 	\begin{itemize}
 		\item HEPS hosts a 6\,GeV high-energy electron storage ring, generating high-purity hard X-ray beams for stable calibration of physical parameters.
@@ -3441,9 +3438,6 @@
 	
 	
 	
-	
-	
-	\vskip 0.1in
 	\section*{
 		\begin{center}
 			12. A Fresh Perspective \\
@@ -3468,7 +3462,7 @@
 	We hold a moderate, non-exclusive stance on dark energy. The growing-\(c(t)\) framework does not rule out the cosmological constant; rather, it offers an independent physical route to reproduce the observed cosmic acceleration. The DESI DR2 data, which challenge the \(\Lambda\)CDM paradigm, are fully consistent with the growing-\(c(t)\) cosmology — and may even be interpreted as the first observational hint of the \(G(t) \propto c(t)^{-2}\) scaling law we have posited.
 
 	\medskip
-	\textit{\textbf{Note:} We apply the same cautious stance to the dark matter framework. Stronger effective gravity from diminished early $c(t)$ can partially explain high-redshift gravitational shortfalls. However, our mechanism cannot resolve the 400-fold mass mismatch observed in the low-redshift Coma Galaxy Cluster\cite{Zwicky:1933}.}
+	\textit{\textbf{Note:} We apply the same cautious stance to the dark matter framework. Stronger effective gravity from diminished early $c(t)$ can partially explain high-redshift gravitational shortfalls. However, our mechanism cannot resolve the 400-fold mass mismatch observed in the low-redshift Coma Galaxy Cluster~\cite{Zwicky:1933}.}
 
 	
 	\medskip
@@ -3480,7 +3474,7 @@
 	Per atomic physics, photons above 13.6\,eV ionize hydrogen instantly; recombination speeds up sharply at lower gas temperatures. At $1+z=25$, early galaxies emit massive far-ultraviolet photons matching the 91.2\,nm ionization threshold. Standard theory uses the $68\,\mathrm{K}$ temperature to argue recombination is slow, and abundant UV photons would fully ionize intergalactic hydrogen at high redshift.
 	
 	\medskip
-	This prediction clashes with joint observations\cite{Madau:2023}. JWST detects extreme UV photon output at $1+z=25$, while $21\tinysp$CM radio signals prove widespread neutral hydrogen persists at the same redshift. This inconsistency forms the photon budget crisis, which standard cosmology only resolves near $1+z=7$ via falling UV production and faster recombination. 
+	This prediction clashes with joint observations~\cite{Madau:2023}. JWST detects extreme UV photon output at $1+z=25$, while $21\tinysp$CM radio signals prove widespread neutral hydrogen persists at the same redshift. This inconsistency forms the photon budget crisis, which standard cosmology only resolves near $1+z=7$ via falling UV production and faster recombination. 
 	
 	\medskip
 	The severity of this crisis is underscored by recent efforts to resolve it within the standard paradigm. For instance, Austin et al.~\cite{Austin:2025} and other recent studies~\cite{Reionization:2025} have attempted to reconcile JWST observations with reionization by invoking strong feedback mechanisms or HII clumping. While these attempts provide valuable insights, they often require fine-tuned parameters. The growing-\(c(t)\) framework, by contrast, offers a more fundamental resolution by decoupling \(T_{\rm rad}\) and \(T_{\rm gas}\), as we have argued.
@@ -3510,7 +3504,7 @@
 	Within standard Newtonian celestial mechanics and conventional cosmology, all stellar and galactic mass calibrations fundamentally rest on the gravitational constant $G_0$, which is calibrated locally within the Solar System. Standard cosmological frameworks implicitly treat $G=G_0$ as invariant across all cosmic redshifts, and all subsequent calculations of stellar density, radius and stellar evolution obey this fixed scaling rule.
 	
 	\medskip
-	Recent JWST observations have identified candidate compact galaxies at extremely high redshifts ranging from $z\sim10$ to $z\sim25$. Under the assumption of a fixed gravitational constant $G_0$, the estimated average density of objects in this high-redshift regime approaches or even exceeds the nuclear saturation density\cite{Labbe:2023}.
+	Recent JWST observations have identified candidate compact galaxies at extremely high redshifts ranging from $z\sim10$ to $z\sim25$. Under the assumption of a fixed gravitational constant $G_0$, the estimated average density of objects in this high-redshift regime approaches or even exceeds the nuclear saturation density~\cite{Labbe:2023}.
 	
 	\medskip
 	If density exceeds this saturation threshold, runaway nuclear fusion ignites inside stars, driving their rapid collapse into black holes. This theoretical outcome conflicts with the stable, long-lived high-redshift systems observed by space telescopes. Standard theories seek to resolve this tension by invoking unconfirmed physical mechanisms: super-Eddington accretion or the direct collapse of massive primordial gas clouds; however, neither scenario has been validated via local astronomical observations.
@@ -3537,7 +3531,7 @@
 	\medskip
 	\bigskip
 	\textbf{Resolving Timescale Conflict for Population III Stars}\,\,\,
-	Within the standard $\Lambda$CDM model, the first generation of metal-free primordial stars---Population III stars---inevitably form with extremely large masses, ranging from ten to several hundred solar masses, due to the absence of metal-line cooling in primordial gas clouds. The standard $\Lambda$CDM model predicts that these very massive Population III stars remain on the main sequence for merely two to three million years\cite{Topping:2023}.
+	Within the standard $\Lambda$CDM model, the first generation of metal-free primordial stars---Population III stars---inevitably form with extremely large masses, ranging from ten to several hundred solar masses, due to the absence of metal-line cooling in primordial gas clouds. The standard $\Lambda$CDM model predicts that these very massive Population III stars remain on the main sequence for merely two to three million years~\cite{Topping:2023}.
 	
 	\medskip
 	This canonical prediction creates a severe timescale conflict with recent JWST observations of celestial objects in the high-redshift range $z\sim10$ to $z\sim25$. JWST has identified fully formed, massive galaxies that emerged merely several hundred million years after the Big Bang. If all these primordial massive stars burn through their nuclear fuel and die within just a few million years, galaxy assembly, supernova feedback, and metal enrichment must proceed at an unphysically rapid pace to produce the observed mature galaxies.
@@ -3566,7 +3560,7 @@
 	Standard stellar evolution theories assume a constant speed of light $c$. Based on this premise, they predict a definite primordial lithium abundance for the early Sun. However, high-precision spectroscopic observations have long revealed a marked discrepancy: the lithium content on the solar surface is merely one-third of the theoretical prediction. This well-known inconsistency is referred to as the long-standing solar lithium puzzle.
 	
 	\medskip
-	To fix this problem, existing theories add extra assumptions. These include stronger internal mixing, early mass loss, or lithium hiding in planets\cite{Korn:2019}. However, there is no direct proof for these ideas, and they fail to provide a unified, self-consistent physical picture.
+	To fix this problem, existing theories add extra assumptions. These include stronger internal mixing, early mass loss, or lithium hiding in planets~\cite{Korn:2019}. However, there is no direct proof for these ideas, and they fail to provide a unified, self-consistent physical picture.
 	
 	\medskip
 	Within the growing-$c(t)$ framework proposed in this study, the Solar System formed at a cosmic redshift of $1+z\approx1.43$. Following the scaling law $c(z)=c_0/(1+z)$, the vacuum light speed at the epoch of solar formation was roughly 70\% of its present-day value. Correspondingly, the Bohr radii of hydrogen, lithium, carbon, and all other elements shrink to 70\% of their present-day sizes, imposing inherent limits on the initial lithium reservoir of the protosun.
@@ -3615,19 +3609,20 @@
 	The most precise direct laboratory measurement of $G$ was reported by the Luo-Jun group (2018)~\cite{Luo:2018}, achieving a relative uncertainty of $11.6\times 10^{-6}$ using two independent Cavendish-type torsion-balance schemes. 
 	
 	\medskip
-	By contrast, the constraint $\Delta G/G \sim 10^{-13}\,\mathrm{yr}^{-1}$ from Lunar Laser Ranging (LLR) is not a direct measurement, but an inference built upon the prior model assumption that both $c$ and $G$ are constant~\cite{Mueller:2014}. We now dissect the reasoning behind this inference.
+	By contrast, the constraint $\Delta G/G \sim 10^{-13}\,\mathrm{yr}^{-1}$ from Lunar Laser Ranging (LLR) is not a direct measurement, but an inference built upon the prior model assumption that light speed $c$ is constant~\cite{Mueller:2014}. We now dissect the reasoning behind this inference.
 	
 	\medskip
-	After removing known perturbative effects, LLR observations yield an apparent lunar recession rate of ${\Delta D} = \boldsymbol{3.8}\ \mathrm{cm\,yr^{-1}}$ under the constant-$c$ assumption~\cite{Murphy:2013}, with this entire $3.8\ \mathrm{cm\,yr^{-1}}$ being attributed to tidal angular-momentum dissipation within the Earth-Moon system. This corresponds to a fractional growth of the round-trip light travel time:
+	After removing known perturbative effects from the Sun and other planets, LLR observations yield an apparent lunar recession rate of ${\Delta D} = \boldsymbol{3.8}\ \mathrm{cm\,yr^{-1}}$ under the constant-$c$ assumption~\cite{Murphy:2013}; the standard LLR model attributes this entire recession to tidal angular-momentum dissipation within the Earth-Moon system. This corresponds to a fractional growth of the round-trip light travel time:
 	\[
 	\frac{\Delta T}{T}\thinspace =\thinspace \frac{\Delta D}{D} \thinspace =  \thinspace \frac{3.8\ \mathrm{cm/yr}}{3.844\times 10^{10}\ {\mathrm{cm}}} \thinspace = \thinspace 9.89\times 10^{-11}\ \mathrm{yr}^{-1}\,\,.   \eqno(12.1)
 	\]
 	
 	\medskip
-	\textit{\textbf{Note:} Crucially, distance $D$ is not directly measured; LLR measures only time. The distance is computed from the round-trip time by assuming a constant \(c\).}
+	\textit{\textbf{Note:} Crucially, $\Delta D$ is not directly measured; LLR measures only the round-trip light travel time $T$ and its annual variation $\Delta T$. The recession distance $\Delta D$ is then inferred from $\Delta T$ by assuming a constant speed of light $c$.}
 	
 	\bigskip
-	As stated in Section 11, within our ultra-fine model, $\Delta c/c = 6.89\times 10^{-11}\ \mathrm{yr}^{-1}$. From the logarithmic differential of $T$ and $c$, we obtain the real orbital expansion ratio:
+	As stated in Section 11, within our ultra-fine model, $\Delta c/c = 6.89\times 10^{-11}\ \mathrm{yr}^{-1}$. Since $T = D/c$ (single-trip light travel time), logarithmic differentiation gives the real orbital expansion ratio:
+	
 	\[
 	\frac{\Delta D_{\mathrm{real}}}{D} \thinspace = \thinspace \frac{\Delta {T}}{T} + \frac{\Delta c}{c}\,\,,   \eqno(12.2)
 	\]
@@ -3659,10 +3654,11 @@
 	\]
 	
 	\medskip
-	\textit{\textbf{Note:} This component of orbital expansion arises purely from the cosmic evolution of $G$, independent of tidal dissipation.}
+	\textit{\textbf{Note:} This component of orbital expansion arises purely from the cosmic evolution of gravity $G$, independent of tidal dissipation.}
 	
 	\medskip	
 	Subtracting the cosmic contribution from the total rate, the remaining part corresponds to the orbital expansion induced by \textit{\textbf{tidal}} dissipation. So, we have:
+	
 	\[
 	\frac{\Delta D_\mathrm{tide}}{D}
 	\thinspace = \thinspace \frac{\Delta D_\mathrm{real}}{D} - \frac{\Delta D_\mathrm{gravity}}{D}
@@ -3678,10 +3674,10 @@
 	\]
 	
 	\medskip
-	Thus, in contrast to the standard LLR analysis, which attributes the entire observed recession to tidal dissipation, our variable-\(c\) model offers a distinctly different interpretation. In our model, \(\Delta D_{\mathrm{tide}}\) is only \(1.15\ \mathrm{cm\,yr^{-1}}\), significantly smaller than the \(3.8\ \mathrm{cm\,yr^{-1}}\) inferred from the standard LLR framework.
+	Thus, in contrast to the standard LLR model, which attributes the entire observed recession to tidal dissipation, our variable-\(c\) model offers a distinctly different interpretation. In our model, \(\Delta D_{\mathrm{tide}}\) is only \(1.15\ \mathrm{cm\,yr^{-1}}\), significantly smaller than the \(3.8\ \mathrm{cm\,yr^{-1}}\) inferred from the standard LLR framework.
 	
 	\medskip
-	Consequently, we conclude that the \(10^{-13}\) bound on \(\Delta G/G\) from LLR cannot be considered a solid constraint against the conjecture presented in this work, as it is strongly model-dependent on the assumed constancy of \(c\) and \(G\).
+	Consequently, we conclude that the \(10^{-13}\) bound on \(\Delta G/G\) from LLR model cannot be considered a solid constraint against the conjecture presented in this work.
 
 
 	
@@ -3755,11 +3751,11 @@
 	I first began wondering about the essence of light and gravity decades ago. A sudden insight came to me during a drive in early March. Realizing this is one of the deepest mysteries of physics, I dared not even entertain the thought. In early May, the growing passion urged me to write this study. I attempt to build a logically consistent physical framework in this work. Even if my theory fails to match observational evidence, I hope it can serve as an imaginative thought experiment.
 	
 	
-	\vskip 0.3in
+	\vskip 0.5in
 	\paragraph{Funding:} No funding was received for this work.
 	
 	
-	\vskip 0.1in
+	\vskip 0.5in
 	\bibliography{refs}
 	\newpage
 	
@@ -3775,7 +3771,7 @@
 	E-mail: maxianliang@gmail.com\\[10pt]
 	June 13, 2026
 	
-	\vskip 0.6in
+	\vskip 0.4in
 	
 	
 	
@@ -3790,7 +3786,7 @@
 		Version History 
 		
 		\smallskip
-		\texttt{\makebox[3.0em][l]{v1.9}2026-08-17\hspace{1.2em}Added LLR does not prove an exact constant G to Section 12.}
+		\texttt{\makebox[3.0em][l]{v1.9}2026-08-18\hspace{1.2em}Added LLR does not prove an exact constant G to Section 12.}
 
 		\smallskip
 		\texttt{\makebox[3.0em][l]{v1.8}2026-08-08\hspace{1.2em}Added additional references and explanatory notes throughout.}
@@ -3823,22 +3819,21 @@
 		\vskip 0.2in
 		\noindent
 		Citation Template
-		
+				
 		\medskip
 		\hspace{-0.8em} \begin{minipage}{\linewidth}
 			\begin{verbatim}
 				@misc{XianLiang:2026_growing_ct,
 					author       = "XianLiang.Ma",
-					title        = "{XianLiang Conjecture: Cosmic Redshift is Just the Light Speed Expansion!}",
+					title        = "{XianLiang Conjecture: Cosmic Redshift is Just 
+					                 the Light Speed Expansion! G(t)c(t)^2 = P}",
 					year         = "2026",
 					month        = "6",
-					howpublished = "{GitHub repository}",
-					url          = "https://github.com/ma-xian-liang/2026-growing-ct"
+					url          = "https://github.com/ma-xian-liang/2026-growing-ct",
+					howpublished = "{GitHub repository}"
 				}
 			\end{verbatim}
 		\end{minipage}
-		
-		
 		
 		
 		\vskip 0.2in
