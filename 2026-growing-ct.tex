@@ -1696,13 +1696,14 @@
 	$$
 		
 	\smallskip
-	Two large-number coincidences were noted by Dirac: the first is the ratio of electric to gravitational force between an electron and a proton; the second is the ratio of the cosmic age to the light-crossing time of a proton. 
+	Two large-number coincidences were noted by Dirac. The first is the ratio of electric to gravitational force between an electron and a proton, the second is the ratio of the cosmic age to the light-crossing time of a proton. 
 	$$
 	N_{\text{Dirac,1}} = \frac{F_\text{ep}}{F_g} 
 	= \frac{e^2}{ 4\pi\,G\,\varepsilon_0\,m_e\,m_p} \approx 2.27 \times 10^{39} \eqno(1.16)
 	$$
+	
 	$$
-	N_{\text{Dirac,2}} = \frac{T_{0}}{d_p / c} = \frac{c \, T_{\text{0}}}{d_p} \approx 7.67 \times 10^{40} \eqno(1.17)
+	N_{\text{Dirac,2}} = \frac{T_{0}}{d_p / c} = \frac{c \, T_{0}}{d_p} \approx 7.67 \times 10^{40} \eqno(1.17)
 	$$
 	
 	
@@ -2361,15 +2362,15 @@
 	Each piecewise $yr_i$ stands for the time scaling factor derived under the growing-$c(t)$ model. For example, $yr_i=1.5$ corresponds to an averaged redshift $\bar z=0.5$ from $z_i$ and $z_{i+1}$; the original $10^4$ years of sampling interval is scaled to $1.5\times 10^4$ years within the growing-$c(t)$ framework.
 	\medskip
 	
-	
-	
+
 	\bigskip
 	{\bf Cumulative Summation $\boldsymbol{\mathrm{YR}_i}$}\,\,\,
-	We accumulate the sequence $yr_i$ following Eq.~(6.2) to compute the total cosmic timescale under the growing-$c(t)$ model. To suppress floating-point round-off error arising from millions of successive additions, the Kahan summation algorithm is adopted for residual error compensation.
-	\[
+	Starting from $i=0$ and moving forward to $i=1379022$, we accumulate the sequence $yr_i$ following Eq.~(6.2) to compute the total cosmic timescale under the growing-$c(t)$ model. To suppress floating-point round-off error arising from millions of successive additions, the Kahan summation algorithm is adopted for residual error compensation.
+	$$
 	\mathrm{YR}_i = \mathrm{YR}_{i-1} + yr_i \,\,,\quad \mathrm{YR}_0 = yr_0 \,\,.\eqno(6.2)
-	\]
+	$$
 	
+	\medskip
 	The resulting $\mathrm{YR}_i$ array represents the growing-$c(t)$ timescale quantified in units of $10^4$ years. Each $\mathrm{YR}_i$ is multiplied by $-1$ to denote negative cosmic time. The formation point of the CMB epoch corresponds to $-45.2\ \mathrm{Gyr}$.
 	\medskip
 	
@@ -2980,8 +2981,8 @@
 	The second critical issue is the photon‑scattering problem. Standard \(\Lambda\)CDM cosmology assumes a hot primordial universe with constant present-day \(c\), which produces intense photon scattering and obstructs early particle assembly and hadronization. The cosmic transition from opaque plasma to transparent medium is governed by coupled scattering processes such as Thomson scattering on free electrons and Rayleigh scattering on neutral hydrogen, as documented in the existing literature~\cite{Coulton:2021}.
 	
 	\medskip
-	To resolve the horizon and flatness puzzles, Magueijo introduced an early-time VSL (variable speed of light) model~\cite{Magueijo:2003}. However, this ansatz amplifies photon interaction rates and mean free paths, worsening the scattering barrier to hadronization and neutral atom formation — the very problem that a successful cosmology must resolve.
-		
+	To resolve the horizon and flatness puzzles, Magueijo introduced an early-time VSL (variable speed of light) model~\cite{Magueijo:2003} in which the speed of light in the early universe is assumed to be extraordinarily larger than its present-day \(c\). However, this ansatz amplifies photon interaction rates and mean free paths, worsening the scattering barrier to hadronization and neutral atom formation — the very problem that a successful cosmology must resolve.
+			
 	\medskip
 	Within the growing-\(c(t)\) framework, this issue is addressed via the postulated \textit{ZLZT} (Zero ‑Light‑Speed and Zero‑Temperature) primordial universe, where both light speed and temperature asymptotically approach zero. This initial condition removes the intense photon scattering inherent to standard cosmology and conventional VSL theories.
 		
