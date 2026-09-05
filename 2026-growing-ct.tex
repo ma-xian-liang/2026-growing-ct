@@ -2372,7 +2372,7 @@
 	{\bf Cumulative Summation $\boldsymbol{\mathrm{YR}_i}$}\,\,\,
 	Starting from $i=0$ and moving forward to $i=1379022$, we accumulate the sequence $yr_i$ following Eq.~(6.2) to compute the total cosmic timescale under the growing-$c(t)$ model. To suppress floating-point round-off error arising from millions of successive additions, the Kahan summation algorithm is adopted for residual error compensation.
 	$$
-	\mathrm{YR}_i = \mathrm{YR}_{i-1} + yr_i \,\,,\quad \mathrm{YR}_0 = yr_0 \,\,.\eqno(6.2)
+	\mathrm{YR}_0 = yr_0 \,\,,\quad \mathrm{YR}_i = \mathrm{YR}_{i-1} + yr_i \,\,.\eqno(6.2)
 	$$
 	
 	\medskip
