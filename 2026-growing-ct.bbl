@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{NBS:1987}
+{\em The International System of Units (SI)}.
+\newblock NBS Special Publication 330. 1987.
+\newblock Appendices I and II contain the meter definition and practical
+  realization.
+
 \bibitem{Astropy:2022}
 Astropy Collaboration, A.~M. Price-Whelan, et~al.
 \newblock {The Astropy Project: Sustaining and Growing a Community-oriented
@@ -81,12 +87,6 @@ Paul C.~W. Davies.
 \newblock {\em {About Time: Einstein's Unfinished Revolution}}.
 \newblock Simon \& Schuster, New York, 1995.
 
-\bibitem{NBS:1987}
-{\em The International System of Units (SI)}.
-\newblock NBS Special Publication 330. 1987.
-\newblock Appendices I and II contain the meter definition and practical
-  realization.
-
 \bibitem{HEPS:2022}
 Y.~Jiao et~al.
 \newblock {The High Energy Photon Source (HEPS): A new 6-GeV synchrotron
@@ -156,6 +156,26 @@ Michael~J. Prather.
 A.~J. Korn and J.~Meléndez.
 \newblock {Lithium in the Universe}.
 \newblock {\em Astronomy \& Astrophysics Review}, 27:4, 2019.
+
+\bibitem{Luo:2018}
+Qing Li, Chao Xue, Jian-Ping Liu, Jun-Fei Wu, Shan-Qing Yang, Cheng-Gang Shao,
+  Li-Di Quan, Wen-Hai Tan, Liang-Cheng Tu, Qi~Liu, Hao Xu, Lin-Xia Liu,
+  Qing-Lan Wang, Zhong-Kun Hu, Ze-Bing Zhou, Peng-Shun Luo, Shu-Chao Wu, Vadim
+  Milyukov, and Jun Luo.
+\newblock Measurements of the gravitational constant using two independent
+  methods.
+\newblock {\em Nature}, 560:582--588, 2018.
+
+\bibitem{Mueller:2014}
+Jürgen Müller, L.~Biskupek, F.~Hofmann, and E.~Mai.
+\newblock Testing relativity by lunar laser ranging.
+\newblock In {\em Frontiers in Relativistic Celestial Mechanics}, volume~2. de
+  Gruyter, 2014.
+
+\bibitem{Murphy:2013}
+T.~W. Murphy.
+\newblock Lunar laser ranging: the millimeter challenge.
+\newblock {\em Reports on Progress in Physics}, 76(7):076901, 2013.
 
 \bibitem{Milne:1933}
 E.~A. Milne.
