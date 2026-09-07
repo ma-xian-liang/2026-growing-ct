@@ -2045,9 +2045,9 @@
 					{2.7*exp(-1*(x-2.4))};
 					
 					% Reference line t = 2.5$\mathrm{Gyr}$
-					\draw[blue!80!black, line width=1.0pt] (axis cs:2.4, 0) -- (axis cs:2.4, 20);
+					\draw[blue!80!black, line width=0.8pt] (axis cs:2.4, 0) -- (axis cs:2.4, 20);
 					% Reference line z = 2.7
-					\draw[blue!80!black, line width=1.0pt] (axis cs:0.2, 2.7) -- (axis cs:13.8, 2.7);
+					\draw[blue!80!black, line width=0.8pt] (axis cs:0.2, 2.7) -- (axis cs:13.8, 2.7);
 					
 					% Text annotations
 					\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:2.65, 9) {$t^\Delta=2.4\ \mathrm{Gyr}$};
@@ -2081,9 +2081,9 @@
 					{2.7*exp(-0.16*(x-2.4)) * ((x/2.4)^(-0.84)) * (((13.8-x)/(13.8-2.4))^0.86)};
 					
 					% Reference line t = 2.4$\mathrm{Gyr}$
-					\draw[blue!80!black, line width=1.0pt] (axis cs:2.4, 0) -- (axis cs:2.4, 20);
+					\draw[blue!80!black, line width=0.8pt] (axis cs:2.4, 0) -- (axis cs:2.4, 20);
 					% Reference line z = 2.7
-					\draw[blue!80!black, line width=1.0pt] (axis cs:0.2, 2.7) -- (axis cs:13.8, 2.7);
+					\draw[blue!80!black, line width=0.8pt] (axis cs:0.2, 2.7) -- (axis cs:13.8, 2.7);
 					
 					% Text annotations
 					\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:2.65, 9) {$t^\Delta=2.4\ \mathrm{Gyr}$};
@@ -2104,8 +2104,6 @@
 		\label{fig:redshift_fit_comparison}
 		
 	\end{figure}
-	
-	
 	
 	
 	
@@ -2134,7 +2132,6 @@
 	\end{itemize}
 	\bigskip
 	\medskip
-	
 	
 	
 	
@@ -2294,19 +2291,109 @@
 	\]
 	
 	\medskip
-	Up to this point, the compact growing-$c(t)$ model has been fully established. Detailed physical interpretation will be discussed in the following sections.
+	Up to this point, the compact growing-$c(t)$ model has been fully established. We now present its evolution curve in the following figure.
+					
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=14cm, height=7cm,
+				axis lines = box,
+				xlabel = {Cosmic time \(t\) [Gyr]},
+				ylabel = {Sigmoid growing-\(c(t)\)},
+				xmin=-68, xmax=40,
+				ymin=-0.06, ymax=1.4,
+				xtick = {-70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40},
+				ytick = {0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4},
+				tick label style={font=\small},
+				label style={font=\small},
+				smooth,
+				every tick/.style={thick, black},
+				]
+				
+				\addplot[color=red, line width=1.6pt, solid, domain=-59.1:0, samples=600]
+				{ (1 + exp(-0.1442 * 8.854)) / (1 + exp(-0.1442*(x + 8.854))) };
+				
+				\addplot[color=purple!80!black, line width=1.6pt, dashed, domain=0:35, samples=600]
+				{ (1 + exp(-0.1442 * 8.854)) / (1 + exp(-0.1442*(x + 8.854))) };
+				
+								
+				% Reference line z_future = Future Max, 1.2789 
+				\draw[purple!80!black, line width=0.5pt] (axis cs:-70, 1.2789) -- (axis cs:35, 1.2789);	
+				% Text annotation
+				\node[purple!80!black, font=\scriptsize] at (axis cs:-12, 1.2289) {$\boldsymbol{J = 1.2789}$};
+
+				
+				% Reference line z_symmetric = symmetric line, 0.63945 
+				\draw[purple!80!black, line width=0.5pt] (axis cs:-14, 0.63945) -- (axis cs:35, 0.63945);
+				\draw[purple!80!black, line width=1.2pt] (axis cs:-8.854, 0.43945) -- (axis cs:-8.854, 0.90);
+				% Text annotation
+				\node[purple!80!black, font=\scriptsize] at (axis cs:17, 0.58945) {$\boldsymbol{0.5*J = 0.63945}$};
+				\node[purple!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-8.854, 0.70) {$\boldsymbol{-\beta}$};
+
+				
+				% Reference line z_now = Present Day, -0Gyr, 1.0 
+				\draw[blue!80!black, line width=0.8pt] (axis cs:0, -0.08) -- (axis cs:0, 1.1);
+				\draw[blue!80!black, line width=0.3pt] (axis cs:-70, 1.00) -- (axis cs:3, 1.00);
+				% Text annotation
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-0.05, 0.03) {Present-Day};
+
+				% Reference line z_3 = Solar System, -7.55Gyr, 0.70 
+				\draw[blue!80!black, line width=0.8pt] (axis cs:-7.55, -0.08) -- (axis cs:-7.55, 0.9);
+				\draw[blue!80!black, line width=0.3pt] (axis cs:-70, 0.70) -- (axis cs:-5, 0.70);
+				% Text annotation
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-7.60, 0.03) {${z_3}$\,\,\,Solar-System};
+				
+				% Reference line z_2 = Cosmic Noon, -36.8Gyr, 0.04 
+				\draw[blue!80!black, line width=0.8pt] (axis cs:-17.83, -0.08) -- (axis cs:-17.83, 0.80);
+				\draw[blue!80!black, line width=0.3pt] (axis cs:-70, 0.27) -- (axis cs:-15, 0.27);
+				% Text annotation
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-17.90, 0.03) {${z_2}$\,\,\,Cosmic-Noon};
+				
+				% Reference line z_1 = Early Galaxy, -32.7Gyr, 0.04 
+				\draw[blue!80!black, line width=0.8pt] (axis cs:-32.7, -0.08) -- (axis cs:-32.7, 0.80);
+				\draw[blue!80!black, line width=0.3pt] (axis cs:-70, 0.04) -- (axis cs:-30, 0.04);
+				% Text annotation
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-32.8, 0.03) {${z_1}$\,\,\,Early-Galaxy};
+				
+				% Reference line z_0 = CMB Decoupling, -59.1Gyr, 0.092%
+				\draw[blue!80!black, line width=0.8pt] (axis cs:-59.1, -0.08) -- (axis cs:-59.1, 0.80);
+				% Text annotation
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-59.2, 0.03) {${z_0}$\,\,\,CMB-Decoupling};
+												
+			\end{axis}
+		\end{tikzpicture}
+		
+		
+		\vspace{0.2cm}
+		\captionsetup{width=0.85\textwidth, font=footnotesize}
+		\caption{
+			The $\mathrm{C(t)}$ curve of the compact sigmoid growing-$c(t)$ model with determined parameters $k=0.1442$,  $\beta=8.854$, $t_w=-17.98\,\mathrm{Gyr}$, and $J=1.2789$. The corresponding cosmic times of the four benchmark epochs $z_0, z_1, z_2, z_3$ will be explained in Section 7.}
+		\label{fig:growing_ct_model}
+			
+	\end{figure}
 	
+		
+	\medskip
 	\bigskip
-	\noindent
-	$\triangleright \triangleright \triangleright$\enspace
-	For the equations system listed in Eq.~(5.19), multiplying the right-hand-side value $11.4$ of the integral constraint $D(t_w,0)$ by $1.25$ (yielding $14.25$) and scaling the denominator constant $3.7$ in the light-speed relation $C(t_w)$ also by the same factor $1.25$ (yielding $4.625$) leads to an alternative set of solved parameters:
-	\[
-	\boldsymbol{k} = 0.2550, \quad \boldsymbol{\beta} = 14.77, \quad \boldsymbol{t_w} = -19.93\,\mathrm{Gyr}, \quad \boldsymbol{J} = 1.0231. \eqno(5.21)
-	\]
-	
-	When adopting this parameter-modified model, within the time range $t\in[-60,5]$, which corresponds to cosmic window from ancient $-60\ \mathrm{Gyr}$ to $5\ \mathrm{Gyr}$ in the future, the resulting $C(t)$ profile exhibits an ideal, nearly perfect sigmoid shape. The physical origin of this scaling factor $1.25$ remains unclarified, or it may merely arise from accidental coincidence, and relevant discussion is open to the academic community.\enspace$\triangleleft \triangleleft \triangleleft$
-	
-	\bigskip
+	{\bf Discussion of the Sigmoid Model Curve}\,\,\,
+	The model obtained in Eq.~(5.20) allows us to extract several noteworthy features, summarized as follows.
+	\begin{itemize}
+		\item \textit{The asymptotic future light speed.} As \( t \to +35 \) Gyr, the normalized light speed \( C(t) \) approaches the asymptotic value \( J = 1.2789 \), implying that, should this sigmoid growing-$c(t)$ hold, the speed of light would continue to increase by approximately \( 27.89\% \) over the next 35 Gyr to \( 1.2789\,c_0\).
+		
+		\item \textit{A substantially extended cosmic timeline.} The CMB decoupling epoch \( z_0 \) corresponds to \( t = -59.1 \) Gyr, far exceeding the standard \(\Lambda\)CDM value of \( -13.8 \) Gyr.
+		
+		\item \textit{The symmetry center of the curve.} The sigmoid function is symmetric about its inflection point at \( \boldsymbol{t} = \boldsymbol{-\beta} = -8.854 \) Gyr, where \( C(t) = 0.5J = 0.63945 \).
+		
+		\item \textit{A suggestive symmetry.} Remarkably, Cosmic Noon (\( t_w = -17.98 \) Gyr) is located near the left maximum curvature point, while the present day (\( t = 0 \)) lies close to the right maximum curvature point, with \( 2\times(-8.854) = -17.708 \approx -17.98\) Gyr. 
+		
+		\item \textit{A suggestive symmetry.} Remarkably, Cosmic Noon (\( t_w = -17.98 \) Gyr) is located near the left maximum curvature point, while the present day (\( t = 0 \)) lies close to the right maximum curvature point, with the relation \( 2\times(-8.854) = -17.708 \approx -17.98\) Gyr.
+		
+		\item \textit{A philosophical reflection.} This near-symmetry, emerging from a model anchored solely by Cosmic Noon, invites reflection. The left maximum marks the epoch when star formation and black hole activity peaked, corresponding to the universe's most rapid renewal phase. The right maximum, in contrast, corresponds to the era when the universe has matured enough for intelligent life to emerge. That both extrema align so naturally with these two defining moments of cosmic history does not seem purely accidental; it hints at a resonance that might be called an aesthetics of existence.
+	\end{itemize}
+
+		
+	\medskip
 	\textit{\textbf{Note:} One may construct a variant of the growing-$c(t)$ model by defining the function via the improved composite model in Eq.~(5.6); however, this formulation features an overly intricate mathematical structure and thus lies beyond the scope of the present work.}
 	
 
@@ -2395,12 +2482,12 @@
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
-				width=14cm, height=8cm,
+				width=14cm, height=7cm,
 				axis lines = box,
 				xlabel = {Cosmic Time \(t\) [Gyr]},
-				ylabel = {growing-\(c(t)\)},
+				ylabel = {Growing-\(c(t)\)},
 				xmin=-50, xmax=5,
-				ymin=0.0, ymax=1.2,
+				ymin=-0.05, ymax=1.2,
 				xtick = {-50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5},
 				ytick = {0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2},
 				tick label style={font=\small},
@@ -2418,27 +2505,27 @@
 				
 				
 				% Reference line z_3 = Solar System, -5.57Gyr, 0.70 
-				\draw[blue!80!black, line width=1.0pt] (axis cs:-5.57, 0) -- (axis cs:-5.57, 1.2);
+				\draw[blue!80!black, line width=0.8pt] (axis cs:-5.57, 0) -- (axis cs:-5.57, 1.2);
 				\draw[blue!80!black, line width=0.4pt] (axis cs:-60, 0.70) -- (axis cs:-3, 0.70);
 				% Text annotation
-				\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:-5.68, 0.50) {${z_3}$\,\,\,Solar-System};
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-5.68, 0.50) {${z_3}$\,\,\,Solar-System};
 				
-				% Reference line z_1 = Early Galaxy, -36.8Gyr, 0.04 
-				\draw[blue!80!black, line width=1.0pt] (axis cs:-20, 0) -- (axis cs:-20, 1.2);
+				% Reference line z_2 = Cosmic Noon, -36.8Gyr, 0.04 
+				\draw[blue!80!black, line width=0.8pt] (axis cs:-20, 0) -- (axis cs:-20, 1.2);
 				\draw[blue!80!black, line width=0.4pt] (axis cs:-60, 0.27) -- (axis cs:-16, 0.27);
 				% Text annotation
-				\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:-20.1, 0.29) {${z_2}$\,\,\,Cosmic-Noon};
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-20.1, 0.29) {${z_2}$\,\,\,Cosmic-Noon};
 				
 				% Reference line z_1 = Early Galaxy, -36.8Gyr, 0.04 
-				\draw[blue!80!black, line width=1.0pt] (axis cs:-36.8, 0) -- (axis cs:-36.8, 1.2);
+				\draw[blue!80!black, line width=0.8pt] (axis cs:-36.8, 0) -- (axis cs:-36.8, 1.2);
 				\draw[blue!80!black, line width=0.4pt] (axis cs:-60, 0.04) -- (axis cs:-32, 0.04);
 				% Text annotation
-				\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:-36.9, 0.13) {${z_1}$\,\,\,Early-Galaxy};
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-36.9, 0.13) {${z_1}$\,\,\,Early-Galaxy};
 				
 				% Reference line z_0 = CMB Decoupling, -45.2Gyr, 0.092%
-				\draw[blue!80!black, line width=1.0pt] (axis cs:-45.2, 0) -- (axis cs:-45.2, 1.2);
+				\draw[blue!80!black, line width=0.8pt] (axis cs:-45.2, 0) -- (axis cs:-45.2, 1.2);
 				% Text annotation
-				\node[blue!80!black, font=\small, anchor=south west, rotate=90] at (axis cs:-45.3, 0.03) {${z_0}$\,\,\,CMB-Decoupling};
+				\node[blue!80!black, font=\scriptsize, anchor=south west, rotate=90] at (axis cs:-45.3, 0.03) {${z_0}$\,\,\,CMB-Decoupling};
 				
 			\end{axis}
 		\end{tikzpicture}
@@ -4138,17 +4225,20 @@
 	E-mail: maxianliang@gmail.com\\[10pt]
 	June 13, 2026
 	
-	\vskip 0.3in
+	\vskip 0.2in
 
 	
 	\begin{footnotesize}
-		\vspace{0.3em}
+		\vspace{0.1em}
 		\noindent{\color{lightgray}\rule{\linewidth}{0.3pt}}
-		\vspace{0.2em}
+		\vspace{0.1em}
 		
 		\vskip 0.0in
 		\noindent
 		Version History 
+		
+		\smallskip
+		\texttt{\makebox[3.0em][l]{v2.2}2026-09-07\hspace{1.2em}Added figure 2 and discussion to Section 5.}
 		
 		\smallskip
 		\texttt{\makebox[3.0em][l]{v2.1}2026-09-01\hspace{1.2em}Added Appendix: What if the Conjecture Holds True.}
@@ -4229,11 +4319,9 @@
 		Document Fingerprint (SHA-256, IPR.TSA.CN Trusted Timestamp)
 		
 		\smallskip
-		\texttt{463F919377637F84C125D355DD74471CCF8A301FA061D6E1DFAB88445BF44DE2}
-		
+		\texttt{463F919377637F84C125D355DD74471CCF8A301FA061D6E1DFAB88445BF44DE2}		
 	\end{footnotesize}
-	
-	
+		
 \end{document}
 
 \typeout{get arXiv to do4passes:Label(s) may have changed.Rerun}
