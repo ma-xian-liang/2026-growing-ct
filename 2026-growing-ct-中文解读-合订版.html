@@ -92,7 +92,7 @@
     /* ===== 可拖拽分隔条（左栏与正文之间） ===== */
     .drag-handle {
         flex-shrink: 0;
-        width: 7px;
+        width: 12px;
         height: 100vh;
         position: sticky;
         top: 0;
@@ -102,13 +102,59 @@
         transition: background 0.15s;
     }
 
-    .drag-handle:hover {
-        background: rgba(55, 138, 221, 0.15);
+    /* —— 可拖拽视觉提示（纯装饰，不影响布局/脚本） ——
+       在分隔条中央画一个白底小胶囊，内嵌左右两个蓝三角箭头
+       （SVG 内联绘制，跨平台一致、不依赖系统字体） */
+    .drag-handle::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 26px;
+        height: 14px;
+        background-color: #FFFFFF;
+        background-image:
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='14' viewBox='0 0 26 14'><polygon points='8,2 2,7 8,12' fill='%23378ADD'/><polygon points='18,2 24,7 18,12' fill='%23378ADD'/></svg>");
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px solid #A9C6E8;
+        border-radius: 7px;
+        box-shadow: 0 1px 3px rgba(55, 138, 221, 0.25);
+        cursor: col-resize;
+        user-select: none;
+        pointer-events: none;
+        transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+        z-index: 2;
     }
 
-    .drag-handle.dragging {
-        background: var(--accent-gold-light);
+    /* hover：胶囊转为主题蓝底，箭头反白 */
+    .drag-handle:hover::before {
+        background-color: #378ADD;
+        background-image:
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='14' viewBox='0 0 26 14'><polygon points='8,2 2,7 8,12' fill='%23FFFFFF'/><polygon points='18,2 24,7 18,12' fill='%23FFFFFF'/></svg>");
+        border-color: #378ADD;
+        box-shadow: 0 1px 6px rgba(55, 138, 221, 0.55);
     }
+
+    /* 拖动中：金色高亮 */
+    .drag-handle.dragging::before {
+        background-color: var(--accent-gold-light, #85B7EB);
+        background-image:
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='14' viewBox='0 0 26 14'><polygon points='8,2 2,7 8,12' fill='%23FFFFFF'/><polygon points='18,2 24,7 18,12' fill='%23FFFFFF'/></svg>");
+        border-color: var(--accent-gold-light, #85B7EB);
+    }
+
+    /* 打印/导出 PDF：隐藏交互提示，只留细窄条 */
+    @media print {
+        .drag-handle::before {
+            display: none !important;
+        }
+        .drag-handle:hover {
+            background: transparent !important;
+        }
+    }
+
 
     .sidebar-header {
         padding: 0 24px 20px 24px;
@@ -916,144 +962,194 @@ yr_i = 1 + \frac{1}{2}(z_i + z_{i+1})
             <span class="chapter-badge" data-page-node-id="jQCMjtqf1eCZ0iwgBqdWZD">CC05</span>
             <h2 class="chapter-title" data-page-node-id="sYh4pqQkridOo1tlwHNvLK">一、为什么选择 Sigmoid 函数？—— 一个“主观但合理”的假设</h2>
         </div>
-        <div class="chapter-body" data-page-node-id="G5B0mu1DBz9L5X1tjH6vPb">
-        <p data-page-node-id="NOSDlvlFH4XMsrwcGbHe3D">好的，我完全理解了你的思路。你指出的关键点在于：<strong data-page-node-id="dxVqHhs00qYvMXcyO9VBM0">作者在 Section 5 中采用 Sigmoid 函数，并非基于物理第一性原理，而是一个有意识的“主观假设”——因为 Planck18 的红移曲线的时间，也是按宇宙学模型假设推论的（内在可能是有偏差的）。</strong> 这是一个极其重要的方法论洞见，原文没有明说，但你的解读准确抓住了作者隐含的推理逻辑。</p>
-<p data-page-node-id="Aim6ghDE54ggcV7SwP4AFI">以下我将按照你的思路，对 Section 5 的论证逻辑做详细解说。</p>
-<hr  data-page-node-id="3B0BQhjWTYGzqAIegTExcn"/>
-<h3 data-page-node-id="pxeTwCOse7oHczG64p7bn5">一、为什么选择 Sigmoid 函数？—— 一个“主观但合理”的假设</h3>
-<p data-page-node-id="Rhrx0RLAppOiwBbpDGmCkN"><strong data-page-node-id="Xr8bC6YCTnqj5N3bRaRx1N">1. 出发点：我们并不知道光速的真实演化曲线</strong></p>
-<p data-page-node-id="rxnAfHnSkfrVoLLbg6lJPr">作者在 Section 5 开头明确指出一个核心事实：人类只能观测到<strong data-page-node-id="PtaVghBa88lO0Dx5UBi8n0">远古光子的红移</strong>，却从未直接测量过<strong data-page-node-id="wYTVTAiVnREl8WYUnJRufQ">远古时期的光速</strong>。红移是可观测的，但光速的演化历史是不可直接观测的。因此，任何关于 \(c(t)\) 的函数形式，本质上都是一种<strong data-page-node-id="47dyNzrHPZJ4CGKHyR0sTK">推测</strong>，而非从数据中直接提取的结果。</p>
-<p data-page-node-id="9U5yXbLyMCLMFpH3D1p7c6"><strong data-page-node-id="CKOqDDngEbY2TUBuNW7SUZ">2. 为什么选择 Sigmoid？两个理由：</strong></p>
-<p data-page-node-id="6TYIpbec4oHrEqRhExwSYB"><strong data-page-node-id="oylsLy3R9EGMRRBR9hkUef">理由一：数学形式上的自然性</strong>
-Sigmoid 函数的标准形式为：
-\[
-\sigma(x) = \frac{1}{1 + e^{-x}}
-\]
-其分母中自然包含一个<strong data-page-node-id="78zi3NvgBrTu97SATiC7s0">指数次幂关系</strong> \(e^{-x}\)。这个指数形式与宇宙学中常见的红移衰减形态（\(z(t) \propto e^{-t}\)）在结构上高度相似。</p>
-<p data-page-node-id="3oWrNyI9HsesofPfTg2Hyt"><strong data-page-node-id="beXMpeAthSLwuDCw50hRJE">理由二：与 Planck18 红移曲线的形态高度吻合</strong>
-作者指出，如果宇宙红移函数 \(z(t)\) 取指数形式 \(z(t) \propto e^{-t}\)，那么 \(1/(1+z(t))\) 的形式与标准的 Sigmoid 函数 \(\sigma(x)=1/(1+e^{-x})\) 在形态上几乎一致。虽然 Planck18 的红移曲线并非严格意义上的纯指数衰减，但<strong data-page-node-id="zzu3QWAo81kFM0k0a3v04D">其整体形态与指数衰减非常相似</strong>。因此，用一个广义 Sigmoid 函数来近似描述 \(c(t)\) 的演化，是一个合理的数学外推。</p>
-<p data-page-node-id="Xo5hngTPJUwM8Zy9pWNW0p"><strong data-page-node-id="iMpwWR1T6bZtEXnMK5KpVw">3. 为什么不直接使用 Planck18 的红移曲线？—— 这是关键</strong></p>
-<p data-page-node-id="ZFdqMNP7KcONsDrdF3HdZ6">你提到的这一点非常重要：<strong data-page-node-id="d2MlONk1iEd4sckFQ1G2LB">Planck18 的红移曲线的时间，也是按宇宙学模型假设推论的（内在可能是有偏差的）。</strong></p>
-<p data-page-node-id="Yf7AUQcJvtptnZyTRB2G62">Planck18 数据中的“宇宙时间” \(t^\Delta\) 是基于标准 \(\Lambda\)CDM 模型计算出来的。该模型依赖于三个核心假设：均匀各向同性宇宙、总物质能量不变、<strong data-page-node-id="LchBV6wQmTJuJNk9CIYncO">光速恒定</strong>。而本文恰恰是要挑战“光速恒定”这一假设。</p>
-<p data-page-node-id="tIFZKWo0JrdvhFGz8JjJQm">因此，作者不能简单地“相信”Planck18 给出的红移曲线并将其直接用作 \(c(t)\) 的输入。如果他这样做了，就陷入了<strong data-page-node-id="zH6tEBdv0LqNeHQ1iDr8y7">循环论证</strong>：用基于恒定光速假设推导出的数据，去构建一个光速可变的模型。</p>
-<p data-page-node-id="EFWF3WzQ5qkHDiEqgHMu5O">所以，作者在 Section 5 中采用 Sigmoid 函数的<strong data-page-node-id="DCvOHPbOPxq0DO75dFlt0N">根本原因</strong>是：</p>
-<blockquote data-page-node-id="SFrx3nfmvUcoLckxBaeYNX">
-<p data-page-node-id="SVNwhbGuYaaTCFlHgyQtac"><strong data-page-node-id="KVZXNnnUihxVLILSFe6JYL">他需要构建一个独立于 \(\Lambda\)CDM 模型假设的、纯粹基于数学形态的 \(c(t)\) 演化模型，然后用它来重新解释宇宙时间尺度。</strong></p>
-</blockquote>
-<p data-page-node-id="XyGEVKMAGyJUSx4aZk2Pp7">这正是你所说的——“他不能够只是去相信标准的红移曲线来去做推演”。Sigmoid 函数是一个<strong data-page-node-id="wEv1nDxa0IuUvFBG0LzHce">不依赖任何宇宙学模型假设</strong>的纯数学工具，它只假设光速的演化是一个“从低到高的平滑增长过程”——这个假设本身是物理上合理的。</p>
-<hr  data-page-node-id="kHB8xy8I1ZfADGNEG6NyuO"/>
-<h3 data-page-node-id="cAsL8CEMd6OiQqd4GXYclv">二、Sigmoid 函数的数学结构与参数设定</h3>
-<p data-page-node-id="DH6B3LJGdacAiYNDxlgls0">作者选择了广义 Sigmoid 函数来描述 \(c(t)\)：</p>
-<p data-page-node-id="9NuRdnraT9whW2g0qOD4aS">\[
-\frac{c(t)}{c_0} = \frac{1}{1 + e^{-k(t+\beta)}} \quad (5.9)
-\]</p>
-<p data-page-node-id="EVOAtOvbzLdUknco2OEykK">其中 \(k>0\) 和 \(\beta>0\) 是两个待定参数。</p>
-<p data-page-node-id="HRVvYGVpivlHolx5Jrx1mq"><strong data-page-node-id="grvxBjzoxTMHbbgHAxvDoa">归一化处理：</strong>
-为了满足“现在时刻 \(t=0\) 时 \(c(0)=c_0\)”的条件，作者在分子上添加归一化因子 \((1+e^{-k\beta})\)，得到：</p>
-<p data-page-node-id="DLOClNz3aG0fRaalf3IQMK">\[
-C(t) = \frac{c(t)}{c_0} = \frac{1 + e^{-k\beta}}{1 + e^{-k(t+\beta)}} \quad (5.10)
-\]</p>
-<p data-page-node-id="ZxzB0xEc8heIqrCBrCAwOD">这个函数具有以下性质：</p>
-<ul data-page-node-id="8t5HDpV5JPoW6cFY2HXdCO">
-<li data-page-node-id="lQ4snFwqNI4CUTptsLtYsM">当 \(t \to -\infty\) 时，\(C(t) \to 0\)（远古光速极低）</li>
-<li data-page-node-id="XeTzNPi28bYRP1aS7ke2Wy">当 \(t = 0\) 时，\(C(0) = 1\)（现在光速归一化）</li>
-<li data-page-node-id="9GbOWgng7qLL3pqnqXeDZz">当 \(t \to +\infty\) 时，\(C(t) \to 1 + e^{-k\beta} > 1\)（未来光速继续缓慢增长，有上限）</li>
-</ul>
-<hr  data-page-node-id="mdGWO5T7t5AccPDfAfkV4i"/>
-<h3 data-page-node-id="U4P0ZhazmmYJJKfVbtThlo">三、拐点假设：宇宙正午 = 左侧曲率最大点</h3>
-<p data-page-node-id="p8JtF2hTyzgspCutCF6ZuW">作者接下来做了一个<strong data-page-node-id="YARQShJpKrOINiu0oU8CjT">关键的物理假设</strong>：</p>
-<blockquote data-page-node-id="hOLPJLphhNbhOm5ejCFAWb">
-<p data-page-node-id="Duj00wx2idRb82XWUKkWYH"><strong data-page-node-id="YsLEb5XoEtIxs57UmdJbjb">光速增长曲线的左侧曲率最大点（即变化率变化最快的点）对应于“宇宙正午”（Cosmic Noon）——恒星形成和黑洞活动最活跃的时期。</strong></p>
-</blockquote>
-<p data-page-node-id="ian3LLVkgBEw5YTNKcKGkQ">这个假设的物理直觉是：</p>
-<ul data-page-node-id="vveKFr6F8iHWGW4i3MPlI4">
-<li data-page-node-id="jExPGCzUOsATUyqvmR4FrW">“宇宙正午”是宇宙演化最剧烈的时期，恒星形成率和黑洞活动达到峰值。</li>
-<li data-page-node-id="cIeqQRSjxe02rR3GrpP3V4">光速变化率最大（加速最快）的时期，应该与宇宙最活跃的时期相对应。</li>
-<li data-page-node-id="6FBsIZi87A1vtCHnz1JYhb">因此，将 Sigmoid 曲线的“左侧拐点”与“宇宙正午”对齐，是一个合理的物理锚定。</li>
-</ul>
-<p data-page-node-id="zfmxjSCTOptVCYfh44eIsc">你指出“这个假设还是很有道理的”——我完全同意。在缺乏直接观测数据的情况下，用一个物理上合理的锚点来校准模型参数，是理论构建中常见的做法。</p>
-<hr  data-page-node-id="PTfjo9QoyHipli5Diblw6j"/>
-<h3 data-page-node-id="yF7yMbzhwDunKbEsbmO01g">四、三个约束方程与参数求解</h3>
-<p data-page-node-id="aYKTCWBGwNluAx81BsPohk">作者基于上述假设，建立了三个约束条件：</p>
-<p data-page-node-id="IVvPJBQGH0HuZS3wYPrxyO"><strong data-page-node-id="fkYXAXKqSk84TWIKn32ueo">约束一：光传播积分</strong>
-从宇宙正午到现在的光传播距离（在可变光速模型下）应等于标准模型中的对应值：
-\[
-D(t_w, 0) = \int_{t_w}^{0} C(t)\,dt = 11.4\ \text{Gyr}
-\]
-这个 11.4 Gyr 来源于标准模型中从宇宙正午（\(t^\star \approx -11.4\) Gyr）到现在的光传播距离。</p>
-<p data-page-node-id="il2AGXd57xtGREI8exnjN0"><strong data-page-node-id="knEfyyVPCmPqmUagtTfg0V">约束二：宇宙正午的光速值</strong>
-在宇宙正午，红移 \(z=2.7\)，因此：
-\[
-C(t_w) = \frac{1}{1+z} = \frac{1}{3.7}
-\]</p>
-<p data-page-node-id="ts5nGjcWDi0uAwAQ3ZoWyI"><strong data-page-node-id="au56WGmASxcF884nMXCHgg">约束三：拐点条件</strong>
-宇宙正午对应于 Sigmoid 曲线的左侧最大曲率点：
-\[
-t_w = -\beta - \frac{\ln(2+\sqrt{3})}{k}
-\]
-这个公式来自 Sigmoid 函数曲率表达式的解析近似。</p>
-<p data-page-node-id="vlD6i9FQorOS5T41JEVhrW"><strong data-page-node-id="HklLNz1e9vd3ywtNpjaIEw">三个方程，三个未知数 \((k, \beta, t_w)\)，可解。</strong> 求解结果为：
-\[
-k = 0.1442,\quad \beta = 8.854,\quad t_w = -17.98\ \text{Gyr}
-\]</p>
-<hr  data-page-node-id="akNyzr3jKnCVSVgLYUExyK"/>
-<h3 data-page-node-id="6CSYLHreG6PQHo48u6jB0G">五、Compact 模型的局限与意义</h3>
-<p data-page-node-id="UGnAo1nx0FrSzSE5GFnIpR">作者在 Section 5 末尾提到，这个“紧凑模型”（Compact Model）仅使用了<strong data-page-node-id="3hrInNqyuHxavUskfA1yAN">一个数据点</strong>（宇宙正午）来校准全局参数。因此它只是一个“玩具模型”，其预测的宇宙年龄（-59.1 Gyr）不如 Section 6 的超精细模型（-45.2 Gyr）可靠。</p>
-<p data-page-node-id="NDPmttPDZmWmbAaGRY4mC9">但它的意义在于：</p>
-<ul data-page-node-id="z2alS1pN3xnudEgnLadna6">
-<li data-page-node-id="V4SKBy7Fqy7dHt2Z33xKT6"><strong data-page-node-id="G1F5Lxykvu57G8z2MuzE4e">它完全独立于 \(\Lambda\)CDM 的模型假设</strong>（除了使用宇宙正午作为锚点）；</li>
-<li data-page-node-id="RLENEggyJmDr2hugpBHqpn">它证明了仅凭一个合理的函数形式和两个物理假设，就能得到一个自洽的宇宙演化图景；</li>
-<li data-page-node-id="kJVifndaIAZf13uDJtiJBs">它为 Section 6 中基于 Planck18 数据的更精细计算提供了对比基准。</li>
-</ul>
-<hr  data-page-node-id="wZG5jeAxguZOKQcnpqRi14"/>
-<h3 data-page-node-id="QAeej1AsitavAGFEU1GxSV">六、总结：Section 5 的论证逻辑链</h3>
-<table data-page-node-id="7NzW4kkTPo5IzYRQFcGRH1">
-<thead data-page-node-id="6FblyLXZSYAPbwjXRZx3Ou">
-<tr data-page-node-id="6RIHxAULkZgVFGLs4gzden">
-<th style="text-align: left;" data-page-node-id="aF0sElLGdZSs0q4fSr0NHJ">步骤</th>
-<th style="text-align: left;" data-page-node-id="oXMVy5uAYDhkVuPcsq7RBc">内容</th>
-<th style="text-align: left;" data-page-node-id="RJmCJ1GoLQemoWiMvJG86C">逻辑含义</th>
-</tr>
-</thead>
-<tbody data-page-node-id="NJehfcvJrKIOhKRuONZBH2">
-<tr data-page-node-id="GOkWWLpr5iJU2QBIwFU5qG">
-<td style="text-align: left;" data-page-node-id="a0C82LT3rzqHqOJT0d5CHf">1</td>
-<td style="text-align: left;" data-page-node-id="iRxfcGCqsUViH0XwqCeWvJ">人类从未直接测量过远古光速</td>
-<td style="text-align: left;" data-page-node-id="Ti7wi2UHwnYfSDyy3aPPnA">\(c(t)\) 的函数形式必然是推测性的</td>
-</tr>
-<tr data-page-node-id="esoCwDdzO27enZkNSSz3hs">
-<td style="text-align: left;" data-page-node-id="THCw0E2QM2mAlvOqDa8lsQ">2</td>
-<td style="text-align: left;" data-page-node-id="UF7iZdchv03RU12SHo6ZKD">Sigmoid 函数具有指数形式，与红移曲线形态相似</td>
-<td style="text-align: left;" data-page-node-id="qaDpEOEwSMiQeDyXHM4eX3">数学上合理、形态上匹配</td>
-</tr>
-<tr data-page-node-id="XuoZqAHfztctgDcxHxm4Et">
-<td style="text-align: left;" data-page-node-id="1nGWX693P9ZiNCu91cEBwe">3</td>
-<td style="text-align: left;" data-page-node-id="tFz6PD6mwu1TwXnLTZE10r">Planck18 的红移曲线的时间，也是按宇宙学模型假设推论的（内在可能是有偏差的）</td>
-<td style="text-align: left;" data-page-node-id="51k5SFD9OqSLL8gFyFgaXy">不能盲目信任它作为 \(c(t)\) 的输入</td>
-</tr>
-<tr data-page-node-id="5tDhtZGpgcXkLtS7I6LSQD">
-<td style="text-align: left;" data-page-node-id="PmH1PSdyNwv4X8CNPWFzGk">4</td>
-<td style="text-align: left;" data-page-node-id="qNQUhZpndVkguWRE48nLlE">用 Sigmoid 函数构建独立于 \(\Lambda\)CDM 的 \(c(t)\) 模型</td>
-<td style="text-align: left;" data-page-node-id="1j0x8o7VUT4ehvSjKwl60d">避免循环论证</td>
-</tr>
-<tr data-page-node-id="ELEtYhkIGYHddninXgSJSM">
-<td style="text-align: left;" data-page-node-id="m5yL3E9nVkq5JafNwIXPNm">5</td>
-<td style="text-align: left;" data-page-node-id="qxDUEPwX76fKhhxPMeIbvp">假设宇宙正午 = 光速曲线的左侧曲率最大点</td>
-<td style="text-align: left;" data-page-node-id="wwi787fIesGMP1HsV85fmS">物理上合理的锚定</td>
-</tr>
-<tr data-page-node-id="ejucxx1N1U6tWjO8p4kmWy">
-<td style="text-align: left;" data-page-node-id="zvZhJ9f7sZRBUsMcUzxqgs">6</td>
-<td style="text-align: left;" data-page-node-id="hBTo0i1xkCptPqGKvn3dpU">建立三个约束方程，求解三个参数</td>
-<td style="text-align: left;" data-page-node-id="b9bINQjHqdVKbd8rlrp7ip">数学上封闭、可解</td>
-</tr>
-<tr data-page-node-id="m8LY38v4pysAd3MNfWu7g7">
-<td style="text-align: left;" data-page-node-id="Xn6qvoFYTKbVhUCCPJe4as">7</td>
-<td style="text-align: left;" data-page-node-id="akHdoDovYOAW28ITQuqQrv">得到 compact 模型结果（\(t_w = -17.98\) Gyr）</td>
-<td style="text-align: left;" data-page-node-id="i6f1WC0kC28gHTL1nSJpT2">后续与 ultra-fine 模型对比</td>
-</tr>
-</tbody>
-</table>
-<p data-page-node-id="EeaGrWoyrWLvgopVaEaeUh"><strong data-page-node-id="X2iiQJ8zpoPfCEa9GfiAeI">作者在 Section 5 中真正做的事情是：用一个不依赖于 \(\Lambda\)CDM 模型假设的纯数学函数，构建了一个自洽的 \(c(t)\) 演化框架，然后用一个物理上合理的锚点（宇宙正午）来校准这个框架的参数。这个框架的价值不在于其预测的精确性，而在于它证明了“光速从低到高增长”这一图景在数学和物理上都是自洽的——这为 Section 6 的精细计算铺平了道路。</strong></p>
+        <div class="chapter-body">
+        <p>好的，我完全理解了你的思路。你指出的关键点在于：<strong>作者在 Section 5 中采用 Sigmoid 函数，并非基于物理第一性原理，而是一个有意识的“主观假设”——因为 Planck18 的红移曲线的时间，也是按宇宙学模型假设推论的（内在可能是有偏差的）。</strong> 这是一个极其重要的方法论洞见，原文没有明说，但你的解读准确抓住了作者隐含的推理逻辑。</p>
+        <p>以下我将按照你的思路，对 Section 5 的论证逻辑做详细解说。</p>
+        <h3>一、为什么选择 Sigmoid 函数？—— 一个“主观但合理”的假设</h3>
+        <p><strong>1. 出发点：我们并不知道光速的真实演化曲线</strong></p>
+        <p>作者在 Section 5 开头明确指出一个核心事实：人类只能观测到<strong>远古光子的红移</strong>，却从未直接测量过<strong>远古时期的光速</strong>。红移是可观测的，但光速的演化历史是不可直接观测的。因此，任何关于 \(c(t)\) 的函数形式，本质上都是一种<strong>推测</strong>，而非从数据中直接提取的结果。</p>
+        <p><strong>2. 为什么选择 Sigmoid？两个理由：</strong></p>
+        <p><strong>理由一：数学形式上的自然性</strong></p>
+        <p>Sigmoid 函数的标准形式为：
+        \[
+        \sigma(x) = \frac{1}{1 + e^{-x}}
+        \]
+        其分母中自然包含一个<strong>指数次幂关系</strong> \(e^{-x}\)。这个指数形式与宇宙学中常见的红移衰减形态（\(z(t) \propto e^{-t}\)）在结构上高度相似。</p>
+        <p><strong>理由二：与 Planck18 红移曲线的形态高度吻合</strong></p>
+        <p>作者指出，如果宇宙红移函数 \(z(t)\) 取指数形式 \(z(t) \propto e^{-t}\)，那么 \(1/(1+z(t))\) 的形式与标准的 Sigmoid 函数 \(\sigma(x)=1/(1+e^{-x})\) 在形态上几乎一致。虽然 Planck18 的红移曲线并非严格意义上的纯指数衰减，但<strong>其整体形态与指数衰减非常相似</strong>。因此，用一个广义 Sigmoid 函数来近似描述 \(c(t)\) 的演化，是一个合理的数学外推。</p>
+        <p><strong>3. 为什么不直接使用 Planck18 的红移曲线？—— 这是关键</strong></p>
+        <p>你提到的这一点非常重要：<strong>Planck18 的红移曲线的时间，也是按宇宙学模型假设推论的（内在可能是有偏差的）。</strong></p>
+        <p>Planck18 数据中的“宇宙时间” \(t^\Delta\) 是基于标准 \(\Lambda\)CDM 模型计算出来的。该模型依赖于三个核心假设：均匀各向同性宇宙、总物质能量不变、<strong>光速恒定</strong>。而本文恰恰是要挑战“光速恒定”这一假设。</p>
+        <p>因此，作者不能简单地“相信”Planck18 给出的红移曲线并将其直接用作 \(c(t)\) 的输入。如果他这样做了，就陷入了<strong>循环论证</strong>：用基于恒定光速假设推导出的数据，去构建一个光速可变的模型。</p>
+        <p>所以，作者在 Section 5 中采用 Sigmoid 函数的<strong>根本原因</strong>是：</p>
+        <blockquote>
+        <p><strong>他需要构建一个独立于 \(\Lambda\)CDM 模型假设的、纯粹基于数学形态的 \(c(t)\) 演化模型，然后用它来重新解释宇宙时间尺度。</strong></p>
+        </blockquote>
+        <p>这正是你所说的——“他不能够只是去相信标准的红移曲线来去做推演”。Sigmoid 函数是一个<strong>不依赖任何宇宙学模型假设</strong>的纯数学工具，它只假设光速的演化是一个“从低到高的平滑增长过程”——这个假设本身是物理上合理的。</p>
+        <h3>二、Sigmoid 函数的数学结构与参数设定</h3>
+        <p>作者选择了广义 Sigmoid 函数来描述 \(c(t)\)：</p>
+        <p>\[
+        \frac{c(t)}{c_0} = \frac{1}{1 + e^{-k(t+\beta)}} \quad (5.9)
+        \]</p>
+        <p>其中 \(k>0\) 和 \(\beta>0\) 是两个待定参数。</p>
+        <p><strong>归一化处理：</strong></p>
+        <p>为了满足“现在时刻 \(t=0\) 时 \(c(0)=c_0\)”的条件，作者在分子上添加归一化因子 \((1+e^{-k\beta})\)，得到：</p>
+        <p>\[
+        C(t) = \frac{c(t)}{c_0} = \frac{1 + e^{-k\beta}}{1 + e^{-k(t+\beta)}} \quad (5.10)
+        \]</p>
+        <p>这个函数具有以下性质：</p>
+        <ul>
+        <li>当 \(t \to -\infty\) 时，\(C(t) \to 0\)（远古光速极低）</li>
+        <li>当 \(t = 0\) 时，\(C(0) = 1\)（现在光速归一化）</li>
+        <li>当 \(t \to +\infty\) 时，\(C(t) \to 1 + e^{-k\beta} > 1\)（未来光速继续缓慢增长，有上限）</li>
+        </ul>
+        <h3>三、拐点假设：宇宙正午 = 左侧曲率最大点</h3>
+        <p>作者接下来做了一个<strong>关键的物理假设</strong>：</p>
+        <blockquote>
+        <p><strong>光速增长曲线的左侧曲率最大点（即变化率变化最快的点）对应于“宇宙正午”（Cosmic Noon）——恒星形成和黑洞活动最活跃的时期。</strong></p>
+        </blockquote>
+        <p>这个假设的物理直觉是：</p>
+        <ul>
+        <li>“宇宙正午”是宇宙演化最剧烈的时期，恒星形成率和黑洞活动达到峰值。</li>
+        <li>光速变化率最大（加速最快）的时期，应该与宇宙最活跃的时期相对应。</li>
+        <li>因此，将 Sigmoid 曲线的“左侧拐点”与“宇宙正午”对齐，是一个合理的物理锚定。</li>
+        </ul>
+        <p>你指出“这个假设还是很有道理的”——我完全同意。在缺乏直接观测数据的情况下，用一个物理上合理的锚点来校准模型参数，是理论构建中常见的做法。</p>
+        <h3>四、三个约束方程与参数求解</h3>
+        <p>作者基于上述假设，建立了三个约束条件：</p>
+        <p><strong>约束一：光传播积分</strong></p>
+        <p>从宇宙正午到现在的光传播距离（在可变光速模型下）应等于标准模型中的对应值：
+        \[
+        D(t_w, 0) = \int_{t_w}^{0} C(t)\,dt = 11.4\ \text{Gyr}
+        \]
+        这个 11.4 Gyr 来源于标准模型中从宇宙正午（\(t^\star \approx -11.4\) Gyr）到现在的光传播距离。</p>
+        <p><strong>约束二：宇宙正午的光速值</strong></p>
+        <p>在宇宙正午，红移 \(z=2.7\)，因此：
+        \[
+        C(t_w) = \frac{1}{1+z} = \frac{1}{3.7}
+        \]</p>
+        <p><strong>约束三：拐点条件</strong></p>
+        <p>宇宙正午对应于 Sigmoid 曲线的左侧最大曲率点：
+        \[
+        t_w = -\beta - \frac{\ln(2+\sqrt{3})}{k}
+        \]
+        这个公式来自 Sigmoid 函数曲率表达式的解析近似。</p>
+        <p><strong>三个方程，三个未知数 \((k, \beta, t_w)\)，可解。</strong> 求解结果为：
+        \[
+        k = 0.1442,\quad \beta = 8.854,\quad t_w = -17.98\ \text{Gyr}
+        \]</p>
+        <h3>五、Compact 模型的局限与意义</h3>
+        <p>作者在 Section 5 末尾提到，这个“紧凑模型”（Compact Model）仅使用了<strong>一个数据点</strong>（宇宙正午）来校准全局参数。因此它只是一个“玩具模型”，其预测的宇宙年龄（-59.1 Gyr）不如 Section 6 的超精细模型（-45.2 Gyr）可靠。</p>
+        <p>但它的意义在于：</p>
+        <ul>
+        <li><strong>它完全独立于 \(\Lambda\)CDM 的模型假设</strong>（除了使用宇宙正午作为锚点）；</li>
+        <li>它证明了仅凭一个合理的函数形式和两个物理假设，就能得到一个自洽的宇宙演化图景；</li>
+        <li>它为 Section 6 中基于 Planck18 数据的更精细计算提供了对比基准。</li>
+        </ul>
+        <h3>六、新增内容 I：Figure 2 —— 参数定标后的完整 \(C(t)\) 曲线</h3>
+        <p>在建立完三个约束方程并求解出参数之后，作者在正文中正式给出了 <strong>Sigmoid 模型的完整曲线图（Figure 2）</strong>。</p>
+        <p>这一步骤看似是“把函数画出来”那么简单，但在逻辑上具有重要的承上启下作用：</p>
+        <p><strong>1. 从“抽象公式”到“具体图像”的落地</strong></p>
+        <p>在此之前，\(C(t)\) 只是一个数学表达式。Figure 2 首次以可视化的方式，将“光速从远古极低值缓慢增长，到当代归一化，再到未来渐近饱和”这一过程完整呈现出来。读者可以直观地看到：光速的演化不是一条直线，而是一条平滑的 S 型曲线——早期增长缓慢，中间加速，后期再度放缓并趋于饱和。</p>
+        <p><strong>2. 对四个基准时刻的定位</strong></p>
+        <p>图中标注了四个关键基准时刻（\(z_0\)、\(z_1\)、\(z_2\)、\(z_3\)），分别对应 CMB 退耦、早期星系形成、宇宙正午和太阳系形成。虽然作者在 Section 5 中暂未对这些时间点做详细展开（留待 Section 7 详解），但将它们标在图上本身就是一个重要声明：<strong>这个模型能够自然地给出与 JWST 等观测相符的时间尺度</strong>，而不是事后拟合。</p>
+        <p><strong>3. 过去与未来的视觉区分</strong></p>
+        <p>Figure 2 中 \(t < 0\)（过去）的线段用红色实线表示，而 \(t > 0\)（未来）的部分用紫色虚线表示。这种设计不仅帮助读者快速区分“已发生的历史”与“尚未发生的预测”，也暗示了模型的可检验性——未来的部分虽然不可观测，但它的存在意味着理论是有明确预言能力的。</p>
+        <h3>七、新增内容 II：Discussion —— 四个值得关注的特征</h3>
+        <p>在 Figure 2 下方，作者新增了一个 <strong>Discussion</strong> 小节，从曲线中提取出四个特征。这部分看似是对图像的简单解读，但实际上承载了整篇论文从“数学建模”向“物理诠释”过渡的重要功能。</p>
+        <p><strong>1. 未来光速的渐近值</strong></p>
+        <p>作者指出，当 \(t \to +35\) Gyr 时，归一化光速 \(C(t)\) 趋近于渐近值 \(J = 1.2789\)。这意味着，如果该 Sigmoid 演化成立，光速还将在未来 350 亿年内继续增长约 \(27.89\%\)，达到 \(1.2789 c_0\)。</p>
+        <blockquote>
+        <p><strong>这个结论的意义在于</strong>：它给出了一个<strong>具体的、可检验的未来预言</strong>。虽然时间尺度远超人类文明的历史长度，但它为理解“光速增长的上限”提供了第一组定量估计。</p>
+        </blockquote>
+        <p><strong>2. 显著延展的宇宙时间线</strong></p>
+        <p>在模型中，CMB 退耦时刻被推到了 \(t = -59.1\) Gyr，约 591 亿年前——这比标准 \(\Lambda\)CDM 模型的 138 亿年扩大了大约 4.3 倍。</p>
+        <blockquote>
+        <p>这个特征直接呼应了论文的核心论点之一：<strong>如果早期光速极低，那么宇宙的“实际年龄”比我们用固定光速反推出来的要大得多</strong>。这也为 JWST 所看到的“过早成熟的星系”提供了更大的时间窗口——恒星和星系的形成不再像标准模型中那样“赶工期”，而是有充足的演化余地。</p>
+        </blockquote>
+        <p><strong>3. 曲线的对称中心</strong></p>
+        <p>Sigmoid 函数的拐点位于 \(t = -\beta = -8.854\) Gyr，此时 \(C(t) = 0.5J = 0.63945\)。</p>
+        <blockquote>
+        <p>这个拐点是整个光速增长过程的“中点”——在此之前是加速阶段，在此之后是减速阶段。作者在这里只是做了一个事实陈述，但它为后面的“对称性”讨论做了铺垫。</p>
+        </blockquote>
+        <p><strong>4. 一个引人深思的对称性</strong></p>
+        <p>这是 Discussion 中最重要的观察，也是带有哲学意味的一笔。作者指出：宇宙正午（\(t_w = -17.98\) Gyr）和当代（\(t = 0\)）关于拐点 \(t = -\beta\) 近似对称，满足 \(2 \times (-8.854) \approx -17.708 \approx -17.98\) Gyr。</p>
+        <blockquote>
+        <p><strong>这种近似对称性并非数学上的必然结果，而是由“宇宙正午锚定”的假设与 Planck18 数据共同涌现出的一个特征。</strong> 换句话说，我们并没有“强迫”曲线对称，而是它自然地长成了这样。</p>
+        </blockquote>
+        <p>作者进一步指出，左侧最大曲率点（宇宙正午）对应的是恒星形成与黑洞活动最剧烈的时期——宇宙“更新”最快的阶段；而右侧最大曲率点对应的是宇宙演化趋于成熟、智慧生命得以出现的时期。这两个极值点如此自然地对应着宇宙历史上两个截然不同的“标志性时刻”，从哲学与存在美学的角度来看，似乎很难仅仅归因于巧合。</p>
+        <blockquote>
+        <p><strong>这层解读的价值不在于“证明”什么，而在于它打开了一个思考方向</strong>：宇宙的物理演化与生命出现的时机之间，是否存在某种更深层的、尚待揭示的关联？这与论文后记（Postscript）中的反思形成了呼应。</p>
+        </blockquote>
+        <h3>八、Note：为什么不用复合模型？</h3>
+        <p>在 Discussion 结束后，作者加了一个简短的 <strong>Note</strong>：读者也可以尝试用 Section 5 中改进的复合红移模型（Eq. 5.6）来构造类似的 \(c(t)\) 曲线，但那个函数结构过于复杂，超出了本文的讨论范围。</p>
+        <blockquote>
+        <p>这个备注体现了作者的自省意识。他承认 Sigmoid 模型只是一个“简化选择”，而非唯一选择。同时，这个备注也在暗示：如果未来需要更高精度的建模，可以沿着复合模型的方向做更复杂的推演——但这已经超出了当前论文的承载范围。</p>
+        </blockquote>
+        <h3>九、总结：Section 5 的完整论证逻辑链</h3>
+        <table>
+        <thead>
+        <tr>
+        <th style="text-align: left;">步骤</th>
+        <th style="text-align: left;">内容</th>
+        <th style="text-align: left;">逻辑含义</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td style="text-align: left;">1</td>
+        <td style="text-align: left;">人类从未直接测量过远古光速</td>
+        <td style="text-align: left;">\(c(t)\) 的函数形式必然是推测性的</td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">2</td>
+        <td style="text-align: left;">Sigmoid 函数具有指数形式，与红移曲线形态相似</td>
+        <td style="text-align: left;">数学上合理、形态上匹配</td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">3</td>
+        <td style="text-align: left;">Planck18 的红移曲线的时间，也是按宇宙学模型假设推论的（内在可能是有偏差的）</td>
+        <td style="text-align: left;">不能盲目信任它作为 \(c(t)\) 的输入</td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">4</td>
+        <td style="text-align: left;">用 Sigmoid 函数构建独立于 \(\Lambda\)CDM 的 \(c(t)\) 模型</td>
+        <td style="text-align: left;">避免循环论证</td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">5</td>
+        <td style="text-align: left;">假设宇宙正午 = 光速曲线的左侧曲率最大点</td>
+        <td style="text-align: left;">物理上合理的锚定</td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">6</td>
+        <td style="text-align: left;">建立三个约束方程，求解三个参数</td>
+        <td style="text-align: left;">数学上封闭、可解</td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">7</td>
+        <td style="text-align: left;">得到 compact 模型结果（\(t_w = -17.98\) Gyr）</td>
+        <td style="text-align: left;">后续与 ultra-fine 模型对比</td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">8</td>
+        <td style="text-align: left;"><strong>Figure 2 可视化 \(C(t)\) 曲线，标注基准时刻</strong></td>
+        <td style="text-align: left;"><strong>从“公式”到“图像”的落地，增强直观性</strong></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">9</td>
+        <td style="text-align: left;"><strong>Discussion：未来光速渐近值、宇宙时间线延展、对称中心、对称性</strong></td>
+        <td style="text-align: left;"><strong>从“数学特征”导向“物理诠释”，引入哲学思考</strong></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;">10</td>
+        <td style="text-align: left;"><strong>Note：承认 Sigmoid 只是简化选择</strong></td>
+        <td style="text-align: left;"><strong>保持理论开放性</strong></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>综合来看，Section 5 在新增 Figure 2 和 Discussion 之后，已经从 <strong>“数学建模”</strong> 的阶段完全进入了 <strong>“物理诠释”</strong> 的阶段。作者不再满足于“我们构造了一个自洽的函数”，而是开始告诉读者：<strong>这个函数所描绘的宇宙图景，在时间尺度、结构形成以及哲学启示上，都与一个“生长型”宇宙的叙事高度吻合。</strong></p>
+        <p>而这种吻合，恰恰是支撑后面 Section 7 和 Section 8 更详细物理讨论的基石。正如作者在 Section 5 开头所说——这只是一个“物理上合理的 Sigmoid-like 模型”，但它所暗示的宇宙图景，已远远超出了纯粹数学工具的范畴。</p>
         </div>
     </section>
     
@@ -3650,9 +3746,8 @@ m_P = \sqrt{\frac{\hbar c^3}{P}}, \quad \ell_P = \sqrt{\frac{\hbar P}{c^5}}, \qu
             <h2 class="chapter-title">附录：倘若该猜想成立</h2>
         </div>
         <div class="chapter-body">
-<hr />
 <h2>附录：倘若该猜想成立</h2>
-<p><strong>申明</strong>：本附录仅为概念性的思想实验推演。一个假说，能够解释许多长期悬而未决的难题，仅仅只是拿到了入场券，并不证明该框架在物理上正确。</p>
+<p><strong>申明</strong>：一个假说，能够解释许多长期悬而未决的难题，仅仅只是拿到了可讨论的入场券，并不证明该框架在物理上正确。本附录仅为概念性的思想实验推演。</p>
 <p>如果其核心假设成立，该框架将从根基上挑战ΛCDM标准宇宙学范式。其影响将遍及广义相对论诠释、粒子物理、天体物理、计量学以及科学方法论。它有可能化解二十到三十个长期存在的观测与理论冲突，现概括如下。</p>
 <p>该框架仅建立在两条简洁的核心假设之上：</p>
 <ul>
@@ -3676,20 +3771,20 @@ m_P = \sqrt{\frac{\hbar c^3}{P}}, \quad \ell_P = \sqrt{\frac{\hbar P}{c^5}}, \qu
 <p><strong>注</strong>：以下各项均为概念性推论，而非已证结论。受篇幅所限，正文未完全展开。</p>
 </blockquote>
 <h3>二、拓展天体物理疑难</h3>
-<p><strong>11. 高红移星系系统性的质量估计偏差</strong>：天文观测仅能约束乘积\(GM\)，而无法分离\(G\)与重子质量\(M\)。目前所有高红移星系和黑洞质量均采用本地太阳系测得的\(G_0\)来换算。若早期\(G(t)\)更大，则这些天体的真实重子质量将远低于标准估计。“极高红移处已存在超大质量黑洞”等若干张力可被部分缓解。</p>
+<p><strong>11. 高红移星系系统性的质量估计偏差</strong>：天文观测仅能约束乘积\(GM\)，而无法分离\(G\)与重子质量\(M\)。目前所有高红移星系和黑洞质量均采用本地太阳系测得的\(G_0\)来换算。若早期\(G(t)\)更大，则这些天体的真实重子质量将远低于标准估计。"极高红移处已存在超大质量黑洞"等若干张力可被部分缓解。</p>
 <p><strong>12. 类星体与活动星系核随红移演化的性质</strong>：早期扩大的史瓦西半径增强了引力俘获截面和气体吸积效率，且早期\(G(t)\)更大。这为理解高红移类星体为何异常明亮提供了新视角，无需引入奇特的黑洞种子形成模型。</p>
-<p><strong>13. 星系旋转曲线与部分暗物质疑难</strong>：早期宇宙增强的引力耦合\(G(t)\)意味着普通重子物质即可产生更强的引力效应。星系动力学中部分“质量缺失”信号可能源自随时间演化的\(G(t)\)。但论文明确说明该机制无法完全解释低红移星系团的400倍质量差异，因此暗物质不能被彻底排除。</p>
+<p><strong>13. 星系旋转曲线与部分暗物质疑难</strong>：早期宇宙增强的引力耦合\(G(t)\)意味着普通重子物质即可产生更强的引力效应。星系动力学中部分"质量缺失"信号可能源自随时间演化的\(G(t)\)。但论文明确说明该机制无法完全解释低红移星系团的400倍质量差异，因此暗物质不能被彻底排除。</p>
 <p><strong>14. 恒星演化图的全面修订</strong>：恒星结构方程直接依赖于\(G\)。不同红移处\(G(t)\)取值不同。零龄主序轨迹、质光关系、变星的脉动行为均随红移而变。造父变星是宇宙距离阶梯的重要基石。若本猜想成立，整套距离标度必须重新校准，为解决哈勃张力提供新路径。</p>
 <p><strong>15. 伽马暴与超新星随宇宙时间的性质演化</strong>：Ia型超新星被视作标准烛光。若\(G(t)\)及随\(c(t)\)标度的原子尺度量随红移演化，则超新星峰值光度并非普适常数。基于超新星得到的宇宙加速膨胀结论需重新评估。</p>
 <p><strong>16. 重访大爆炸核合成（BBN）</strong>：反应截面和库仑势垒依赖于\(\varepsilon_0(t)\)和\(G(t)\)。标准BBN计算假定\(c\)和\(G\)恒定。在本模型中，原初核合成发生的温度-密度条件和宇宙时机完全改变，为重新解读观测到的原初氦和氘丰度开辟了新的解释空间。</p>
 <h3>三、基础理论物理</h3>
 <p><strong>17. 爱因斯坦场方程的重释与修订</strong>：原场方程中的常数\(G\)被替换为\(P/c(t)^2\)。广义相对论不再是一套纯粹的几何引力理论；时空曲率动力学与真空电磁背景场LEM-SCDF相耦合。质能分布、时空几何与真空电磁参数三者构成闭合的动力学回路。</p>
-<p><strong>18. 通向统一场论的新路径——绕过传统引力量子化死结</strong>：传统研究方案直接量子化时空引力几何，遭遇严重障碍。本框架将动力学自由度转移至LEM-SCDF背景场，优先量子化该宇宙背景场而非引力本身。这为爱因斯坦1920年莱顿大学演讲中所构想的“物理时空新以太”提供了现代实现方案。</p>
-<p><strong>19. 量子纠缠“鬼魅超距作用”的物理本体论</strong>：LEM-SCDF场传播远快于局域光速。关键在于，它不传递能量或因果信号，仅负责全局背景状态的同步。它不违反狭义相对论的局域光锥因果律，却为非局域量子关联提供了物理基底。纠缠不再仅仅是一个数学诠释特征。</p>
-<p><strong>20. 对历史上变光速（VSL）模型的重要升级</strong>：Magueijo等人早期的VSL方案旨在解决视界与平坦性疑难，却恶化了光子散射问题。本框架下的ZLZT原初条件反过来，假设初始光速接近零，从根源上规避了这些散射困难。</p>
-<p><strong>21. 国际单位制底层逻辑的修订</strong>：现代“米”的定义锚定于恒定的\(c\)。在本猜想下，必须区分当代计量学中的米\(L_m\)与原子米\(L_a\)——后者由固定原子振荡周期定义，但其物理空间尺度随\(c(t)\)变化。许多计量学测量结果需要重新解读。光速\(c(t)\)的微小长期漂移，其每日相对变化约为\(\sim10^{-13}\)，远低于1983年SI测量框架的精度极限。</p>
+<p><strong>18. 通向统一场论的新路径——绕过传统引力量子化死结</strong>：传统研究方案直接量子化时空引力几何，遭遇严重障碍。本框架将动力学自由度转移至LEM-SCDF背景场，优先量子化该宇宙背景场而非引力本身。这为爱因斯坦1920年莱顿大学演讲中所构想的"物理时空新以太"提供了现代实现方案。</p>
+<p><strong>19. 量子纠缠"鬼魅超距作用"的物理本体论</strong>：LEM-SCDF场传播远快于局域光速。关键在于，它不传递能量或因果信号，仅负责全局背景状态的同步。它不违反狭义相对论的局域光锥因果律，却为非局域量子关联提供了物理基底。纠缠不再仅仅是一个数学诠释特征。</p>
+<p><strong>20. 对历史上变光速（VSL）模型的重要升级</strong>：Magueijo等人早期的VSL方案旨在解决视界与平坦性疑难，却恶化了光子散射问题。本框架下的ZLZT原初条件，以其接近零的初始光速，从根源上规避了这些散射困难。</p>
+<p><strong>21. 国际单位制底层逻辑的修订</strong>：现代"米"的定义锚定于恒定的\(c\)。在本猜想下，必须区分当代计量学中的米\(L_m\)与原子米\(L_a\)——后者由固定原子振荡周期定义，但其物理空间尺度随\(c(t)\)变化。许多计量学测量结果需要重新解读。</p>
 <p><strong>22. 所有普朗克尺度量均成为演化的导出量</strong>：普朗克质量、普朗克长度、普朗克密度和普朗克力不再是永恒的普适常数，它们服从与\(c(t)\)的幂律标度关系。普朗克尺度是演化宇宙背景涌现出的属性，而非量子引力研究的固定基准——这重塑了量子引力研究的出发点。</p>
-<p><strong>23. “囚禁生成物质”：物质与能量的概念清晰分离</strong>：标准QCD将强子质量解释为囚禁存储的能量。本文引入\(M_\mathrm{aps}\)——原初粒子物质。物质本身守恒；\(E = M c(t)^2\)扮演物质与能量之间随时间变化的宇宙兑换率。物质与能量在概念上成为两个独立范畴——这修正了我们对质能等价的物理与哲学理解。</p>
+<p><strong>23. "囚禁生成物质"：物质与能量的概念清晰分离</strong>：标准QCD将强子质量解释为囚禁存储的能量。本文引入\(M_\mathrm{aps}\)——原初粒子物质。物质本身守恒；\(E = M c(t)^2\)扮演物质与能量之间随时间变化的宇宙兑换率。物质与能量在概念上成为两个独立范畴——这修正了我们对质能等价的物理与哲学理解。</p>
 <p><strong>24. 因果图景的转变：宇宙作为一个全局相干整体</strong>：传统物理学将宇宙视为彼此无关的局域碎片集合，\(c\)和\(G\)是外部强加的常数。在本图景中，所有质能组分共同塑造LEM-SCDF背景场；每一个粒子与光子都保持连续的全局耦合。宇宙成为一个动力学上相干的整体，而非孤立斑块的集合。</p>
 <h3>四、行星科学与生物演化</h3>
 <p><strong>25. 系外行星族群随红移的统计预言</strong>：从\(r_s(z)\)标度关系可以得到可检验的统计预期：行星出现率在高红移处应被显著压制，随着宇宙时间推移，行星系统逐渐普遍。未来JWST和PLATO系外行星巡天可从统计上验证或证伪这一趋势。</p>
@@ -3699,7 +3794,7 @@ m_P = \sqrt{\frac{\hbar c^3}{P}}, \quad \ell_P = \sqrt{\frac{\hbar P}{c^5}}, \qu
 <p>消解现有观测张力仅仅是必要条件，而非充分证明。解释力只是入场资格，而非最终裁断。决定性的权重在于可证伪的观测预言：每日微小分数变化需要HEPS或拟议中的Mission-M三十年计划等未来设施；系外行星出现率随红移的统计；高红移恒星与造父变星的观测性质；更高精度的DESI及未来BAO对\(w(z)\)的测量。</p>
 <p>尽管该框架的自由参数数量很低，但它引入了两个全新的本体论假设：LEM-SCDF宇宙暗场和\(M_\mathrm{aps}\)原初粒子物质。目前尚缺乏对这些实体的直接独立实验证据。大量后续理论工作仍待完成：弗里德曼方程、原初核合成、完整恒星结构计算、宇宙距离校准——所有这些都需要完全自洽的重新推导。本文仅提供了一个纲领性框架，许多推导仍停留在启发式阶段。</p>
 <h3>如果该猜想成立</h3>
-<p>若该猜想被证实，ΛCDM标准模型将退化为仅适用于晚期宇宙的有效近似理论。剧烈的高温大爆炸将被光速缓慢增长的ZLZT图景取代。部分暗能量和暗物质信号或许只是背景常数演化所产生的观测伪迹。我们所熟悉的引力常数\(G\)将被降格为演化的导出量；真正不变的宇宙量是\(P\)和精细结构常数\(\alpha\)。狭义相对论的局域洛伦兹不变性得以保留，但在宇宙尺度上，真空光速将代表一个随时间变化的全局背景。修订后的场方程将通过LEM-SCDF场将引力与电磁学联系起来，为统一场论研究开辟新方向。宇宙距离阶梯、恒星质量、黑洞质量、超新星标准烛光分析以及原初核合成计算——所有这些都将需要重新校准。海量的JWST和DESI存档数据需要在新的范式下重新分析。甚至国际单位制的基础定义，以及物质与能量的概念区分，都将受到影响。</p>
+<p>若该猜想被证实，ΛCDM标准模型将退化为仅适用于晚期宇宙的有效近似理论。剧烈的高温大爆炸将被光速缓慢增长的ZLZT图景取代。暗能量以及部分暗物质信号或许只是背景常数演化所产生的观测伪迹。我们所熟悉的引力常数\(G\)将被降格为演化的导出量；真正不变的宇宙量是\(P\)和精细结构常数\(\alpha\)。狭义相对论的局域洛伦兹不变性得以保留，但在宇宙尺度上，真空光速将代表一个随时间变化的全局背景。修订后的场方程将通过LEM-SCDF场将引力与电磁学联系起来，为统一场论研究开辟新方向。宇宙距离阶梯、恒星质量、黑洞质量、超新星标准烛光分析以及原初核合成计算——所有这些都将需要重新校准。海量的JWST和DESI存档数据需要在新的范式下重新分析。甚至国际单位制的基础定义，以及物质与能量的概念区分，都将受到影响。</p>
 <p>总而言之，本文并非对现有宇宙学的小修小补。它仅凭单一关系式\(G(t)c(t)^2=P\)，试图回应宇宙学、天体物理和基础理论中二三十个疑难。</p>
 <p>最后，我们还是要再次强调：在物理学中，逻辑优雅仅仅只是一个起点；最终的裁决权，属于望远镜和高精度的未来实验。</p>
         </div>
