@@ -60,35 +60,37 @@ The model attempts to provide a unified reinterpretation of several major contem
 
 ## Abstract
 
-Einstein's 1905 special relativity (SR) and 1915 general relativity (GR) demand only Lorentz-frame invariance of the speed of light. They never require that c remains constant across ten-billion-year cosmic timescales. This key distinction has been silently misread for a century by an untested cosmological assumption. 
+Einstein's 1905 special relativity (SR) and 1915 general relativity (GR) demand only the strict Lorentz-frame invariance of light speed. They never require constant `c` across ten-billion-year cosmic timescales. This key distinction has been silently misread, for a century, by an untested cosmological assumption.
 
-In the 1983 SI definition, c was fixed at 299,792,458 m/s, with a stated measurement uncertainty of ±1.1 m/s, corresponding to a relative uncertainty of approximately 3.67 × 10⁻⁹. 
+In the 1983 SI definition, `c` was defined as 299792458 m/s, with a stated measurement uncertainty of ±1.1 m/s, corresponding to a relative precision of approximately 3.67 × 10^-9.
 
-Dirac's 1937 large numbers hypothesis entertained the possibility of a time-varying gravitational constant G(t) ∝ 1/t. In this spirit, the present study explores a new theoretical framework for cosmic evolution.
+Critically, if the fractional daily growing rate of `c(t)` is on the order of 10^-13 day^-1, as predicted by the study's model, such a tiny variation lies far below the precision limit of the 1983 SI standard. Accordingly, it is entirely reasonable that this tiny drift has eluded all laboratory measurements over the full 43-year period from 1983 to 2026.
 
-The framework is built upon two core postulates. **First**, the speed of light is time-dependent, while a cosmic coupling constant P remains invariant, satisfying G(t) · c(t)² = P. **Second**, the fine-structure constant α is eternally invariant. Under these two assumptions, the time-growing speed of light c(t) emerges as the sole driving force of cosmic evolution. The gravitational constant G is no longer fundamental but a derived physical quantity dependent on c(t).
+Dirac's (1937) large numbers hypothesis entertained the possibility of time-varying gravitational parameter `G(t) ∝ 1/t` and light speed `c(t)`. Feynman (1960) and Davies (1995) both pointed out that the standard interpretation of cosmological redshift contains an unanswered causal gap.
 
-The physical dimension of length, as defined by the SI meter, is re-examined within this framework. Vacuum permeability μ₀, vacuum permittivity ε₀, the Bohr radius a<sub>B</sub> of hydrogen, the reduced Planck constant ħ, the Planck mass m<sub>p</sub>, the Planck length ℓ<sub>p</sub>, the Planck density ρ<sub>p</sub>, and the thermodynamic ionization temperature T<sub>ion</sub> in the Boltzmann formula—all evolve alongside c(t).
+More recently, JWST (2023) and DESI (2025) data have revealed a series of theoretical conflicts with the current ΛCDM model, particularly at high redshift and in the nature of dark energy.
 
-The time-dependent function c(t) is inferred to scale synchronously with both the cosmic scale factor a(t) and the redshift factor 1 + z defined in the standard ΛCDM model. At the CMB decoupling epoch corresponding to 1 + z = 1100, the speed of light c(t) is 1/1100 of the present speed c₀; the Bohr radius a<sub>B</sub> is 1/1100 of its current value; and the ionization temperature T<sub>ion</sub> is only 82.64 K. These results differ markedly from the conventional high-temperature assumption of the standard ΛCDM model.
+In the spirit of Dirac, Feynman, and Davies, the present study explores a new theoretical framework for cosmic evolution, built upon two core postulates: (1) the speed of light is time-dependent, while a cosmic coupling constant `P` remains invariant, satisfying `G(t) c(t)^2 = P`; and (2) the fine-structure constant α is eternally invariant.
 
-Within this growing-c(t) model, the cosmic formation timescale extends to [−59.1, −45.2] Gyr, far exceeding the −13.8 Gyr assumed in the standard model. This implies a gently evolving cosmos rather than a violent Big Bang scenario.
+Under these two assumptions, the time-growing speed of light `c(t)` emerges as the sole driving force of cosmic evolution, and the gravitational constant `G` is no longer a fundamental constant but a derived physical quantity dependent on `c(t)`. The physical dimension of length, as defined by the SI meter, is re-examined within this framework.
 
-The interpretation of the Einstein curvature field equation G<sub>μν</sub> is revisited, revealing extremely high spacetime curvature in the early galaxy formation era (1 + z = 25) and the CMB epoch (1 + z = 1100).
+Vacuum permeability μ0, vacuum permittivity ε0, the Bohr radius a_B of hydrogen, the Schwarzschild radius r_s, the reduced Planck constant ħ, the Planck mass m_P, the Planck length ℓ_P, the Planck density ρ_P, and the thermodynamic temperature T_ion in the Boltzmann ionization formula all evolve alongside `c(t)`.
 
-The intrinsic meaning of the cosmic coupling constant P is explored, with the relation:
+The time-dependent function `c(t)` is inferred to scale synchronously with both the cosmic scale factor `a(t)` and the redshift factor `1+z` defined in the standard ΛCDM model. At the CMB decoupling epoch corresponding to `1+z = 1100`, the speed of light `c(t)` is 1/1100 of the present speed c0, the Bohr radius a_B is 1/1100 of its current value, and the ionization temperature T_ion is only 82.64 K, a result markedly different from the conventional high-temperature assumption of the standard ΛCDM model.
 
-> **P = c(t)⁶ · G<sub>μν</sub> / (8π · T<sub>μν</sub>) ≈ c(t)⁴ · G<sub>μν</sub> / (8π · M<sub>μν</sub>)**
+Within this growing-`c(t)` model, the cosmic formation timescale was extended to [−59.1, −45.2] Gyr, far exceeding the −13.8 Gyr assumed in the standard model, implying a gently evolving cosmos rather than a violent Big Bang scenario.
 
-Here, P characterizes the fundamental coupling between cosmic mass-energy distribution, spacetime curvature, and the time-varying light speed c(t). On macroscopic scales, dynamic mass distribution governs the evolution of both spacetime curvature and light propagation velocity.
+The interpretation of the Einstein curvature field equation `G_μν` is revisited, revealing an extremely high spacetime curvature in the early galaxy formation era (`1+z = 25`) and the CMB epoch (`1+z = 1100`).
 
-The evolution of the speed of light encodes the transition of the universe from an early utterly homogeneous post-hadronization plasma state toward local clustering of matter and energy in spacetime. Its present fractional daily variation rate is calculated to be [0.86, 1.89] × 10⁻¹³ day⁻¹, and the feasibility of testing this variation at the High Energy Photon Source (HEPS) is explored.
+The intrinsic meaning of the cosmic coupling constant `P` is explored, with the relation `P = c(t)^6 G_μν / (8π T_μν) ≈ c(t)^4 G_μν / (8π M_μν)`. Here, `P` characterizes the fundamental coupling between the cosmic mass-energy distribution, spacetime curvature and time-varying light speed `c(t)`. On macroscopic scales, the dynamic mass distribution governs the evolution of both spacetime curvature and light propagation velocity.
 
-Outstanding problems—including the DESI DR2 dynamical dark energy preference, the cosmic photon budget crisis, the early galaxy stellar mass tension, the Population III star timescale conflict, the early solar lithium abundance puzzle, and the late emergence of advanced intelligent life—may be re-examined within this growing-c(t) framework.
+The evolution of the speed of light encodes the transition of the universe from an early utterly homogeneous post-hadronization plasma state toward local clustering of matter and energy in spacetime. Its present fractional daily variation rate is calculated to be [0.86, 1.89] × 10^-13 day^-1, and the feasibility of testing this variation is explored through both the High Energy Photon Source (HEPS) and the proposed Mission-M research initiative.
 
-We postulate the ultimate cosmic origin as the **ZLZT (Zero-Light-Speed Zero-Temperature)** primordial state, where both the speed of light and temperature approach zero. Meanwhile, the **LEM-SCDF (Light-Electricity-Magnetism Synchronized Cosmic Dark Field)** is defined to realize the global synchronization of electromagnetic parameters.
+Outstanding problems such as the DESI DR2 dynamical dark energy preference, the cosmic photon budget crisis, the early galaxy stellar mass tension, the Population III star timescale conflict, the early solar lithium abundance puzzle, and the late emergence of advanced intelligent life may be re-examined within this growing-`c(t)` model.
 
-More importantly, the revised Einstein field equation—which abandons the constant G and adopts dynamic c(t)—offers a groundbreaking perspective and a feasible approach for exploring the long-sought unified field theory.
+We postulate the ultimate cosmic origin as the *ZLZT* (Zero-Light-Speed and Zero-Temperature) primordial state, where both the speed of light and temperature approach zero. Meanwhile, the *LEM-SCDF* (Light-Electricity-Magnetism Synchronized Cosmic Dark Field) is defined to realize the global synchronization of electromagnetic parameters.
+
+More importantly, the revised Einstein field equation, which abandons the constant `G` and is equipped with dynamic `c(t)`, offers a groundbreaking perspective and feasible approach for exploring the long-sought unified field theory.
 
 ---
 
