@@ -60,17 +60,18 @@ The model attempts to provide a unified reinterpretation of several major contem
 
 ## Abstract
 
+
 Einstein's 1905 special relativity (SR) and 1915 general relativity (GR) demand only the strict Lorentz-frame invariance of light speed. They never require constant `c` across ten-billion-year cosmic timescales. This key distinction has been silently misread, for a century, by an untested cosmological assumption.
 
 In the 1983 SI definition, `c` was defined as 299792458 m/s, with a stated measurement uncertainty of ±1.1 m/s, corresponding to a relative precision of approximately 3.67 × 10^-9.
 
 Critically, if the fractional daily growing rate of `c(t)` is on the order of 10^-13 day^-1, as predicted by the study's model, such a tiny variation lies far below the precision limit of the 1983 SI standard. Accordingly, it is entirely reasonable that this tiny drift has eluded all laboratory measurements over the full 43-year period from 1983 to 2026.
 
-Dirac's (1937) large numbers hypothesis entertained the possibility of time-varying gravitational parameter `G(t) ∝ 1/t` and light speed `c(t)`. Feynman (1960) and Davies (1995) both pointed out that the standard interpretation of cosmological redshift contains an unanswered causal gap.
+Dirac's (1937) large numbers hypothesis entertained the possibility of time-varying gravitational parameter `G(t) ∝ 1/t` and light speed `c(t)`. Feynman (1960) and Davies (1995) both pointed out that the standard interpretation of cosmological redshift contains an unanswered causal gap in its physical mechanism.
 
 More recently, JWST (2023) and DESI (2025) data have revealed a series of theoretical conflicts with the current ΛCDM model, particularly at high redshift and in the nature of dark energy.
 
-In the spirit of Dirac, Feynman, and Davies, the present study explores a new theoretical framework for cosmic evolution, built upon two core postulates: (1) the speed of light is time-dependent, while a cosmic coupling constant `P` remains invariant, satisfying `G(t) c(t)^2 = P`; and (2) the fine-structure constant α is eternally invariant.
+In the spirit of doubt and inquiry pioneered by Dirac, Feynman, and Davies, the present study explores a new theoretical framework for cosmic evolution, built upon two core postulates: (1) the speed of light is time-dependent, while a cosmic coupling constant `P` remains invariant, satisfying `G(t) c(t)^2 = P`; and (2) the fine-structure constant α is eternally invariant.
 
 Under these two assumptions, the time-growing speed of light `c(t)` emerges as the sole driving force of cosmic evolution, and the gravitational constant `G` is no longer a fundamental constant but a derived physical quantity dependent on `c(t)`. The physical dimension of length, as defined by the SI meter, is re-examined within this framework.
 
@@ -91,6 +92,7 @@ Outstanding problems such as the DESI DR2 dynamical dark energy preference, the 
 We postulate the ultimate cosmic origin as the *ZLZT* (Zero-Light-Speed and Zero-Temperature) primordial state, where both the speed of light and temperature approach zero. Meanwhile, the *LEM-SCDF* (Light-Electricity-Magnetism Synchronized Cosmic Dark Field) is defined to realize the global synchronization of electromagnetic parameters.
 
 More importantly, the revised Einstein field equation, which abandons the constant `G` and is equipped with dynamic `c(t)`, offers a groundbreaking perspective and feasible approach for exploring the long-sought unified field theory.
+
 
 ---
 
