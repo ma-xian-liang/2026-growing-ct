@@ -1517,9 +1517,23 @@
 \setcounter{tocdepth}{1}
 
 \begin{document}
-		
+	
+	% First Page Zenodo.org DOI
+	\AddToShipoutPictureFG*{%
+		\AtPageLowerLeft{%
+			\put(30,180){%
+				\rotatebox{90}{%
+					\textcolor[RGB]{90,105,168}{%
+						\rmfamily\fontfamily{ptm}\selectfont\selectfont\LARGE
+						{https://doi.org/10.5281/zenodo.23279668}
+					}%
+				}%
+			}%
+		}%
+	}
+	
 	\maketitle
-		
+	
 	\setlength{\leftskip}{1.3cm}
 	\setlength{\rightskip}{1.3cm}
 	
